@@ -1,0 +1,46 @@
+.section-home-new-arrivals
+	@apply py-20 bg-neutral-50
+	.section-header
+		@apply flex justify-between items-end mb-10
+		.title-wrapper
+			@apply flex flex-col gap-2
+			.section-heading
+				@apply text-3xl font-light uppercase tracking-wide
+			.view-all-link
+				@apply text-sm text-gray-500 underline underline-offset-4 transition-colors
+				&:hover
+					@apply text-black
+		.slider-nav
+			@apply flex gap-4
+			.nav-btn
+				@apply w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center transition-all cursor-pointer
+				&:hover
+					@apply bg-black text-white
+	.product-item
+		.product-img
+			@apply relative aspect-[3/4] overflow-hidden mb-4
+			img
+				@apply w-full h-full object-cover transition-transform duration-500
+		.product-actions
+			@apply absolute bottom-4 left-0 w-full flex justify-center opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0
+			.add-to-cart-btn
+				@apply bg-white text-black px-6 py-2 text-sm uppercase tracking-wide transition-colors cursor-pointer
+				&:hover
+					@apply bg-black text-white
+		&:hover
+			.product-img
+				img
+					@apply scale-105
+	.product-info
+		.product-tags
+			@apply flex gap-2 mb-2
+			.product-tag
+				@apply text-[10px] uppercase tracking-wider text-gray-500
+		.product-name
+			@apply text-base font-medium uppercase mb-1
+			a
+				@apply transition-all
+				&:hover
+					@apply underline
+		.product-price
+			@apply text-sm text-gray-500

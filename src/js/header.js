@@ -2,222 +2,131 @@ export const header = {
   init: () => {
     const headerEl = document.querySelector(".header");
     if (!headerEl) return;
-    const desktopMenuItems = document.querySelectorAll(
-      ".header .header-wrapper .menu li.has-sub"
-    );
+
     let lastScrollY = window.scrollY;
 
-    // Sticky Header
+    // Sticky Header on Scroll
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Sticky header
-      if (currentScrollY > 0) {
+      if (currentScrollY > 50) {
         headerEl.classList.add("active");
       } else {
         headerEl.classList.remove("active");
       }
 
-      // 👉 Scroll UP → close desktop submenu
-      if (currentScrollY > lastScrollY && window.innerWidth >= 1024) {
-        desktopMenuItems.forEach((item) =>
-          item.classList.remove("open-submenu")
-        );
-      }
-
       lastScrollY = currentScrollY;
     };
+
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    // Mobile Menu Toggle
-    const hamburger = document.querySelector(".header-hambuger");
+
+    // Mobile Hamburger Toggle
+    const hamburger = document.querySelector(".header-hamburger");
     const mobileMenu = document.querySelector(".mobile-menu");
 
     if (hamburger && mobileMenu) {
       hamburger.addEventListener("click", () => {
-        if (mobileMenu.classList.contains("active")) {
-          // Close
-          hamburger.classList.remove("active");
-          mobileMenu.classList.remove("active");
-          document.body.classList.remove("overflow-hidden");
-        } else {
-          // Open
-          hamburger.classList.add("active");
-          mobileMenu.classList.add("active");
-          document.body.classList.add("overflow-hidden");
-        }
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+        document.body.classList.toggle("overflow-hidden");
       });
     }
 
-    // Close all submenus when mouse leaves the header
-    headerEl.addEventListener("mouseleave", (e) => {
-      if (window.innerWidth >= 1024) {
-        // Check if the mouse moved to an element that is still inside the header
-        if (e.relatedTarget && headerEl.contains(e.relatedTarget)) {
-          return;
-        }
-        desktopMenuItems.forEach((item) =>
-          item.classList.remove("open-submenu")
-        );
-      }
-    });
+    // Desktop Mega Menu - Click Toggle
+    const menuItems = document.querySelectorAll(
+      ".header .menu-item.has-dropdown"
+    );
 
-    desktopMenuItems.forEach((item) => {
-      const link = item.querySelector("a");
+    menuItems.forEach((item) => {
+      const link = item.querySelector(".header-link");
 
-      // Hover Event
-      item.addEventListener("mouseenter", () => {
-        if (window.innerWidth >= 1024) {
-          // Close others
-          desktopMenuItems.forEach((other) => {
-            if (other !== item) other.classList.remove("open-submenu");
+      if (link) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+
+          // Check if this item is already active
+          const isActive = item.classList.contains("active");
+
+          // Close all other menus
+          menuItems.forEach((otherItem) => {
+            otherItem.classList.remove("active");
           });
-          item.classList.add("open-submenu");
-        }
-      });
-    });
 
-    // Mobile Submenu Logic (Accordion)
-    const mobileSubTriggers = document.querySelectorAll(
-      ".mobile-menu .has-sub > div > i, .mobile-menu .has-sub-2 > div > i"
-    );
-
-    mobileSubTriggers.forEach((trigger) => {
-      trigger.addEventListener("click", (e) => {
-        e.preventDefault();
-        const parentLi = trigger.closest("li");
-        const submenu = parentLi.querySelector(".submenu, .submenu-2");
-
-        if (submenu) {
-          parentLi.classList.toggle("active");
-          slideToggle(submenu);
-        }
-      });
-    });
-
-    // Click Outside (Desktop)
-    document.addEventListener("click", (e) => {
-      if (window.innerWidth < 1024) return;
-      if (!e.target.closest(".header .menu")) {
-        desktopMenuItems.forEach((item) =>
-          item.classList.remove("open-submenu")
-        );
+          // Toggle current menu
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
       }
     });
 
-    // Language Dropdown
-    const langTrigger = document.querySelector(".header .tools .language");
+    // Close mega menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".header .menu-item")) {
+        menuItems.forEach((item) => item.classList.remove("active"));
+      }
+    });
 
-    if (langTrigger) {
-      langTrigger.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent immediate closing
-        langTrigger.classList.toggle("active");
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!langTrigger.contains(e.target)) {
-          langTrigger.classList.remove("active");
-        }
-      });
-    }
-
-    // Search Toggle
-    const searchTrigger = document.querySelector(".header .tools .search");
-    const searchOverlay = document.querySelector(".header-search-form");
-    const searchClose = document.querySelector(
-      ".header-search-form .close-search"
+    // Submenu Level 2 Toggle (for mobile and desktop)
+    const submenuToggles = document.querySelectorAll(
+      ".menu-list .has-submenu > a"
     );
 
-    if (searchTrigger && searchOverlay) {
-      searchTrigger.addEventListener("click", () => {
+    submenuToggles.forEach((toggle) => {
+      toggle.addEventListener("click", (e) => {
+        if (window.innerWidth >= 1024) {
+          // Desktop: prevent default and toggle
+          e.preventDefault();
+          const parent = toggle.closest(".has-submenu");
+          parent.classList.toggle("active");
+        }
+      });
+    });
+
+    // Search Overlay Toggle
+    const searchBtn = document.querySelector(".header .search-btn");
+    const searchOverlay = document.querySelector(".header-search-overlay");
+    const searchClose = document.querySelector(".search-close");
+    const searchInput = document.querySelector(".search-input");
+
+    if (searchBtn && searchOverlay) {
+      // Open search
+      searchBtn.addEventListener("click", () => {
         searchOverlay.classList.add("active");
         document.body.classList.add("overflow-hidden");
+        // Focus input after animation
+        setTimeout(() => {
+          if (searchInput) searchInput.focus();
+        }, 300);
       });
 
+      // Close search - close button
       if (searchClose) {
         searchClose.addEventListener("click", () => {
-          searchOverlay.classList.remove("active");
-          document.body.classList.remove("overflow-hidden");
+          closeSearchOverlay();
         });
       }
 
-      // Close when clicking outside the form
+      // Close search - click outside
       searchOverlay.addEventListener("click", (e) => {
         if (e.target === searchOverlay) {
-          searchOverlay.classList.remove("active");
-          document.body.classList.remove("overflow-hidden");
+          closeSearchOverlay();
         }
       });
 
-      // Close on Escape key
+      // Close search - ESC key
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape" && searchOverlay.classList.contains("active")) {
-          searchOverlay.classList.remove("active");
-          document.body.classList.remove("overflow-hidden");
+          closeSearchOverlay();
         }
       });
+
+      function closeSearchOverlay() {
+        searchOverlay.classList.remove("active");
+        document.body.classList.remove("overflow-hidden");
+        if (searchInput) searchInput.value = "";
+      }
     }
   },
-};
-
-// Helper for smooth slide animation
-const slideToggle = (target, duration = 300) => {
-  if (window.getComputedStyle(target).display === "none") {
-    return slideDown(target, duration);
-  } else {
-    return slideUp(target, duration);
-  }
-};
-
-const slideUp = (target, duration = 300) => {
-  target.style.transitionProperty = "height, margin, padding";
-  target.style.transitionDuration = duration + "ms";
-  target.style.boxSizing = "border-box";
-  target.style.height = target.offsetHeight + "px";
-  target.offsetHeight; // force repaint
-  target.style.overflow = "hidden";
-  target.style.height = 0;
-  target.style.paddingTop = 0;
-  target.style.paddingBottom = 0;
-  target.style.marginTop = 0;
-  target.style.marginBottom = 0;
-  window.setTimeout(() => {
-    target.style.display = "none";
-    target.style.removeProperty("height");
-    target.style.removeProperty("padding-top");
-    target.style.removeProperty("padding-bottom");
-    target.style.removeProperty("margin-top");
-    target.style.removeProperty("margin-bottom");
-    target.style.removeProperty("overflow");
-    target.style.removeProperty("transition-duration");
-    target.style.removeProperty("transition-property");
-  }, duration);
-};
-
-const slideDown = (target, duration = 300) => {
-  target.style.removeProperty("display");
-  let display = window.getComputedStyle(target).display;
-  if (display === "none") display = "block";
-  target.style.display = display;
-  let height = target.offsetHeight;
-  target.style.overflow = "hidden";
-  target.style.height = 0;
-  target.style.paddingTop = 0;
-  target.style.paddingBottom = 0;
-  target.style.marginTop = 0;
-  target.style.marginBottom = 0;
-  target.offsetHeight; // force repaint
-  target.style.transitionProperty = "height, margin, padding";
-  target.style.transitionDuration = duration + "ms";
-  target.style.height = height + "px";
-  target.style.removeProperty("padding-top");
-  target.style.removeProperty("padding-bottom");
-  target.style.removeProperty("margin-top");
-  target.style.removeProperty("margin-bottom");
-  window.setTimeout(() => {
-    target.style.removeProperty("height");
-    target.style.removeProperty("overflow");
-    target.style.removeProperty("transition-duration");
-    target.style.removeProperty("transition-property");
-  }, duration);
 };

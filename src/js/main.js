@@ -9,7 +9,6 @@ import {
 } from "./helper";
 import { header } from "./header";
 import { swiperInit } from "./swiper";
-import productDetail from "./productDetail";
 import customersDetail from "./customersDetail";
 $(document).ready(function () {
   setBackgroundElement();
@@ -18,7 +17,6 @@ $(document).ready(function () {
   buttonToTop();
   initAccordion();
   header.init();
-  productDetail();
   customersDetail();
   swiperInit();
 });

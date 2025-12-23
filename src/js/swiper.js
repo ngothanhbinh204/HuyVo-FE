@@ -151,6 +151,54 @@ export function swiperInit() {
     },
   });
 
+  // Home Explore Slider (Home-2)
+  if ($(".section-home-explore .swiper").length > 0) {
+    new Swiper(".section-home-explore .swiper", {
+      modules: [Pagination, Autoplay],
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 800,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".section-home-explore .swiper-pagination",
+        clickable: true,
+      },
+    });
+  }
+
+  // New Arrivals Slider (Home-3)
+  if ($(".section-home-new-arrivals .swiper").length > 0) {
+    new Swiper(".section-home-new-arrivals .swiper", {
+      modules: [Navigation],
+      slidesPerView: 2,
+      spaceBetween: 16,
+      speed: 600,
+      loop: false,
+      navigation: {
+        nextEl: ".section-home-new-arrivals .nav-next",
+        prevEl: ".section-home-new-arrivals .nav-prev",
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 24,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+    });
+  }
+
   // Services Detail Slider
   if ($(".swiper-services-detail .swiper").length > 0) {
     new Swiper(".swiper-services-detail .swiper", {

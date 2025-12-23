@@ -95,12 +95,11 @@ module.exports = {
         sm: "100vw",
         md: "100vw",
         lg: "1024px",
-        xl: "calc(1440/1920*100rem)",
+        xl: "calc(1512/1920*100rem)",
       },
     },
     fontFamily: {
-      primary: ["Exo", "sans-serif"],
-      exo: ["Exo", "sans-serif"],
+      primary: ["SFU", "sans-serif"],
       awesome: ['"Font Awesome 6 Pro"'],
       awesomeSharp: ['"Font Awesome 6 Sharp"'],
       inter: ["Inter", "sans-serif"],
@@ -299,11 +298,14 @@ module.exports = {
       },
       colors: {
         primary: {
-          1: "#03045e",
+          1: "#0E1010",
           2: "#ED1C24",
           4: "#fde4d3",
           5: "#f4914c",
           6: "#19517f",
+          black05: "#0E1010",
+          black04: "#504B4C",
+          black03: "#7C7879",
           "3 BG": "#f7fced",
           "2 - 80%": "#000000",
           "background-2": "#f5f5f5",
@@ -367,7 +369,8 @@ module.exports = {
       },
 
       fontFamily: {
-        exo: "Exo",
+        // exo: "Exo",
+        sfu: "SFU",
         Awesome6: ["'Font Awesome 6 Pro'"],
         Awesome6Brands: ["'Font Awesome 6 Brands'"],
       },

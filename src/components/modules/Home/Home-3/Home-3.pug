@@ -1,0 +1,29 @@
+section.section.section-home-new-arrivals
+	.container
+		.section-header
+			.title-wrapper
+				h2.section-heading NEW ARRIVALS
+				a.view-all-link(href="#") View all
+			
+			.slider-nav
+				button.nav-btn.nav-prev
+					i.fa-light.fa-chevron-left
+				button.nav-btn.nav-next
+					i.fa-light.fa-chevron-right
+
+		.new-arrivals-slider
+			.swiper
+				.swiper-wrapper
+					- for(var i = 1; i <= 6; i++)
+						.swiper-slide
+							.product-item
+								.product-img
+									+PugImg('https://placehold.co/400x600')
+									.product-actions
+										button.add-to-cart-btn ADD TO CART
+								.product-info
+									.product-tags
+										span.product-tag NEW
+									h3.product-name
+										a(href="#") LẬP HỒNG XUÂN SAKURA
+									p.product-price 7.700.000 ₫

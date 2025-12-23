@@ -1,0 +1,25 @@
+.section-home-banner
+	@apply relative h-screen w-full overflow-hidden
+	.banner-wrapper
+		@apply w-full h-full
+	.banner-item
+		@apply w-full h-full relative
+		img
+			@apply w-full h-full object-cover
+	.banner-content
+		@apply absolute inset-0 pointer-events-none
+		.container
+			@apply relative h-full
+	.top-right-text
+		@apply absolute top-32 right-4 text-right text-white
+		@screen lg
+			right: calc((100vw - 1512px) / 2)
+		p
+			@apply text-lg font-light tracking-wide opacity-80
+	.bottom-center-text
+		@apply absolute bottom-20 left-1/2 -translate-x-1/2 text-center text-white
+		.banner-subtitle
+			@apply text-sm uppercase tracking-[0.2em] mb-2
+		.banner-title
+			@apply text-6xl font-light uppercase tracking-[0.1em]
+			font-family: 'Cinzel', serif

@@ -1,159 +1,101 @@
 header.header
-		.header-wrapper(class="flex items-center justify-between rounded-[80px]")
-			.logo
-				a(href="/")
-					+PugImg("./img/logo-thienloc.svg")(class="h-12 w-auto object-contain")
-			.menu(class="hidden lg:block")
-				ul
-					li
-						a(href="/" class="item-menu") <i class="fa-solid fa-house"></i>
-					li
-						a(href="Introduction.html" class="item-menu") Giới thiệu
-					li.has-sub
-						a(href="#" class="item-menu")
-							span Sản phẩm
-						.mega-menu
-									.col
-										.label Ấn phẩm bao bì
-										ul
-											li: a(href="#") In Hộp Giấy - Hộp Cứng
-											li: a(href="#") In Túi Giấy
-											li: a(href="#") Tem Nhãn
-											li: a(href="#") Thùng Carton
-									.col
-										.label Ấn phẩm văn phòng
-										ul
-											li: a(href="#") In Bao Thư
-											li: a(href="#") Bìa Đựng Hồ Sơ
-											li: a(href="#") Danh Thiếp
-											li: a(href="#") Giấy Tiêu Đề
-									.col
-										.label Ấn phẩm tiếp thị
-										ul
-											li: a(href="#") In Tờ Rơi
-											li: a(href="#") In Catalogue
-											li: a(href="#") Tờ Gấp
-											li: a(href="#") Phiếu Quà Tặng - Giảm Giá
-											li: a(href="#") In Lịch Tết
-									.col
-										.label Sản phẩm khác
-										ul
-											li: a(href="#") Biểu Mẫu
-											li: a(href="#") Phiếu Bảo Hành
-											li: a(href="#") Thiệp Mời
-											li: a(href="#") Thực Đơn
-									.col
-										.label In gia công
-										ul
-											li: a(href="#") In Gia Công
-					li.has-sub
-						a(href="#" class="item-menu")
-							span Dịch vụ
-						.mega-menu
-									.col
-										.label Ấn phẩm bao bì
-										ul
-											li: a(href="#") In Hộ
-											li: a(href="#") In Túi Gi
-											li: a(href="#") Tem N
-											li: a(href="#") Thùng Cart
-									.col
-										.label Ấn phẩm văn phòng
-										ul
-											li: a(href="#") In Bao Thư
-											li: a(href="#") Bìa Đựng  
-											li: a(href="#") Danh Thiếp
-											li: a(href="#") Giấy Tiêu Đề
-									.col
-										.label Ấn phẩm tiếp thị
-										ul
-											li: a(href="#") In Tờ Rơi
-											li: a(href="#") In Catalogue
-											li: a(href="#") Tờ Gấp
-											li: a(href="#") Phiếu Quà Tặng - Giảm Giá
-											li: a(href="#") In Lịch Tết
-									.col
-										.label Sản phẩm khác
-										ul
-											li: a(href="#") Biểu Mẫu
-											li: a(href="#") Phiếu Bảo Hành
-											li: a(href="#") Thiệp Mời
-											li: a(href="#") Thực Đơn
-									.col
-										.label In gia công
-										ul
-											li: a(href="#") In Gia Công
-					li
-						a(href="#" class="item-menu") Khách hàng
-					li
-						a(href="#" class="item-menu") Tin tức
-					li
-						a(href="#" class="item-menu") Liên hệ
-			.tools
-				.search.cursor-pointer
-				
-					i.fa-light.fa-magnifying-glass(class="text-xl")
-				.language.relative
-					.current-lang.flex.items-center.gap-1.cursor-pointer
-						+PugImg("./img/flag-vn.svg")(class="flag")
-						span VN
-						i.fa-light.fa-chevron-down(class="text-xs text-neutral-600 transition-transform duration-300")
-					.lang-dropdown
-						ul
-							li
-								a(href="#")
-									+PugImg("./img/flag-vn.svg")(class="flag")
-									span VN
-							li
-								a(href="#")
-									+PugImg("./img/flag-en.svg")(class="flag")
-									span EN
-				.hamburger(class="lg:hidden")
-					.header-hambuger
-						span
-						span
-						span
-		.mobile-menu
-			ul.flex.flex-col.gap-4
-				li
-					a(href="#" class="text-lg font-bold text-utility-2929 block py-2") <i class="fa-solid fa-house"></i>
-				li
-					a(href="#" class="text-lg font-bold text-utility-2929 block py-2") Giới thiệu
-				li.has-sub
-					.flex.items-center.justify-between.border-b.border-neutral-100
-						a(href="#" class="text-lg font-bold text-utility-2929 block py-2 flex-1") Sản phẩm
-						i.fa-solid.fa-chevron-down(class="text-sm text-neutral-500 transition-transform duration-300 w-8 h-8 flex items-center justify-center cursor-pointer")
-					.submenu(class="hidden pl-4")
-						ul.flex.flex-col.gap-2.py-2
-							li.has-sub-2
-								.flex.items-center.justify-between
-									a(href="#" class="text-base text-neutral-600 block py-2 flex-1") Ấn phẩm bao bì
-									i.fa-solid.fa-chevron-down(class="text-xs text-neutral-400 transition-transform duration-300 w-6 h-6 flex items-center justify-center cursor-pointer")
-								.submenu-2(class="hidden pl-4 border-l border-neutral-200 ml-2")
-									ul.flex.flex-col.gap-2.py-2
-										li: a(href="#" class="text-sm text-neutral-500 block py-1") In Hộp Giấy - Hộp Cứng
-										li: a(href="#" class="text-sm text-neutral-500 block py-1") In Túi Giấy
-										li: a(href="#" class="text-sm text-neutral-500 block py-1") Tem Nhãn
-										li: a(href="#" class="text-sm text-neutral-500 block py-1") Thùng Carton
-							li
-								a(href="#" class="text-base text-neutral-600 block py-2") Ấn phẩm văn phòng
-							li
-								a(href="#" class="text-base text-neutral-600 block py-2") Ấn phẩm tiếp thị
-							li
-								a(href="#" class="text-base text-neutral-600 block py-2") Sản phẩm khác
-							li
-								a(href="#" class="text-base text-neutral-600 block py-2") In gia công
-				li.has-sub
-					.flex.items-center.justify-between.border-b.border-neutral-100
-						a(href="#" class="text-lg font-bold text-utility-2929 block py-2 flex-1") Dịch vụ
-						i.fa-solid.fa-chevron-down(class="text-sm text-neutral-500 transition-transform duration-300 w-8 h-8 flex items-center justify-center cursor-pointer")
-					.submenu(class="hidden pl-4")
-						ul.flex.flex-col.gap-2.py-2
-							li: a(href="#" class="text-base text-neutral-600 block py-2") Dịch vụ 1
-							li: a(href="#" class="text-base text-neutral-600 block py-2") Dịch vụ 2
-				li
-					a(href="#" class="text-lg font-bold text-utility-2929 block py-2") Khách hàng
-				li
-					a(href="#" class="text-lg font-bold text-utility-2929 block py-2") Tin tức
-				li
-					a(href="#" class="text-lg font-bold text-utility-2929 block py-2") Liên hệ
+	.container
+		.header-wrapper
+			ul.header-left.menu-list
+				li.menu-item.has-dropdown
+					a.header-link(href="#")
+						.btn-inner
+							.main-text.text SHOP
+							.hover-text(class="text") SHOP
+					.mega-menu
+						.container
+							.mega-menu-wrapper
+								.mega-menu-column
+									.column-title MODERNE HERITAGE
+									.column-content
+										ul.menu-list
+											li
+												a(href="#") AO DAI MADAME
+											li
+												a(href="#") AO DAI FIRSTLADY
+											li
+												a(href="#") BA BA MADEMOISELLE
+											li
+												a(href="#") BA BA GABRIELLA
+								.mega-menu-column
+									.column-title WOMENWEAR
+									.column-content
+										ul.menu-list
+											li.has-submenu
+												a(href="#") 
+													span READY TO WEAR
+													i.fa-solid.fa-chevron-down
+											li.has-submenu.active
+												a(href="#") 
+													span BAG & ACCESSORIES
+													i.fa-solid.fa-chevron-down
+												ul.submenu-level2
+													li
+														a(href="#") LEATHER GOODS
+													li
+														a(href="#") BELTS
+													li
+														a(href="#") JEWLERY
+											li.has-submenu
+												a(href="#") 
+													span SHOES
+													i.fa-solid.fa-chevron-down
+								.mega-menu-column
+									.column-title MENWEAR
+									.column-content
+										ul.menu-list
+											li.has-submenu
+												a(href="#") 
+													span READY TO WEAR
+													i.fa-solid.fa-chevron-down
+											li.has-submenu
+												a(href="#") 
+													span BAG & ACCESSORIES
+													i.fa-solid.fa-chevron-down
+											li
+												a(href="#") SHOES
+								.mega-menu-images
+									.image-wrapper
+										+PugImg('https://placehold.co/300x400')
+									.image-wrapper
+										+PugImg('https://placehold.co/300x400')
+								.mega-menu-footer
+									a.shop-all-link(href="#") 
+										span SHOP ALL
+										i.fa-solid.fa-arrow-right
+				li.menu-item
+					a.header-link(href="#") COLLECTIONS
+				li.menu-item
+					a.header-link(href="#") SALE
+			
+			.header-center
+				a.logo(href="/") HUYVO
+			
+			.header-right
+				button.header-icon.search-btn
+					i.fa-regular.fa-magnifying-glass
+				button.header-icon.user-btn
+					i.fa-regular.fa-user
+				button.header-icon.cart-btn
+					i.fa-regular.fa-bag-shopping
+				button.header-hamburger
+					span
+					span
+					span
+
+//- Search Overlay
+.header-search-overlay
+	.search-overlay-inner
+		.container
+			.search-wrapper
+				button.search-close
+					i.fa-solid.fa-xmark
+				.search-form
+					input.search-input(type="text" placeholder="Search...")
+					button.search-submit
+						i.fa-solid.fa-magnifying-glass
