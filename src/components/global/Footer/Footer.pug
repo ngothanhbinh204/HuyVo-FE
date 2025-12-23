@@ -1,0 +1,105 @@
+footer.footer.relative
+	.container
+		.footer-decor
+			+PugImg("./img/decor-footer.svg")
+		.footer-top
+					//- Left: Company Info
+					.box-left(class="w-auto mb-6 lg:mb-0")
+						.footer-company
+							h2.footer-title Công Ty TNHH In Bao Bì Thiên Lộc
+							p.footer-subtitle IN NÊN GIÁ TRỊ – GÓI TRỌN NIỀM TIN
+
+					//- Right: Social & Certs
+					.box-right(class="w-auto")
+						.footer-social-certs
+							//- Social Links
+							.footer-social
+								span.social-label Mạng xã hội
+								.social-links
+									a.social-link(href="#" target="_blank" aria-label="YouTube")
+										i.fa-brands.fa-youtube
+									a.social-link(href="#" target="_blank" aria-label="Facebook")
+										i.fa-brands.fa-facebook-f
+							//- Certifications
+							.footer-certs
+								.box-img
+									+PugImg("./img/cert.png")(class="cert-img" alt="cert Certification")
+								.box-img
+									+PugImg("./img/cert.png")(class="cert-img" alt="ISO Certification")
+
+		//- Footer Middle
+		.footer-middle
+					.col-footer(class="w-full md:w-12/12 lg:col-span-5")
+						ul.footer-info-list
+							li.footer-info-item
+								.info-icon
+									i.fa-solid.fa-building
+								.info-content
+									span.info-label Văn phòng
+									a.info-value(href="https://maps.google.com" target="_blank") 71 Nguyễn Thị Thập, P. Tân Phú, Quận 7, TP. HCM
+							li.footer-info-item
+								.info-icon
+									i.fa-solid.fa-industry
+								.info-content
+									span.info-label Xưởng sản xuất
+									a.info-value(href="https://maps.google.com" target="_blank") 200 Nguyễn Hữu Thọ, Ấp 2, Xã Long Thới, Huyện Nhà Bè, TP. HCM
+
+					.col-footer(class="w-full md:w-12/12 lg:col-span-5")
+						ul.footer-info-list
+							li.footer-info-item
+								.info-icon
+									i.fa-solid.fa-phone
+								.info-content
+									span.info-label Điện thoại
+									a.info-value(href="tel:+842837716039") +84-283 771 6039 | +84-937 25 9068
+							li.footer-info-item
+								.info-icon
+									i.fa-solid.fa-barcode
+								.info-content
+									span.info-label Mã số thuế
+									span.info-value 0304373042
+							li.footer-info-item
+								.info-icon
+									i.fa-solid.fa-fax
+								.info-content
+									span.info-label Fax
+									span.info-value +84-283 771 9188
+							li.footer-info-item
+								.info-icon
+									i.fa-solid.fa-envelope
+								.info-content
+									span.info-label Email
+									a.info-value(href="mailto:info@vietnam-tea.com") info@vietnam-tea.com
+
+					.col-footer(class="w-full md:w-12/12 lg:col-span-2")
+						.footer-menu
+							h3.menu-title Liên kết nhanh
+							//- WordPress Menu: wp_nav_menu location='footer-menu'
+							ul.menu-list
+								li.menu-item: a(href="#") Giới thiệu
+								li.menu-item: a(href="#") Sản phẩm
+								li.menu-item: a(href="#") Dịch vụ
+								li.menu-item: a(href="#") Khách hàng
+								li.menu-item: a(href="#") Tin Tức
+								li.menu-item: a(href="#") Liên hệ
+
+		//- Footer Bottom
+		.footer-bottom
+			.footer-bottom-inner
+				//- Copyright
+				p.copyright © 2025 THIÊN LỘC. All Rights Reserved. Website designed by CanhCam.
+
+				//- Bottom Menu (WordPress: wp_nav_menu location='footer-policy-menu')
+				ul.footer-policy-menu
+					li.policy-item: a(href="#") Privacy Policy
+					li.policy-item: a(href="#") Sitemap
+
+//- Search Overlay
+.header-search-form
+	.wrap-form-search-product
+		form.productsearchbox(action="#" method="GET")
+			input(type="text" placeholder="Tìm kiếm sản phẩm...")
+			button(type="submit")
+				i.fa-light.fa-magnifying-glass(class="text-white")
+	.close-search(class="absolute top-8 right-8 cursor-pointer text-white text-4xl hover:text-primary-1 transition-300")
+		i.fa-light.fa-xmark 
