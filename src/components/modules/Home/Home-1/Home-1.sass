@@ -1,25 +1,166 @@
+// ================================================
+// HOME BANNER SECTION (Hero Video)
+// ================================================
+
 .section-home-banner
-	@apply relative h-screen w-full overflow-hidden
+	@apply relative w-full overflow-hidden
+	
+	// Fixed aspect ratio: 1512/900
+	&::before
+		content: ''
+		@apply block w-full
+		padding-top: calc(900 / 1512 * 100%)
+	
 	.banner-wrapper
-		@apply w-full h-full
-	.banner-item
-		@apply w-full h-full relative
-		img
-			@apply w-full h-full object-cover
+		@apply absolute inset-0 w-full h-full
+	
+	// ----------------------------------------
+	// VIDEO & POSTER MEDIA
+	// ----------------------------------------
+	.banner-media
+		@apply absolute inset-0 w-full h-full z-0
+		
+		// Poster Image - hiển thị trước khi video load
+		.banner-poster
+			@apply absolute inset-0 w-full h-full z-1 transition-opacity duration-500
+			
+			img
+				@apply w-full h-full object-cover
+		
+		// Video Background
+		.banner-video
+			@apply absolute inset-0 w-full h-full object-cover z-2
+		
+		// Khi video đã play, ẩn poster
+		&.video-playing
+			.banner-poster
+				@apply opacity-0 invisible pointer-events-none
+		
+		// Sound Toggle Button
+		.sound-toggle
+			@apply absolute z-10 flex items-center justify-center cursor-pointer transition-all duration-300
+			@apply sq-12 bg-white/10 backdrop-blur-sm rounded-full border border-white/20
+			bottom: 20px
+			left: 20px
+			
+			@screen lg
+				bottom: 30px
+				left: 30px
+			
+			@screen xl
+				bottom: r(40px)
+				left: r(40px)
+			
+			i
+				@apply text-white text-lg
+			
+			.icon-unmuted
+				@apply hidden
+			
+			// Active state - sound on
+			&.active
+				.icon-muted
+					@apply hidden
+				.icon-unmuted
+					@apply block
+			
+			&:hover
+				@apply bg-white/20
+	
+	// ----------------------------------------
+	// CONTENT OVERLAY
+	// ----------------------------------------
 	.banner-content
-		@apply absolute inset-0 pointer-events-none
+		@apply absolute inset-0 z-10 pointer-events-none
+		
 		.container
-			@apply relative h-full
-	.top-right-text
-		@apply absolute top-32 right-4 text-right text-white
+			@apply relative h-full max-w-full px-6
+			@screen xl
+				@apply px-10
+	
+	// ----------------------------------------
+	// TOP RIGHT TEXT (Italic Tagline)
+	// ----------------------------------------
+	.banner-top-text
+		@apply absolute text-right text-white pointer-events-auto
+		top: 80px
+		right: 15px
+		
+		@screen md
+			top: 100px
+			right: 30px
+		
 		@screen lg
-			right: calc((100vw - 1512px) / 2)
-		p
-			@apply text-lg font-light tracking-wide opacity-80
-	.bottom-center-text
-		@apply absolute bottom-20 left-1/2 -translate-x-1/2 text-center text-white
-		.banner-subtitle
-			@apply text-sm uppercase tracking-[0.2em] mb-2
-		.banner-title
-			@apply text-6xl font-light uppercase tracking-[0.1em]
-			font-family: 'Cinzel', serif
+			top: 120px
+		
+		@screen xl
+			top: r(110px)
+			right: r(30px)
+		
+		.text-line
+			@apply leading-relaxed opacity-30 title-20 text-white
+		
+	
+	// ----------------------------------------
+	// BOTTOM CENTER CONTENT (Logo + Subtitle)
+	// ----------------------------------------
+	.banner-bottom-content
+		@apply absolute left-1/2 transform -translate-x-1/2 text-center text-white pointer-events-auto
+		bottom: 60px
+		
+		@screen md
+			bottom: 80px
+		
+		@screen lg
+			bottom: 100px
+		
+		@screen xl
+			bottom: r(120px)
+	
+	.banner-subtitle
+		@apply uppercase font-light opacity-90 mb-2
+		font-size: 10px
+		letter-spacing: 0.25em
+		
+		@screen md
+			font-size: 12px
+			@apply mb-3
+		
+		@screen lg
+			font-size: 14px
+			@apply mb-4
+		
+		@screen xl
+			font-size: r(14px)
+	
+	.banner-logo
+		@apply flex items-center justify-center
+		
+		img
+			@apply h-auto
+			width: 120px
+			
+			@screen md
+				width: 160px
+			
+			@screen lg
+				width: 200px
+			
+			@screen xl
+				width: r(240px)
+
+// ================================================
+// MOBILE FALLBACK (nếu video không autoplay)
+// ================================================
+
+@media (hover: none) and (pointer: coarse)
+	.section-home-banner
+		.banner-media
+			// Mobile có thể không autoplay video
+			// Poster sẽ hiển thị như fallback
+			.banner-poster
+				@apply z-3
+			
+			.banner-video
+				// Thử force play, nếu không được thì poster sẽ hiển thị
+				@apply z-2

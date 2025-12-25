@@ -1,0 +1,63 @@
+// ================================================
+// SECTION HOME POPULAR PRODUCTS
+// ================================================
+
+.section-home-popular
+	@apply py-15 xl:py-20
+
+	// Main Wrapper: 2 columns layout
+	.popular-wrapper
+		@apply flex flex-col gap-10
+		@screen lg
+			@apply flex-row gap-20
+
+	// ----------------------------------------
+	// LEFT COLUMN: Grid + View More
+	// ----------------------------------------
+	.popular-left
+		@screen lg
+			@apply flex-1
+
+	.popular-grid
+		@apply grid grid-cols-2 gap-6
+
+	.popular-item
+		.item-image
+			@apply relative img-ratio ratio:pt-[771_400] overflow-hidden
+
+			img
+				@apply w-full h-full object-cover transition-transform duration-500
+
+			// Item Number Badge
+			.item-number
+				@apply absolute top-0 left-0 p-3 body-14 font-medium text-primary-black02 uppercase
+
+		&:hover
+			.item-image img
+				@apply scale-105
+
+	// View More Button
+	.popular-action
+		@apply mt-6 flex justify-center items-center
+
+	// ----------------------------------------
+	// RIGHT COLUMN: Content (Sticky)
+	// ----------------------------------------
+	.popular-content
+		@screen lg
+			@apply w-[40%] max-w-[400px]
+			min-width: r(530px)
+
+		.content-inner
+			@screen lg
+				@apply sticky
+				top: 120px
+
+	.section-heading
+		@apply title-32 font-medium uppercase tracking-[1.5] text-primary-black05 mb-6
+
+	.section-desc
+		@apply space-y-5 body-14
+
+		p
+			@apply leading-normal text-primary-black04 text-justify

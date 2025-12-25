@@ -1,0 +1,38 @@
+.section-home-categories
+	@apply py-0
+
+	.categories-grid
+		@apply grid grid-cols-1 gap-0
+		@screen lg
+			@apply grid-cols-2
+
+.card-image-overlay
+	@apply relative overflow-hidden
+	
+	.card-image
+		@apply img-ratio ratio:pt-[756_756] w-full
+		
+		img
+			@apply w-full h-full object-cover transition-transform duration-500
+
+	.card-overlay
+		@apply absolute bottom-0 left-0 p-6 z-10
+		@screen md
+			@apply p-10
+		@screen lg
+			@apply p-12
+
+	.card-title
+		@apply title-30 font-light uppercase tracking-wide text-white mb-4 tracking-wider
+		@apply font-normal #{!important}
+		@screen md
+			@apply title-40 mb-5
+		@screen lg
+			@apply title-42 mb-6
+
+	&:hover
+		.card-image img
+			@apply scale-105
+
+		.btn-outline
+			@apply bg-white text-primary-black05

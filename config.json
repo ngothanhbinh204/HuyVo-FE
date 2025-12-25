@@ -2,7 +2,8 @@
 	"_comment": "Set minify to false for faster builds and easier debugging. Set to true for production-ready compressed files.",
 	"minify": true,
 	"font": [
-		"src/assets/fonts/**"
+		"src/assets/fonts/**",
+		"src/font/**"
 	],
 	"js": [
 		"node_modules/jquery/dist/jquery.min.js",

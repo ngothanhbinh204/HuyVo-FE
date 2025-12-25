@@ -16,3 +16,12 @@
 				content: "\f054"
 				@apply font-awesome font-normal text-sm mx-2
 
+.breadcrumb-wrapper
+	@apply mt-8.5 h-10
+
+	.breadcrumb
+		@apply h-full flex items-center gap-2.5 body-14 text-primary-black03 uppercase tracking-wider font-medium
+		a
+			@apply hover:text-primary-black05 transition-colors duration-300
+		.active
+			@apply text-primary-black05

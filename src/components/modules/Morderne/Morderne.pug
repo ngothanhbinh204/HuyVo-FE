@@ -1,0 +1,107 @@
+section.section-moderne-heritage
+	//- Reuse Banner from Shop
+	.shop-banner
+		+PugImg('./img/aodai4.png')
+
+	.container.max-w-full
+		//- Description (Reuse Shop)
+		.shop-description
+			p MADAME HUY VO'S AO DAI IS A BLEND OF THE PRECIOUS HERITAGE OF THE TRADITIONAL DRESS WITH CONTEMPORARY BEAUTY, REPRESENTING A SEAMLESS CONNECTION BETWEEN THE PAST, PRESENT, AND FUTURE.
+
+		//- Breadcrumb
+		.breadcrumb-wrapper
+			ul.breadcrumb
+				li
+					a(href="/") HOME
+				li
+					span /
+				li
+					a(href="#") SHOP
+				li
+					span /
+				li
+					span.active MODERNE HERITAGE
+
+		//- Page Title
+		h1.page-title MODERNE HERITAGE
+
+		//- Filter Bar (Reuse Shop)
+		.shop-toolbar
+			.shop-filters
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span CATEGORY
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span TYPE
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span SIZE
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span COLORS
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span MATERIAL
+						i.fa-light.fa-chevron-down
+			
+			.product-count
+				span 12 PRODUCTS
+
+		//- Category Blocks Wrapper
+		.moderne-heritage-content
+			//- Category Block 1
+			.category-block
+				.category-block-header
+					h2.category-title AO DAI MADAME
+					a.view-all-link(href="#") VIEW ALL
+				
+				.slider-wrapper
+					.nav-btn.nav-prev
+						i.fa-light.fa-chevron-left
+					.category-product-slider
+						.swiper
+							.swiper-wrapper
+								- for(var i = 1; i <= 6; i++)
+									.swiper-slide
+										.product-card-swap
+											.product-card-img
+												.img-primary
+													+PugImg('./img/aodai1.png')
+												.img-hover
+													+PugImg('./img/aodai4.png')
+												.product-card-info
+													h3.product-name LẬP HỒNG XUÂN SAKURA
+													p.product-price 7.700.000 ₫
+					.nav-btn.nav-next
+						i.fa-light.fa-chevron-right
+
+			//- Category Block 2
+			.category-block
+				.category-block-header
+					h2.category-title AO DAI MONSIEUR
+					a.view-all-link(href="#") VIEW ALL
+				
+				.slider-wrapper
+					.nav-btn.nav-prev
+						i.fa-light.fa-chevron-left
+					.category-product-slider
+						.swiper
+							.swiper-wrapper
+								- for(var i = 1; i <= 6; i++)
+									.swiper-slide
+										.product-card-swap
+											.product-card-img
+												.img-primary
+													+PugImg('./img/aodai3.png')
+												.img-hover
+													+PugImg('./img/aodai4.png')
+												.product-card-info
+													h3.product-name LẬP HỒNG XUÂN SAKURA
+													p.product-price 7.700.000 ₫
+					.nav-btn.nav-next
+						i.fa-light.fa-chevron-right

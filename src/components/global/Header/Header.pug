@@ -1,101 +1,204 @@
+//- Header - WordPress Menu Walker Compatible Structure
 header.header
 	.container
 		.header-wrapper
-			ul.header-left.menu-list
-				li.menu-item.has-dropdown
-					a.header-link(href="#")
-						.btn-inner
-							.main-text.text SHOP
-							.hover-text(class="text") SHOP
-					.mega-menu
-						.container
-							.mega-menu-wrapper
-								.mega-menu-column
-									.column-title MODERNE HERITAGE
-									.column-content
-										ul.menu-list
-											li
+			//- Left Menu (Desktop) - WordPress nav_menu compatible
+			nav.header-left
+				ul.menu.menu-list
+					//- Menu Item with Mega Menu (SHOP)
+					li.menu-item.menu-item-has-children.has-dropdown
+						a.header-link(href="#")
+							span.link-text SHOP
+						//- Mega Menu Dropdown
+						.mega-menu
+							.container
+								.mega-menu-wrapper
+									//- Column 1: Moderne Heritage
+									.mega-menu-column
+										.column-title MODERNE HERITAGE
+										ul.sub-menu.menu-list
+											li.menu-item
 												a(href="#") AO DAI MADAME
-											li
+											li.menu-item
 												a(href="#") AO DAI FIRSTLADY
-											li
+											li.menu-item
 												a(href="#") BA BA MADEMOISELLE
-											li
+											li.menu-item
 												a(href="#") BA BA GABRIELLA
-								.mega-menu-column
-									.column-title WOMENWEAR
-									.column-content
-										ul.menu-list
-											li.has-submenu
-												a(href="#") 
+									//- Column 2: Womenwear
+									.mega-menu-column
+										.column-title WOMENWEAR
+										ul.sub-menu.menu-list
+											li.menu-item.menu-item-has-children.has-submenu
+												a(href="#")
 													span READY TO WEAR
 													i.fa-solid.fa-chevron-down
-											li.has-submenu.active
-												a(href="#") 
+												ul.sub-menu.submenu-level2
+													li.menu-item
+														a(href="#") TOPS
+													li.menu-item
+														a(href="#") BOTTOMS
+											li.menu-item.menu-item-has-children.has-submenu.active
+												a(href="#")
 													span BAG & ACCESSORIES
 													i.fa-solid.fa-chevron-down
-												ul.submenu-level2
-													li
+												ul.sub-menu.submenu-level2
+													li.menu-item
 														a(href="#") LEATHER GOODS
-													li
+													li.menu-item
 														a(href="#") BELTS
-													li
+													li.menu-item
 														a(href="#") JEWLERY
-											li.has-submenu
-												a(href="#") 
+											li.menu-item.menu-item-has-children.has-submenu
+												a(href="#")
 													span SHOES
 													i.fa-solid.fa-chevron-down
-								.mega-menu-column
-									.column-title MENWEAR
-									.column-content
-										ul.menu-list
-											li.has-submenu
-												a(href="#") 
+									//- Column 3: Menwear
+									.mega-menu-column
+										.column-title MENWEAR
+										ul.sub-menu.menu-list
+											li.menu-item.menu-item-has-children.has-submenu
+												a(href="#")
 													span READY TO WEAR
 													i.fa-solid.fa-chevron-down
-											li.has-submenu
-												a(href="#") 
+											li.menu-item.menu-item-has-children.has-submenu
+												a(href="#")
 													span BAG & ACCESSORIES
 													i.fa-solid.fa-chevron-down
-											li
+											li.menu-item
 												a(href="#") SHOES
-								.mega-menu-images
-									.image-wrapper
-										+PugImg('https://placehold.co/300x400')
-									.image-wrapper
-										+PugImg('https://placehold.co/300x400')
-								.mega-menu-footer
-									a.shop-all-link(href="#") 
-										span SHOP ALL
-										i.fa-solid.fa-arrow-right
-				li.menu-item
-					a.header-link(href="#") COLLECTIONS
-				li.menu-item
-					a.header-link(href="#") SALE
+									//- Images Column
+									.mega-menu-images
+										.image-wrapper
+											+PugImg('https://placehold.co/300x400')
+										.image-wrapper
+											+PugImg('https://placehold.co/300x400')
+									//- Footer Link
+									.mega-menu-footer
+										a.shop-all-link(href="#")
+											span SHOP ALL
+											i.fa-regular.fa-arrow-up-right
+					//- Menu Item without dropdown
+					li.menu-item
+						a.header-link(href="#")
+							span.link-text COLLECTIONS
+					li.menu-item
+						a.header-link(href="#")
+							span.link-text SALE
 			
-			.header-center
-				a.logo(href="/") HUYVO
+			//- Center Logo
+			a.logo(href="/")
+				+PugImg('./img/LogoHuyVo.svg')
 			
+			//- Right Icons
 			.header-right
-				button.header-icon.search-btn
+				button.header-icon.search-btn(type="button" aria-label="Search")
 					i.fa-regular.fa-magnifying-glass
-				button.header-icon.user-btn
+				a.header-icon.user-btn(href="#" aria-label="Account")
 					i.fa-regular.fa-user
-				button.header-icon.cart-btn
+				a.header-icon.cart-btn(href="#" aria-label="Cart")
 					i.fa-regular.fa-bag-shopping
-				button.header-hamburger
+				//- Mobile Hamburger Button
+				button.header-hamburger(type="button" aria-label="Menu")
 					span
 					span
 					span
 
-//- Search Overlay
+//- Mobile Menu - Figma Design Match
+.mobile-menu
+	.mobile-menu-overlay
+	.mobile-menu-inner
+		//- Close Button (Top Right)
+		button.mobile-menu-close(type="button" aria-label="Close Menu")
+			i.fa-light.fa-xmark
+		
+		//- Menu Body
+		.mobile-menu-body
+			nav.mobile-nav
+				ul.mobile-menu-list
+					//- MODERNE HERITAGE Section (with submenu expanded by default)
+					li.menu-item.menu-item-has-children.is-category
+						.menu-item-header
+							a.category-title(href="#") MODERNE HERITAGE
+							button.submenu-toggle(type="button" aria-label="Toggle submenu")
+								i.fa-light.fa-chevron-down
+						ul.sub-menu
+							li.menu-item
+								a(href="#") AO DAI MADAME
+							li.menu-item
+								a(href="#") AO DAI FIRSTLADY
+							li.menu-item
+								a(href="#") BA BA MADEMOISELLE
+							li.menu-item
+								a(href="#") BA BA GABRIELLA
+					
+					//- WOMENWEAR Section
+					li.menu-item.menu-item-has-children.is-category
+						.menu-item-header
+							a.category-title(href="#") WOMENWEAR
+							button.submenu-toggle(type="button" aria-label="Toggle submenu")
+								i.fa-light.fa-chevron-down
+						ul.sub-menu
+							li.menu-item.has-arrow
+								a(href="#")
+									span READY TO WEAR
+									i.fa-light.fa-chevron-right
+							li.menu-item.has-arrow
+								a(href="#")
+									span BAG & ACCESSORIES
+									i.fa-light.fa-chevron-right
+							li.menu-item.has-arrow
+								a(href="#")
+									span SHOES
+									i.fa-light.fa-chevron-right
+					
+					//- MENWEAR Section
+					li.menu-item.menu-item-has-children.is-category
+						.menu-item-header
+							a.category-title(href="#") MENWEAR
+							button.submenu-toggle(type="button" aria-label="Toggle submenu")
+								i.fa-light.fa-chevron-down
+						ul.sub-menu
+							li.menu-item.has-arrow
+								a(href="#")
+									span READY TO WEAR
+									i.fa-light.fa-chevron-right
+							li.menu-item.has-arrow
+								a(href="#")
+									span BAG & ACCESSORIES
+									i.fa-light.fa-chevron-right
+							li.menu-item.has-arrow
+								a(href="#")
+									span SHOES
+									i.fa-light.fa-chevron-right
+		
+		//- Footer - SHOP ALL Link
+		.mobile-menu-footer
+			a.shop-all-link(href="#")
+				span SHOP ALL
+				i.fa-light.fa-arrow-up-right
+
+//- Search Overlay (Fullscreen)
 .header-search-overlay
-	.search-overlay-inner
+	.search-overlay-backdrop
+	.search-overlay-content
 		.container
-			.search-wrapper
-				button.search-close
-					i.fa-solid.fa-xmark
-				.search-form
-					input.search-input(type="text" placeholder="Search...")
-					button.search-submit
-						i.fa-solid.fa-magnifying-glass
+			button.search-close(type="button" aria-label="Close Search")
+				i.fa-solid.fa-xmark
+			.search-form-wrapper
+				form.search-form(action="/search" method="GET")
+					input.search-input(type="text" name="q" placeholder="Search..." autocomplete="off")
+					button.search-submit(type="submit" aria-label="Submit Search")
+						i.fa-regular.fa-magnifying-glass
+			.search-suggestions
+				.search-popular
+					h4.search-section-title Popular Searches
+					ul.search-tags
+						li
+							a(href="#") Ao Dai
+						li
+							a(href="#") Bags
+						li
+							a(href="#") Accessories
+						li
+							a(href="#") New Collection

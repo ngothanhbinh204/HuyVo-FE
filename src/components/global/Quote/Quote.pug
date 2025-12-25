@@ -1,0 +1,12 @@
+mixin Quote(text)
+	.global-quote-section&attributes(attributes)
+		.quote-wrapper
+			.quote-icon.icon-left
+				i.fa-sharp.fa-solid.fa-quote-left
+			h2.quote-text
+				if block
+					block
+				else
+					| !{text}
+			.quote-icon.icon-right
+				i.fa-sharp.fa-solid.fa-quote-right

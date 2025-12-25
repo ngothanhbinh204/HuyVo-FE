@@ -1,0 +1,71 @@
+section.section-shop-list
+	//- Banner Hero
+	.shop-banner
+		+PugImg('./img/aodai4.png')
+
+	.wrapper-shop.container.max-w-full
+		//- Description (Text Block)
+		.shop-description
+			p MADAME HUY VO'S AO DAI IS A BLEND OF THE PRECIOUS HERITAGE OF THE TRADITIONAL DRESS WITH CONTEMPORARY BEAUTY, REPRESENTING A SEAMLESS CONNECTION BETWEEN THE PAST, PRESENT, AND FUTURE.
+
+		//- Breadcrumb
+		.breadcrumb-wrapper
+			ul.breadcrumb
+				li
+					a(href="/") HOME
+				li
+					span /
+				li
+					a(href="#") SHOP
+				li
+					span /
+				li
+					span.active SHOP ALL
+
+		//- Page Title
+		h1.page-title ALL PRODUCTS
+
+		//- Filter Bar
+		.shop-toolbar
+			.shop-filters
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span CATEGORY
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span TYPE
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span SIZE
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span COLORS
+						i.fa-light.fa-chevron-down
+				.filter-dropdown
+					button.filter-trigger(type="button")
+						span MATERIAL
+						i.fa-light.fa-chevron-down
+			
+			.product-count
+				span 120 PRODUCTS
+
+		//- Product Grid
+		.shop-grid
+			- for(var i = 1; i <= 12; i++)
+				.product-item
+					.product-img
+						+PugImg('./img/aodai1.png')
+						.product-actions
+							button.add-to-cart-btn ADD TO CART
+					.product-info
+						.product-tags
+							if i % 3 == 0
+								span.product-tag NEW
+						h3.product-name
+							a(href="#") LẬP HỒNG XUÂN SAKURA
+						p.product-price 7.700.000 ₫
+		.btn-action
+			a.btn-primary-1(href="#") View More

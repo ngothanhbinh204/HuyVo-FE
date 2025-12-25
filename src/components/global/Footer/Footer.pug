@@ -1,0 +1,37 @@
+footer.footer
+	.footer-main
+		.container.max-w-full
+			.footer-grid
+				//- Column 1: Brand
+				.footer-col.footer-brand
+					a.brand-logo(href="/")
+						+PugImg('./img/LogoHuyVoWhite.svg')
+					p.brand-desc Huy Vo's creative brings you on a timeless, enchanting and fascinating journey inspired by a touch of heritage to modern lifestyle.
+
+				//- Column 2: Menu 1
+				.footer-col.footer-menus
+					.footer-menu
+						ul.footer-menu-list
+							li.footer-menu-item
+								a(href="#") The Company
+							li.footer-menu-item
+								a(href="#") Our News
+							li.footer-menu-item
+								a(href="#") Contact Us
+					.footer-menu
+						ul.footer-menu-list
+							li.footer-menu-item
+								a(href="#") Shipping & Returns
+							li.footer-menu-item
+								a(href="#") Privacy Policy
+							li.footer-menu-item
+								a(href="#") Terms & Conditions
+
+
+				//- Column 4: Newsletter
+				.footer-col.footer-newsletter
+					form.newsletter-form
+						.form-group
+							input.newsletter-input(type="email" placeholder="Enter Email Address" name="email" required)
+							button.newsletter-btn(type="submit") Subscribe
+

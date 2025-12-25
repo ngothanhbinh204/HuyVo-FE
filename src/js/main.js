@@ -8,8 +8,9 @@ import {
   initAccordion,
 } from "./helper";
 import { header } from "./header";
+import { heroBanner } from "./heroBanner";
 import { swiperInit } from "./swiper";
-import customersDetail from "./customersDetail";
+import { initProductMediaScroll, initSizeGuidePopup, initProductMediaSliderMobile } from "./shopDetail";
 $(document).ready(function () {
   setBackgroundElement();
   stickElementToEdge();
@@ -17,8 +18,11 @@ $(document).ready(function () {
   buttonToTop();
   initAccordion();
   header.init();
-  customersDetail();
+  heroBanner.init();
   swiperInit();
+  initProductMediaScroll();
+  initProductMediaSliderMobile();
+  initSizeGuidePopup();
 });
 
 /*==================== Aos Init ====================*/

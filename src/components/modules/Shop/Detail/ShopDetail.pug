@@ -1,0 +1,147 @@
+section.section-shop-detail
+	.container.max-w-full
+		.product-detail-layout
+			//- Left Column: Product Media (Main Scroll Area)
+			.product-media#productMediaScroll
+				//- Thumbnails (Left side - Sticky)
+				.product-thumbs.swiper
+					//- Indicator moved out for cleaner Swiper structure (Mobile hidden via CSS)
+					.thumb-scroll-indicator#mediaThumbDragBox
+					
+					//- Thumb List (Acts as Swiper Wrapper)
+					.thumb-list.swiper-wrapper#mediaThumbDragParent
+						- for(var i = 1; i <= 6; i++)
+							.product-thumb.swiper-slide
+								+PugImg(`./img/aodai${i>4?1:i}.png`)
+
+				//- Main Images
+				.product-images.swiper
+					.swiper-wrapper
+						- for(var i = 1; i <= 6; i++)
+							.product-image.swiper-slide
+								+PugImg(`./img/aodai${i>4?1:i}.png`)
+
+			//- Right Column: Product Info (Sticky)
+			.product-info
+				.product-info-inner
+					//- Breadcrumb
+					.breadcrumb-wrapper
+						ul.breadcrumb
+							li: a(href="#") HOME
+							li: span /
+							li: a(href="#") SHOP
+							li: span /
+							li: span.active MODERNE HERITAGE
+					
+					.wrapper-inner
+						h1.product-title.title-24 LẬP HỒNG XUÂN SAKURA
+						.product-price-wrapper
+							span.current-price 7.700.000 Đ
+							span.old-price 12.200.000 
+						
+						.product-desc.body-14
+							p The Lap Xuan pattern is delicately scattered across the garment, resembling freshly bloomed buds, creating a shimmering effect with every touch of light. The subtle color transition between pink, gold, and lavender brings the design to life while maintaining its inherent sophistication - a piece that is vibrant yet graceful, soft yet full of presence.
+
+						.product-attributes
+							//- Colors
+							.attribute-group.colors-group
+								.attribute-options.colors
+									button.color-option.active(style="background-color: #FFE4E1" data-title="Pale Pink" data-value="pale-pink")
+									button.color-option(style="background-color: #FF1493" data-title="Deep Pink" data-value="deep-pink")
+									button.color-option(style="background-color: #DB7093" data-title="Pale Violet" data-value="pale-violet") 
+								span.attribute-label.body-14.mt-4 COLOR: PALE PINK
+
+							//- Sizes
+							.attribute-group.sizes-group
+								.size-row
+									.attribute-options.sizes
+										button.size-option(data-value="32") 32
+										button.size-option(data-value="34") 34
+										button.size-option(data-value="36") 36
+										button.size-option.active(data-value="38") 38
+										button.size-option(data-value="40") 40
+										button.size-option(data-value="42") 42
+									a.size-guide-link.body-14(href="#") Size guide
+
+						.product-actions
+							button.btn-add-to-cart ADD TO CART
+
+						.product-meta-tabs
+							//- Tab 1: Details
+							.meta-tab-item
+								span.tab-label Product Details
+								.tab-content
+									ul.content-list
+										li Fitted
+										li Midi length
+										li Strapless tube shape
+										li Couture-inspired bow volant drape
+										li Invisible side zipper and hook & eye fastening at central bottom
+										li Model is 180 cm tall, wears a size s
+										li.mt-4 Fabric: Japanese bonded satin
+										li Composition: 100% polyester
+										li Color: aubergine
+										li Made in: The Netherlands
+										li Product code: XD002 00 43216
+
+							//- Tab 2: Care
+							.meta-tab-item
+								span.tab-label Care Guide
+								.tab-content
+									p.content-text Do not wash, do not bleach. Do not tumble dry. Iron at low temperature. Professional dry clean only.
+
+							//- Tab 3: Shipping
+							.meta-tab-item
+								span.tab-label Shipping & Returns
+								.tab-content
+									p.content-text Free shipping on all orders over $500. Returns accepted within 14 days of delivery.
+
+	//- POPUP SIZE GUIDE
+	.popup-size-guide#popupSizeGuide
+		.popup-backdrop
+		.popup-content
+			button.popup-close
+				i.fa-light.fa-xmark
+
+			.popup-header-center
+				h2.popup-title SIZE CONVERSION CHART
+				p.popup-desc Please note that size charts designed to fit to the following body measurements. Some products may vary from these measurements but you can still use them as a guide. If you need further assistance, do not hesitate to contact us.
+
+			.popup-tabs-header
+				button.tab-item.active(data-tab="aodai-madame") Ao Dai Madame
+				button.tab-item(data-tab="aodai-firstlady") Ao Dai FirstLady
+				button.tab-item(data-tab="baba-mademoiselle") Ba Ba Mademoiselle
+				button.tab-item(data-tab="baba-gabriella") Ba Ba Gabriella
+
+			.popup-tab-content.active#aodai-madame
+				h3.measurement-unit Measurements (cm)
+
+				.measurement-guide
+					.guide-image-col
+						.guide-image
+							+PugImg('./img/aodai1.png')
+					.guide-text-col
+						h4.guide-title How to Measurements?
+						ul.guide-list
+							li 
+								strong Chest: 
+								| Measure around the fullest part of your bust and back.
+							li 
+								strong Bicep: 
+								| Measure around the widest part of your upper arm.
+							li 
+								strong Waist: 
+								| Measure the narrowest point above your navel and below your ribs.
+							li 
+								strong Waistpant: 
+								| Measure from the top of the shoulder down to the natural waistline.
+							li 
+								strong Hip: 
+								| Measure the fullest part of your hips and around your body.
+				.measurement-guide-image
+					.image-size
+						+PugImg('./img/SIZEGUIDE.svg')
+				h3.measurement-unit.mt-10 Measurements (In)
+				.measurement-guide
+					.image-size
+						+PugImg('./img/SIZEGUIDE.svg')

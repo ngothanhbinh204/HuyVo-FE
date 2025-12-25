@@ -1,0 +1,59 @@
+// ================================================
+// GLOBAL BUTTON STYLES
+// ================================================
+
+// Primary Button 1: White background, black border
+.btn-primary-1
+	@apply inline-flex items-center justify-center px-8 py-3 body-14 font-medium uppercase tracking-widest
+	@apply border border-primary-black05 bg-white text-primary-black05
+	@apply transition-all duration-300 cursor-pointer
+	
+	&:hover
+		@apply bg-primary-black05 text-white
+	
+	&:focus
+		@apply outline-none
+.btn-primary-3
+	@apply inline-flex items-center justify-center px-8 py-3 body-14 font-medium uppercase tracking-widest
+	@apply border border-white bg-none text-white
+	@apply transition-all duration-300 cursor-pointer
+	
+	&:hover
+		@apply bg-primary-black05 text-white
+	
+	&:focus
+		@apply outline-none
+// Primary Button 2: Black background, black border
+.btn-primary-2
+	@apply inline-flex items-center justify-center px-8 py-3 body-14 font-medium uppercase tracking-widest
+	@apply border border-primary-black05 bg-primary-black05 text-white
+	@apply transition-all duration-300 cursor-pointer
+	
+	&:hover
+		@apply bg-white text-primary-black05
+	
+	&:focus
+		@apply outline-none
+
+// Button with icon
+.btn-icon
+	@apply gap-2
+	
+	i
+		@apply text-sm transition-transform duration-300
+	
+	&:hover
+		i
+			@apply translate-x-1
+
+// Outline Button: Transparent background, white border
+.btn-outline
+	@apply inline-flex items-center justify-center px-8 py-3 body-14 font-medium uppercase tracking-widest
+	@apply border border-white bg-transparent text-white
+	@apply transition-all duration-300 cursor-pointer
+	
+	&:hover
+		@apply bg-white text-primary-black05
+	
+	&:focus
+		@apply outline-none

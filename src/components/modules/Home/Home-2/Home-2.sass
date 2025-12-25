@@ -1,13 +1,20 @@
 .section-home-explore
-	@apply py-20
+	@apply pt-20 pb-10
 	.section-title
-		@apply text-center mb-10
+		@apply text-center mb-10 space-y-3
 		.section-subtitle
-			@apply block text-sm uppercase tracking-widest text-gray-500 mb-2
+			@apply block title-20 uppercase tracking-widest text-primary-black04
 		.section-heading
-			@apply text-4xl font-light uppercase tracking-wide
+			@apply title-40 font-normal uppercase tracking-wider text-primary-black05 leading-[1.2]
 	.explore-slider
 		@apply relative
+		.swiper
+			@apply w-full h-full
+			// .swiper-wrapper
+			// 	img-ratio ratio:pt-[924_1432]
+			// 	.swiper-slide
+			// 		.explore-item
+			// 			+PugImg('https://placehold.co/882x800')
 	.explore-item
 		@apply relative aspect-video overflow-hidden
 		img
@@ -20,4 +27,4 @@
 		.swiper-pagination-bullet
 			@apply w-2 h-2 bg-gray-300 opacity-100 transition-all duration-300
 			&.swiper-pagination-bullet-active
-				@apply bg-black w-8 rounded-full
+				@apply bg-primary-black03 w-8 rounded-full

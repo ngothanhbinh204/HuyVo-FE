@@ -2,11 +2,11 @@ const plugin = require("tailwindcss/plugin");
 function setClamp(min, max = min) {
   const minPx = parseFloat(min);
   const maxPx = parseFloat(max);
-  const maxValue = (maxPx / 1920) * 100 + "rem";
+  const maxValue = (maxPx / 1512) * 100 + "rem";
   return `clamp(${minPx}px, ${maxValue}, ${maxValue})`;
 }
 function r(value) {
-  return (value / 1920) * 100 + "rem";
+  return (value / 1512) * 100 + "rem";
 }
 module.exports = {
   content: [
@@ -69,33 +69,33 @@ module.exports = {
     borderWidth: {
       DEFAULT: "1px",
       0: "0px",
-      1: "calc(1/1920*100rem)",
-      2: "calc(2/1920*100rem)",
-      3: "calc(3/1920*100rem)",
-      4: "calc(4/1920*100rem)",
-      5: "calc(5/1920*100rem)",
-      6: "calc(6/1920*100rem)",
-      7: "calc(7/1920*100rem)",
-      8: "calc(8/1920*100rem)",
-      9: "calc(9/1920*100rem)",
-      10: "calc(10/1920*100rem)",
-      12: "calc(12/1920*100rem)",
-      16: "calc(16/1920*100rem)",
-      20: "calc(20/1920*100rem)",
+      1: "calc(1/1512*100rem)",
+      2: "calc(2/1512*100rem)",
+      3: "calc(3/1512*100rem)",
+      4: "calc(4/1512*100rem)",
+      5: "calc(5/1512*100rem)",
+      6: "calc(6/1512*100rem)",
+      7: "calc(7/1512*100rem)",
+      8: "calc(8/1512*100rem)",
+      9: "calc(9/1512*100rem)",
+      10: "calc(10/1512*100rem)",
+      12: "calc(12/1512*100rem)",
+      16: "calc(16/1512*100rem)",
+      20: "calc(20/1512*100rem)",
     },
     container: {
       center: true,
       padding: {
-        DEFAULT: "15px",
-        md: "30px",
-        xl: "calc(20/1920*100rem)",
+        DEFAULT: "calc(40/1512*100rem)",
+        md: "calc(40/1512*100rem)",
+        xl: "calc(40/1512*100rem)",
       },
       screens: {
         xs: "100vw",
         sm: "100vw",
         md: "100vw",
         lg: "1024px",
-        xl: "calc(1512/1920*100rem)",
+        xl: "calc(1512/1512*100rem)",
       },
     },
     fontFamily: {
@@ -108,110 +108,110 @@ module.exports = {
     fontSize: {
       0: ["0", { lineHeight: "0" }],
       xs: [
-        "clamp(10px,calc(12/1920*100rem),calc(12/1920*100rem))",
+        "clamp(10px,calc(12/1512*100rem),calc(12/1512*100rem))",
         ,
         { lineHeight: "1.2" },
       ],
       sm: [
-        "clamp(14px,calc(14/1920*100rem),calc(14/1920*100rem))",
+        "clamp(14px,calc(14/1512*100rem),calc(14/1512*100rem))",
         ,
         { lineHeight: "1.2" },
       ],
       base: [
-        "clamp(14px,calc(16/1920*100rem),calc(16/1920*100rem))",
+        "clamp(14px,calc(16/1512*100rem),calc(16/1512*100rem))",
         ,
         { lineHeight: "1.2" },
       ],
       "15px": [
-        "clamp(15px,calc(15/1920*100rem),calc(15/1920*100rem))",
+        "clamp(15px,calc(15/1512*100rem),calc(15/1512*100rem))",
         ,
         { lineHeight: "1.2" },
       ],
-      lg: ["calc(18/1920*100rem)", , { lineHeight: "1.2" }],
-      xl: ["calc(20/1920*100rem)", , { lineHeight: "1.2" }],
-      "2xl": ["clamp(18px,calc(24/1920*100rem),calc(24/1920*100rem))"],
-      "3xl": ["calc(30/1920*100rem)"],
-      "4xl": ["calc(36/1920*100rem)"],
-      "5xl": ["calc(40/1920*100rem)"],
-      "6xl": ["calc(48/1920*100rem)"],
-      "7xl": ["calc(72/1920*100rem)", { lineHeight: "1" }],
-      "8xl": ["calc(84/1920*100rem)", { lineHeight: "1" }],
-      "9xl": ["calc(96/1920*100rem)", { lineHeight: "1" }],
-      28: ["calc(28/1920*100rem)", { lineHeight: 1.5 }],
-      30: ["calc(30/1920*100rem)", { lineHeight: "calc(38/1920*100rem)" }],
-      38: ["calc(38/1920*100rem)", { lineHeight: "calc(46/1920*100rem)" }],
-      32: ["calc(32/1920*100rem)"],
-      40: ["calc(40/1920*100rem)"],
-      42: ["calc(42/1920*100rem)"],
-      64: ["calc(64/1920*100rem)"],
+      lg: ["calc(18/1512*100rem)", , { lineHeight: "1.2" }],
+      xl: ["calc(20/1512*100rem)", , { lineHeight: "1.2" }],
+      "2xl": ["clamp(18px,calc(24/1512*100rem),calc(24/1512*100rem))"],
+      "3xl": ["calc(30/1512*100rem)"],
+      "4xl": ["calc(36/1512*100rem)"],
+      "5xl": ["calc(40/1512*100rem)"],
+      "6xl": ["calc(48/1512*100rem)"],
+      "7xl": ["calc(72/1512*100rem)", { lineHeight: "1" }],
+      "8xl": ["calc(84/1512*100rem)", { lineHeight: "1" }],
+      "9xl": ["calc(96/1512*100rem)", { lineHeight: "1" }],
+      28: ["calc(28/1512*100rem)", { lineHeight: 1.5 }],
+      30: ["calc(30/1512*100rem)", { lineHeight: "calc(38/1512*100rem)" }],
+      38: ["calc(38/1512*100rem)", { lineHeight: "calc(46/1512*100rem)" }],
+      32: ["calc(32/1512*100rem)"],
+      40: ["calc(40/1512*100rem)"],
+      42: ["calc(42/1512*100rem)"],
+      64: ["calc(64/1512*100rem)"],
     },
     spacing: {
       0: "0px",
-      0.25: "calc(1/1920*100rem) /* 1px */",
-      0.5: "calc(2/1920*100rem) /* 2px */",
-      0.75: "calc(3/1920*100rem) /* 3px */",
-      1: "calc(4/1920*100rem) /* 4px */",
-      1.25: "calc(5/1920*100rem) /* 5px */",
-      1.5: "calc(6/1920*100rem) /* 6px */",
-      1.75: "calc(7/1920*100rem) /* 7px */",
-      2: "calc(8/1920*100rem) /* 8px */",
-      2.25: "calc(9/1920*100rem) /* 9px */",
-      2.5: "calc(10/1920*100rem) /* 10px */",
-      2.75: "calc(11/1920*100rem) /* 11px */",
-      3: "calc(12/1920*100rem) /* 12px */",
-      3.25: "calc(13/1920*100rem) /* 13px */",
-      3.5: "calc(14/1920*100rem) /* 14px */",
-      3.75: "calc(15/1920*100rem) /* 15px */",
-      4: "calc(16/1920*100rem) /* 16px */",
-      4.25: "calc(17/1920*100rem) /* 17px */",
-      4.5: "calc(18/1920*100rem) /* 18px */",
-      4.75: "calc(19/1920*100rem) /* 19px */",
-      5: "calc(20/1920*100rem) /* 20px */",
-      5.5: "calc(22/1920*100rem) /* 22px */",
-      6: "calc(24/1920*100rem) /* 24px */",
-      6.5: "calc(26/1920*100rem) /* 26px */",
-      7: "calc(28/1920*100rem) /* 28px */",
-      7.5: "calc(30/1920*100rem) /* 30px */",
-      8: "calc(32/1920*100rem) /* 32px */",
-      8.5: "calc(34/1920*100rem) /* 34px */",
-      8.75: "calc(35/1920*100rem) /* 35px */",
-      9: "calc(36/1920*100rem) /* 36px */",
-      9.5: "calc(38/1920*100rem) /* 38px */",
-      10: "calc(40/1920*100rem) /* 40px */",
-      10.5: "calc(42/1920*100rem) /* 42px */",
-      11: "calc(44/1920*100rem) /* 44px */",
-      11.5: "calc(46/1920*100rem) /* 46px */",
-      12: "calc(48/1920*100rem) /* 48px */",
-      12.5: "calc(50/1920*100rem) /* 50px */",
-      13: "calc(52/1920*100rem) /* 52px */",
-      14: "calc(56/1920*100rem) /* 56px */",
-      15: "calc(60/1920*100rem) /* 60px */",
-      16: "calc(64/1920*100rem) /* 64px */",
-      17: "calc(68/1920*100rem) /* 68px */",
-      17.5: "calc(70/1920*100rem) /* 70px */",
-      18: "calc(72/1920*100rem) /* 72px */",
-      19: "calc(76/1920*100rem) /* 76px */",
-      20: "calc(80/1920*100rem) /* 80px */",
-      22.5: "calc(90/1920*100rem) /* 90px */",
-      23: "calc(94/1920*100rem) /* 94px */",
-      24: "calc(96/1920*100rem) /* 96px */",
-      25: "calc(100/1920*100rem) /* 100px */",
-      26: "calc(104/1920*100rem) /* 104px */",
-      27.5: "calc(110/1920*100rem) /* 110px */",
-      28: "calc(112/1920*100rem) /* 112px */",
-      30: "calc(120/1920*100rem) /* 120px */",
-      32: "calc(128/1920*100rem) /* 128px */",
-      34: "calc(136/1920*100rem) /* 136px */",
-      36: "calc(144/1920*100rem) /* 144px */",
-      40: "calc(160/1920*100rem) /* 160px */",
-      42: "calc(168/1920*100rem) /* 168px */",
-      44: "calc(176/1920*100rem) /* 176px */",
-      48: "calc(192/1920*100rem) /* 192px */",
-      48: "calc(192/1920*100rem) /* 192px */",
-      50: "calc(200/1920*100rem) /* 200px */",
-      52: "calc(215/1920*100rem) /* 215px */",
-      56: "calc(224/1920*100rem) /* 224px */",
-      60: "calc(240/1920*100rem) /* 240px */",
+      0.25: "calc(1/1512*100rem) /* 1px */",
+      0.5: "calc(2/1512*100rem) /* 2px */",
+      0.75: "calc(3/1512*100rem) /* 3px */",
+      1: "calc(4/1512*100rem) /* 4px */",
+      1.25: "calc(5/1512*100rem) /* 5px */",
+      1.5: "calc(6/1512*100rem) /* 6px */",
+      1.75: "calc(7/1512*100rem) /* 7px */",
+      2: "calc(8/1512*100rem) /* 8px */",
+      2.25: "calc(9/1512*100rem) /* 9px */",
+      2.5: "calc(10/1512*100rem) /* 10px */",
+      2.75: "calc(11/1512*100rem) /* 11px */",
+      3: "calc(12/1512*100rem) /* 12px */",
+      3.25: "calc(13/1512*100rem) /* 13px */",
+      3.5: "calc(14/1512*100rem) /* 14px */",
+      3.75: "calc(15/1512*100rem) /* 15px */",
+      4: "calc(16/1512*100rem) /* 16px */",
+      4.25: "calc(17/1512*100rem) /* 17px */",
+      4.5: "calc(18/1512*100rem) /* 18px */",
+      4.75: "calc(19/1512*100rem) /* 19px */",
+      5: "calc(20/1512*100rem) /* 20px */",
+      5.5: "calc(22/1512*100rem) /* 22px */",
+      6: "calc(24/1512*100rem) /* 24px */",
+      6.5: "calc(26/1512*100rem) /* 26px */",
+      7: "calc(28/1512*100rem) /* 28px */",
+      7.5: "calc(30/1512*100rem) /* 30px */",
+      8: "calc(32/1512*100rem) /* 32px */",
+      8.5: "calc(34/1512*100rem) /* 34px */",
+      8.75: "calc(35/1512*100rem) /* 35px */",
+      9: "calc(36/1512*100rem) /* 36px */",
+      9.5: "calc(38/1512*100rem) /* 38px */",
+      10: "calc(40/1512*100rem) /* 40px */",
+      10.5: "calc(42/1512*100rem) /* 42px */",
+      11: "calc(44/1512*100rem) /* 44px */",
+      11.5: "calc(46/1512*100rem) /* 46px */",
+      12: "calc(48/1512*100rem) /* 48px */",
+      12.5: "calc(50/1512*100rem) /* 50px */",
+      13: "calc(52/1512*100rem) /* 52px */",
+      14: "calc(56/1512*100rem) /* 56px */",
+      15: "calc(60/1512*100rem) /* 60px */",
+      16: "calc(64/1512*100rem) /* 64px */",
+      17: "calc(68/1512*100rem) /* 68px */",
+      17.5: "calc(70/1512*100rem) /* 70px */",
+      18: "calc(72/1512*100rem) /* 72px */",
+      19: "calc(76/1512*100rem) /* 76px */",
+      20: "calc(80/1512*100rem) /* 80px */",
+      22.5: "calc(90/1512*100rem) /* 90px */",
+      23: "calc(94/1512*100rem) /* 94px */",
+      24: "calc(96/1512*100rem) /* 96px */",
+      25: "calc(100/1512*100rem) /* 100px */",
+      26: "calc(104/1512*100rem) /* 104px */",
+      27.5: "calc(110/1512*100rem) /* 110px */",
+      28: "calc(112/1512*100rem) /* 112px */",
+      30: "calc(120/1512*100rem) /* 120px */",
+      32: "calc(128/1512*100rem) /* 128px */",
+      34: "calc(136/1512*100rem) /* 136px */",
+      36: "calc(144/1512*100rem) /* 144px */",
+      40: "calc(160/1512*100rem) /* 160px */",
+      42: "calc(168/1512*100rem) /* 168px */",
+      44: "calc(176/1512*100rem) /* 176px */",
+      48: "calc(192/1512*100rem) /* 192px */",
+      48: "calc(192/1512*100rem) /* 192px */",
+      50: "calc(200/1512*100rem) /* 200px */",
+      52: "calc(215/1512*100rem) /* 215px */",
+      56: "calc(224/1512*100rem) /* 224px */",
+      60: "calc(240/1512*100rem) /* 240px */",
       full: "100%",
       screen: "100vw",
       "2full": "200%",
@@ -259,42 +259,45 @@ module.exports = {
     outlineOffset: {
       0: "0px",
       1: "1px",
-      2: "calc(2/1920*100rem)",
-      3: "calc(3/1920*100rem)",
-      4: "calc(4/1920*100rem)",
-      5: "calc(5/1920*100rem)",
-      8: "calc(8/1920*100rem)",
+      2: "calc(2/1512*100rem)",
+      3: "calc(3/1512*100rem)",
+      4: "calc(4/1512*100rem)",
+      5: "calc(5/1512*100rem)",
+      8: "calc(8/1512*100rem)",
     },
     extend: {
       minWidth: {
         fit: "fit-content",
-        40: "calc(40/1920*100rem)",
-        124: "calc(124/1920*100rem)",
-        130: "calc(130/1920*100rem)",
-        160: "calc(160/1920*100rem)",
+        40: "calc(40/1512*100rem)",
+        124: "calc(124/1512*100rem)",
+        130: "calc(130/1512*100rem)",
+        160: "calc(160/1512*100rem)",
       },
       maxWidth: {
         fit: "fit-content",
-        40: "calc(40/1920*100rem)",
-        124: "calc(124/1920*100rem)",
-        130: "calc(130/1920*100rem)",
-        160: "calc(160/1920*100rem)",
+        40: "calc(40/1512*100rem)",
+        124: "calc(124/1512*100rem)",
+        130: "calc(130/1512*100rem)",
+        160: "calc(160/1512*100rem)",
+        300: "calc(300/1512*100rem)",
+        573: "calc(573/1512*100rem)",
+        815: "calc(815/1512*100rem)",
       },
       minHeight: {
         fit: "fit-content",
-        40: "calc(40/1920*100rem)",
-        124: "calc(124/1920*100rem)",
-        130: "calc(130/1920*100rem)",
-        160: "calc(160/1920*100rem)",
-        680: "calc(680/1920*100rem)",
+        40: "calc(40/1512*100rem)",
+        124: "calc(124/1512*100rem)",
+        130: "calc(130/1512*100rem)",
+        160: "calc(160/1512*100rem)",
+        680: "calc(680/1512*100rem)",
       },
       maxHeight: {
         fit: "fit-content",
-        40: "calc(40/1920*100rem)",
-        124: "calc(124/1920*100rem)",
-        130: "calc(130/1920*100rem)",
-        160: "calc(160/1920*100rem)",
-        680: "calc(680/1920*100rem)",
+        40: "calc(40/1512*100rem)",
+        124: "calc(124/1512*100rem)",
+        130: "calc(130/1512*100rem)",
+        160: "calc(160/1512*100rem)",
+        680: "calc(680/1512*100rem)",
       },
       colors: {
         primary: {
@@ -306,6 +309,7 @@ module.exports = {
           black05: "#0E1010",
           black04: "#504B4C",
           black03: "#7C7879",
+          black02: "#A6A5A5",
           "3 BG": "#f7fced",
           "2 - 80%": "#000000",
           "background-2": "#f5f5f5",
@@ -334,6 +338,7 @@ module.exports = {
           "1- 10%": "#4d9846",
           white: "#ffffff",
           black: "#000000",
+          gray03: "#CECED3",
           error: "#e30000",
           "error-1": "#e30000",
           "error-2": "#e30000",
@@ -426,26 +431,26 @@ module.exports = {
         DEFAULT: "10px",
       },
       borderRadius: {
-        1: "calc(4/1920*100rem) /* 4px */",
-        2: "calc(8/1920*100rem) /* 8px */",
-        3: "calc(12/1920*100rem) /* 12px */",
-        4: "calc(16/1920*100rem) /* 16px */",
-        5: "calc(20/1920*100rem) /* 20px */",
-        6: "calc(24/1920*100rem) /* 24px */",
-        7: "calc(28/1920*100rem) /* 28px */",
-        8: "calc(32/1920*100rem) /* 32px */",
-        9: "calc(36/1920*100rem) /* 36px */",
-        10: "calc(40/1920*100rem) /* 40px */",
-        11: "calc(44/1920*100rem) /* 44px */",
-        12: "calc(48/1920*100rem) /* 48px */",
-        13: "calc(52/1920*100rem) /* 52px */",
-        14: "calc(56/1920*100rem) /* 56px */",
-        15: "calc(60/1920*100rem) /* 60px */",
-        16: "calc(64/1920*100rem) /* 64px */",
-        17: "calc(68/1920*100rem) /* 68px */",
-        18: "calc(72/1920*100rem) /* 72px */",
-        19: "calc(76/1920*100rem) /* 76px */",
-        20: "calc(80/1920*100rem) /* 80px */",
+        1: "calc(4/1512*100rem) /* 4px */",
+        2: "calc(8/1512*100rem) /* 8px */",
+        3: "calc(12/1512*100rem) /* 12px */",
+        4: "calc(16/1512*100rem) /* 16px */",
+        5: "calc(20/1512*100rem) /* 20px */",
+        6: "calc(24/1512*100rem) /* 24px */",
+        7: "calc(28/1512*100rem) /* 28px */",
+        8: "calc(32/1512*100rem) /* 32px */",
+        9: "calc(36/1512*100rem) /* 36px */",
+        10: "calc(40/1512*100rem) /* 40px */",
+        11: "calc(44/1512*100rem) /* 44px */",
+        12: "calc(48/1512*100rem) /* 48px */",
+        13: "calc(52/1512*100rem) /* 52px */",
+        14: "calc(56/1512*100rem) /* 56px */",
+        15: "calc(60/1512*100rem) /* 60px */",
+        16: "calc(64/1512*100rem) /* 64px */",
+        17: "calc(68/1512*100rem) /* 68px */",
+        18: "calc(72/1512*100rem) /* 72px */",
+        19: "calc(76/1512*100rem) /* 76px */",
+        20: "calc(80/1512*100rem) /* 80px */",
       },
       typography: {
         DEFAULT: {
@@ -497,7 +502,7 @@ module.exports = {
               },
             },
             ul: {
-              "padding-left": "calc(24/1920*100rem)",
+              "padding-left": "calc(24/1512*100rem)",
               li: {
                 paddingLeft: 0,
                 margin: "0 0",
@@ -633,76 +638,83 @@ module.exports = {
       addComponents({
         ".title-60": {
           fontWeight: "700",
-          fontSize: "calc(36/1920*100rem)", // 4xl
+          fontSize: "calc(36/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.md")})`]: {
-            fontSize: "calc(40/1920*100rem)", // 5xl
+            fontSize: "calc(40/1512*100rem)", // 5xl
           },
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(48/1920*100rem)", // 6xl
+            fontSize: "calc(48/1512*100rem)", // 6xl
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            fontSize: "calc(60/1920*100rem)", // 60
+            fontSize: "calc(60/1512*100rem)", // 60
           },
         },
         ".title-138": {
           fontWeight: "600",
           lineHeight: "1.18",
-          fontSize: "calc(96/1920*100rem)", // 6xl
+          fontSize: "calc(96/1512*100rem)", // 6xl
           [`@media (min-width: ${theme("screens.md")})`]: {
-            fontSize: "calc(112/1920*100rem)", // still 6xl
+            fontSize: "calc(112/1512*100rem)", // still 6xl
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            fontSize: "calc(138/1920*100rem)", // 8xl
+            fontSize: "calc(138/1512*100rem)", // 8xl
           },
         },
         ".title-80": {
           fontWeight: "600",
           lineHeight: "1.18",
-          fontSize: "calc(52/1920*100rem)", // 4xl
+          fontSize: "calc(52/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.md")})`]: {
-            fontSize: "calc(60/1920*100rem)", // still 4xl
+            fontSize: "calc(60/1512*100rem)", // still 4xl
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            fontSize: "calc(80/1920*100rem)", // 6xl
+            fontSize: "calc(80/1512*100rem)", // 6xl
           },
         },
         ".title-48": {
           fontWeight: "600",
           lineHeight: "1.18",
-          fontSize: "calc(36/1920*100rem)", // 4xl
+          fontSize: "calc(36/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.md")})`]: {
-            fontSize: "calc(36/1920*100rem)", // still 4xl
+            fontSize: "calc(36/1512*100rem)", // still 4xl
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            fontSize: "calc(48/1920*100rem)", // 6xl
+            fontSize: "calc(48/1512*100rem)", // 6xl
+          },
+        },
+         ".title-42": {
+          fontWeight: "700",
+          fontSize: "calc(36/1512*100rem)", // 4xl
+          [`@media (min-width: ${theme("screens.lg")})`]: {
+            fontSize: "calc(42/1512*100rem)", // 5xl
           },
         },
         ".title-40": {
           fontWeight: "700",
-          fontSize: "calc(36/1920*100rem)", // 4xl
+          fontSize: "calc(36/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(40/1920*100rem)", // 5xl
+            fontSize: "calc(40/1512*100rem)", // 5xl
           },
         },
         ".title-36": {
           fontWeight: "700",
-          fontSize: "calc(32/1920*100rem)", // 4xl
+          fontSize: "calc(32/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(36/1920*100rem)", // 5xl
+            fontSize: "calc(36/1512*100rem)", // 5xl
           },
         },
         ".title-32": {
           fontWeight: "700",
-          fontSize: "calc(28/1920*100rem)", // 4xl
+          fontSize: "calc(28/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(32/1920*100rem)", // 5xl
+            fontSize: "calc(32/1512*100rem)", // 5xl
           },
         },
         ".title-30": {
           fontWeight: "700",
-          fontSize: "calc(26/1920*100rem)", // 4xl
+          fontSize: "calc(26/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(30/1920*100rem)", // 5xl
+            fontSize: "calc(30/1512*100rem)", // 5xl
           },
         },
         ".title-28": {
@@ -714,23 +726,23 @@ module.exports = {
         ".title-24": {
           fontSize: "18px",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "clamp(18px,calc(24/1920*100rem),calc(24/1920*100rem))", // 2xl
+            fontSize: "clamp(18px,calc(24/1512*100rem),calc(24/1512*100rem))", // 2xl
           },
         },
         ".title-20": {
           fontSize: "16px",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            fontSize: "calc(20/1920*100rem)", // xl
+            fontSize: "calc(20/1512*100rem)", // xl
           },
         },
         ".body-14": {
-          "font-size": "calc(14/1920*100rem)",
+          "font-size": "calc(14/1512*100rem)",
         },
         ".body-16": {
-          "font-size": "calc(16/1920*100rem)",
+          "font-size": "calc(16/1512*100rem)",
         },
         ".body-18": {
-          "font-size": "calc(18/1920*100rem)",
+          "font-size": "calc(18/1512*100rem)",
         },
         ".absolute-center-y": {
           position: "absolute",
@@ -749,27 +761,27 @@ module.exports = {
           transform: "translate(-50%, -50%)",
         },
         ".gap-base": {
-          gap: "calc(15/1920*100rem)",
+          gap: "calc(15/1512*100rem)",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            gap: "calc(40/1920*100rem)",
+            gap: "calc(40/1512*100rem)",
           },
         },
         ".mb-base": {
-          marginBottom: "calc(30/1920*100rem)",
+          marginBottom: "calc(30/1512*100rem)",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            marginBottom: "calc(40/1920*100rem)",
+            marginBottom: "calc(40/1512*100rem)",
           },
         },
         ".section-py": {
-          paddingTop: "calc(40/1920*100rem)",
-          paddingBottom: "calc(40/1920*100rem)",
+          paddingTop: "calc(40/1512*100rem)",
+          paddingBottom: "calc(40/1512*100rem)",
           [`@media (min-width: ${theme("screens.lg")})`]: {
-            paddingTop: "calc(60/1920*100rem)",
-            paddingBottom: "calc(60/1920*100rem)",
+            paddingTop: "calc(60/1512*100rem)",
+            paddingBottom: "calc(60/1512*100rem)",
           },
           [`@media (min-width: ${theme("screens.xl")})`]: {
-            paddingTop: "calc(80/1920*100rem)",
-            paddingBottom: "calc(80/1920*100rem)",
+            paddingTop: "calc(80/1512*100rem)",
+            paddingBottom: "calc(80/1512*100rem)",
           },
         },
         ".transition-all": {
@@ -777,6 +789,9 @@ module.exports = {
         },
         ".transition-300": {
           transition: "all .3s ease",
+        },
+        ".transition-400": {
+          transition: "all .4s ease",
         },
         ".transition-500": {
           transition: "all .5s ease",

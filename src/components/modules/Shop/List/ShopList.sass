@@ -1,0 +1,74 @@
+// ================================================
+// SHOP PAGE STYLES
+// ================================================
+
+.section-shop-list
+	@apply pb-10 md:pb-20 xl:pb-30
+
+	// BANNER HERO
+	.shop-banner
+		@apply w-full img-ratio ratio:pt-[905_1512] mb-10
+		@screen lg
+			@apply mb-16 img-ratio ratio:pt-[665_1512]
+		
+		img
+			@apply w-full h-full object-cover
+
+	// DESCRIPTION
+	.shop-description
+		@apply text-center mx-auto mb-12 px-4
+		
+		p
+			@apply body-14 leading-loose tracking-[1.5px] text-primary-black05 uppercase font-medium
+	// BREADCRUMB
+
+	// PAGE TITLE
+	.page-title
+		@apply title-30 font-normal uppercase tracking-wide text-primary-black05 pt-5 pb-7.5
+		@screen md
+			@apply title-32 tracking-wider font-normal
+
+	// TOOLBAR & FILTERS
+	.shop-toolbar
+		@apply flex flex-col gap-6 mb-10
+		@screen lg
+			@apply flex-row items-center justify-between mb-12
+
+	.shop-filters
+		@apply grid grid-cols-2 gap-5 w-full
+		@screen md
+			@apply flex flex-wrap items-center gap-4
+		@screen lg
+			@apply w-auto
+
+		.filter-dropdown
+			@apply relative
+
+		.filter-trigger
+			@apply flex items-center gap-5 justify-between w-full h-12.5 px-7.5 border border-utility-gray03 bg-white transition-all duration-300
+			@apply body-14 font-medium text-primary-black04 uppercase tracking-widest
+			@screen md
+				@apply min-w-[130px] cursor-pointer
+			
+			i
+				@apply body-14 font-medium transition-transform duration-300 text-primary-black04
+
+			&:hover
+				@apply border-primary-black05 text-primary-black05
+				i
+					@apply text-primary-black05
+
+	.product-count
+		@apply body-14 font-medium text-primary-black04 uppercase tracking-widest text-right mt-2 lg:mt-0
+
+	// PRODUCT GRID
+	.shop-grid
+		@apply grid grid-cols-1 gap-x-4 gap-y-10
+		@screen sm
+			@apply grid-cols-2 gap-x-5 gap-y-12
+		@screen lg
+			@apply grid-cols-4 gap-x-5 gap-y-20 
+	.btn-action
+		@apply mt-6 lg:mt-12 xl:mt-20 flex justify-center items-center
+
+

@@ -1,0 +1,36 @@
+// ================================================
+// SECTION HOME BANNER CTA
+// ================================================
+
+.section-home-banner-cta
+	@apply relative w-full overflow-hidden
+
+	.banner-wrapper
+		@apply relative img-ratio ratio:pt-[650_1512]
+
+	// Banner Image
+	.banner-image
+		@apply absolute inset-0 w-full h-full
+
+		img
+			@apply w-full h-full object-cover
+
+	// Banner Content Overlay
+	.banner-content
+		@apply absolute inset-0 z-10 flex items-center
+
+		.container
+			@apply max-w-full mt-auto pb-12 xl:pb-16
+
+	.content-inner
+		@apply text-center w-full
+		.btn-primary-3
+			@apply py-4
+		@screen lg
+			@apply text-left max-w-[500px]
+
+	.banner-heading
+		@apply title-42 font-medium uppercase tracking-wide text-white mb-3
+
+		@screen lg
+			@apply mb-5.5

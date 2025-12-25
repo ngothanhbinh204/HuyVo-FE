@@ -1,0 +1,46 @@
+section.section-collections-list
+	@apply py-8 lg:py-16 pb-0 lg:pb-0
+	// Hero Image
+	.hero-image-section
+		@apply w-full mb-10 lg:mb-16 xl:mb-20 
+
+		.hero-image-wrapper
+			@apply w-full h-full img-ratio ratio:pt-[850_1512]
+			img
+				@apply w-full h-full object-cover transition-transform duration-[1.5s] ease-out
+
+	// Collections List
+	.collections-list-wrapper
+		@apply w-full flex flex-col gap-2.5
+
+
+
+.collection-banner-item
+	@apply relative w-full overflow-hidden
+
+	.banner-wrapper
+		@apply relative img-ratio ratio:pt-[900_1512]
+
+	.banner-image
+		@apply absolute inset-0 w-full h-full
+
+		img
+			@apply w-full h-full object-cover
+	.banner-content
+		@apply absolute inset-0 z-10 flex items-center
+
+		.container
+			@apply max-w-full mt-auto pb-12 xl:pb-16
+
+	.content-inner
+		@apply text-center w-full
+		.btn-primary-3
+			@apply py-4
+		@screen lg
+			@apply text-left max-w-[500px]
+
+	.banner-heading
+		@apply title-42 font-medium uppercase tracking-wide text-white mb-3
+
+		@screen lg
+			@apply mb-4.5

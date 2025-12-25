@@ -1,0 +1,25 @@
+//- ================================================
+//- SECTION HOME POPULAR PRODUCTS
+//- ================================================
+section.section.section-home-popular
+	.container.max-w-full
+		.popular-wrapper
+			//- Left Column: Grid + View More Button
+			.popular-left
+				.popular-grid
+					- for(var i = 1; i <= 4; i++)
+						.popular-item
+							.item-image
+								+PugImg('./img/aodai1.png')
+								.item-number= i < 10 ? '0' + i : i
+				
+				//- View More Button
+				.popular-action
+					a.btn-primary-1(href="#") View More
+
+			//- Right Column: Sticky Content
+			.popular-content
+				.content-inner
+					h2.section-heading POPULAR PRODUCTS
+					.section-desc
+						p At Huy Vo Atelier, the Ao Dai is more than a garment; it is a harmonious symphony between contemporary breath and traditional essence. We curate the most impeccable and dignified appearance for your momentous occasions through our two iconic lines: Ao Dai Madame and Ao Dai Monsieur. Transcending mere ceremonial attire, each design at Huy Vo is a bespoke masterpiece, strictly personalized to elevate the unique aura of the wearer. True sophistication lies not in ostentation, but within the noble silhouette and meticulous attention to every detail. To wear a Huy Vo creation is not merely for today's elegance, but to preserve a living heritage—a story of virtue to be passed down to future generations. It stands as a profound tribute to enduring Vietnamese values.

@@ -1,13 +1,40 @@
+//- ================================================
+//- SECTION HOME BANNER (Hero Video)
+//- ================================================
 section.section.section-home-banner
 	.banner-wrapper
-		.banner-item
-			+PugImg('https://placehold.co/1920x1080')
-			.banner-content
-				.container
-					.top-right-text
-						p A touch of heritage to
-						p modern lifestyle.
-					
-					.bottom-center-text
-						p.banner-subtitle THE HEALER
-						h2.banner-title HUYVO
+		//- Video Background with Poster Cover
+		.banner-media
+			//- Poster Image (hiển thị trước khi video load)
+			.banner-poster
+				+PugImg('https://placehold.co/1512x900')
+			
+			//- Video Background
+			video.banner-video(
+				autoplay
+				muted
+				loop
+				playsinline
+				preload="metadata"
+				poster="https://placehold.co/1512x900"
+			)
+				source(src="./img/example.mp4" type="video/mp4")
+			
+			//- Sound Toggle Button
+			button.sound-toggle(type="button" aria-label="Toggle Sound")
+				i.fa-light.fa-volume-xmark.icon-muted
+				i.fa-light.fa-volume.icon-unmuted
+		
+		//- Content Overlay
+		.banner-content
+			.container
+				//- Top Right Text (Italic tagline)
+				.banner-top-text
+					p.text-line A touch of heritage to
+					p.text-line modern lifestyle.
+				
+				//- Bottom Center Content (Logo + Subtitle)
+				.banner-bottom-content
+					p.banner-subtitle THE HEALER
+					.banner-logo
+						+PugImg('./img/LogoHuyVo-white.svg')

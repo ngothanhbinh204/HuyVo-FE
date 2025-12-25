@@ -1,46 +1,98 @@
+// ================================================
+// SECTION HOME NEW ARRIVALS
+// ================================================
+
 .section-home-new-arrivals
-	@apply py-20 bg-neutral-50
+	@apply py-10 xl:py-15
+
+	// Section Header (Title + View All)
 	.section-header
-		@apply flex justify-between items-end mb-10
+		@apply mb-10
 		.title-wrapper
 			@apply flex flex-col gap-2
 			.section-heading
-				@apply text-3xl font-light uppercase tracking-wide
+				@apply title-32 font-medium uppercase tracking-wide text-primary-black05
 			.view-all-link
-				@apply text-sm text-gray-500 underline underline-offset-4 transition-colors
+				@apply title-20 text-primary-black04 transition-colors
 				&:hover
-					@apply text-black
-		.slider-nav
-			@apply flex gap-4
-			.nav-btn
-				@apply w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center transition-all cursor-pointer
+					@apply text-primary-black05
+
+	.slider-wrapper
+		@apply relative 
+
+		.nav-btn
+			@apply absolute z-10
+			@apply sq-10 flex items-center justify-center transition-all duration-300 cursor-pointer
+			@apply hidden lg:flex
+			top: 50%
+
+			i
+				@apply title-20 text-primary-black04
+
+			&:hover
+				i
+					@apply text-primary-black05
+
+			&.nav-prev
+				left: 0
+				transform: translate(-100%, -50%)
+
+			&.nav-next
+				right: 0
+				transform: translate(100%, -50%)
+
+			// Disabled state
+			&.swiper-button-disabled
+				@apply opacity-30 cursor-not-allowed
 				&:hover
-					@apply bg-black text-white
-	.product-item
-		.product-img
-			@apply relative aspect-[3/4] overflow-hidden mb-4
-			img
-				@apply w-full h-full object-cover transition-transform duration-500
-		.product-actions
-			@apply absolute bottom-4 left-0 w-full flex justify-center opacity-0 translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0
-			.add-to-cart-btn
-				@apply bg-white text-black px-6 py-2 text-sm uppercase tracking-wide transition-colors cursor-pointer
-				&:hover
-					@apply bg-black text-white
-		&:hover
-			.product-img
-				img
-					@apply scale-105
+					i
+						@apply text-primary-black05
+
+	// Swiper Container
+	.new-arrivals-slider
+		@apply relative 
+		.swiper
+			@apply w-full
+
+// ================================================
+// PRODUCT ITEM CARD
+// ================================================
+
+.product-item
+	@apply relative
+	.product-img
+		@apply relative img-ratio ratio:pt-[610_343] overflow-hidden mb-5
+		img
+			@apply w-full h-full object-cover transition-transform duration-500
+		
+	&:hover
+		img
+			@apply scale-105
+
+	.product-actions
+		@apply absolute bottom-5 left-0 w-full flex justify-center opacity-0 translate-y-4 transition-all duration-300
+		
+		.add-to-cart-btn
+			@apply bg-white text-primary-black05 px-6 py-2 body-14 uppercase tracking-wide transition-all duration-300 cursor-pointer
+			&:hover
+				@apply bg-primary-black05 text-white
+		
+		// Show on hover
+		.group:hover &
+			@apply opacity-100 translate-y-0
+
 	.product-info
 		.product-tags
-			@apply flex gap-2 mb-2
+			@apply flex gap-3 absolute top-0 left-0
 			.product-tag
-				@apply text-[10px] uppercase tracking-wider text-gray-500
+				@apply p-3 body-14 font-medium text-primary-black04 uppercase
+
 		.product-name
-			@apply text-base font-medium uppercase mb-1
+			@apply title-20 font-medium uppercase py-2.5 text-primary-black05
 			a
-				@apply transition-all
+				@apply transition-all duration-300
 				&:hover
 					@apply underline
+
 		.product-price
-			@apply text-sm text-gray-500
+			@apply body-16 font-medium text-primary-black04
