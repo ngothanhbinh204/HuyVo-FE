@@ -1,20 +1,22 @@
 .global-quote-section
-	@apply text-center max-w-[90%] lg:max-w-[800px] mx-auto relative px-4
+	@apply text-center max-w-[80%] lg:max-w-815 mx-auto relative px-4
 	@apply my-10 lg:my-16 xl:my-20 px-4
 	.quote-wrapper
 		@apply relative inline-block
 
 	.quote-icon
-		@apply text-primary-black03 opacity-20 absolute
-		font-size: r(100px)
+		@apply text-primary-black03 absolute w-10 h-10 title-40 -top-5 lg:-top-20 leading-none
+		img
+			@apply w-full h-full object-contain
 		@screen md
-			font-size: r(120px)
-		
+			@apply w-16 h-16
+		@screen lg
+			@apply w-20 h-20
 		&.icon-left
-			@apply -top-6 -left-8 md:-left-[60px]
+			@apply -left-8 md:-left-16 lg:-left-30 
 			
 		&.icon-right
-			@apply -bottom-6 -right-8 md:-right-[60px]
+			@apply -right-8 md:-right-16 lg:-right-30
 
 	.quote-text
 		@apply title-20 font-medium uppercase tracking-wider leading-snug text-primary-black05

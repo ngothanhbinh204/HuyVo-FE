@@ -1,24 +1,18 @@
 include ../../../global/Quote/Quote.pug
 
-section.section-collections-list
+section.section-collections-list.wrapper-gap-top
 	.container.max-w-full
-		//- Breadcrumb
 		.breadcrumb-wrapper
 			ul.breadcrumb
 				li: a(href="#") HOME
 				li: span /
 				li: span.active COLLECTIONS
 
-		//- Manifesto (Using Quote Component)
 		+Quote("THE COLLECTIONS BY HUY VO STANDS AS A TESTAMENT TO PROFOUND STUDY, BREATHING LIFE INTO THE ANCESTRAL SPIRIT OF EACH VIETNAMESE SILHOUETTE ACROSS THE AGES.")(class="manifesto-quote")
-
-	//- Hero Image
 	.hero-image-section
 		.container.max-w-full
 			.hero-image-wrapper
 				+PugImg('./img/aodai3.png')
-
-	//- Collections Banners List
 	.collections-list-wrapper
 		.collection-banner-item
 			.banner-wrapper

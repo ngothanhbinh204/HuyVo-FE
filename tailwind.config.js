@@ -286,18 +286,20 @@ module.exports = {
       minHeight: {
         fit: "fit-content",
         40: "calc(40/1512*100rem)",
+        60: "calc(60/1512*100rem)",
+        680: "calc(680/1512*100rem)",
         124: "calc(124/1512*100rem)",
         130: "calc(130/1512*100rem)",
         160: "calc(160/1512*100rem)",
-        680: "calc(680/1512*100rem)",
       },
       maxHeight: {
         fit: "fit-content",
         40: "calc(40/1512*100rem)",
+        60: "calc(60/1512*100rem)",
+        680: "calc(680/1512*100rem)",
         124: "calc(124/1512*100rem)",
         130: "calc(130/1512*100rem)",
         160: "calc(160/1512*100rem)",
-        680: "calc(680/1512*100rem)",
       },
       colors: {
         primary: {
@@ -310,6 +312,7 @@ module.exports = {
           black04: "#504B4C",
           black03: "#7C7879",
           black02: "#A6A5A5",
+          black01: "#D3D3D3",
           "3 BG": "#f7fced",
           "2 - 80%": "#000000",
           "background-2": "#f5f5f5",
@@ -649,6 +652,17 @@ module.exports = {
             fontSize: "calc(60/1512*100rem)", // 60
           },
         },
+        ".title-140": {
+          fontWeight: "600",
+          lineHeight: "1.18",
+          fontSize: "calc(96/1512*100rem)", // 6xl
+          [`@media (min-width: ${theme("screens.md")})`]: {
+            fontSize: "calc(130/1512*100rem)", // still 6xl
+          },
+          [`@media (min-width: ${theme("screens.xl")})`]: {
+            fontSize: "calc(140/1512*100rem)", // 8xl
+          },
+        },
         ".title-138": {
           fontWeight: "600",
           lineHeight: "1.18",
@@ -682,7 +696,7 @@ module.exports = {
             fontSize: "calc(48/1512*100rem)", // 6xl
           },
         },
-         ".title-42": {
+        ".title-42": {
           fontWeight: "700",
           fontSize: "calc(36/1512*100rem)", // 4xl
           [`@media (min-width: ${theme("screens.lg")})`]: {

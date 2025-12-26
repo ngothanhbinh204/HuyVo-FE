@@ -1,0 +1,84 @@
+include ../../global/Quote/Quote
+
+section.section-about-hero
+		h1.about-title(data-aos="fade-up") About Huy Vo Atelier
+		
+		+Quote("Huy Vo’s designs evoke an irresistible sense of elegance and allure. Standing at the crossroads of Eastern soul and Western flair, each piece is a tribute to time-honored heritage reimagined for the modern lifestyle.")(data-aos="fade-up" data-aos-delay="200")
+
+		.hero-banner(data-aos="fade-up" data-aos-delay="400")
+			.img-wrapper
+				img(src="./img/banner_collection_1.jpg" alt="Huy Vo Atelier")
+
+section.section-about-identity
+	.identity-banner
+		.bg-image
+			img(src="./img/banner_collection_1.jpg" alt="Fashion Show Background")
+		.overlay-content
+			.content-box(data-aos="fade-up")
+				.svg-wrapper
+					img(src="./img/daylavietnam.svg" alt="Huy Vo Atelier Logo")
+				
+				.desc-text
+					p Huy Vo Atelier is a contemporary luxury fashion house where heritage is reimagined through a modern lens. Founded by designer Huy Vo, the house represents a seamless fusion of Eastern soul and Western tailoring precision.
+					p We believe that fashion is a language of roots; by reviving traditional silk and honoring time-honored craftsmanship, Huy Vo Atelier creates an allure of unexpected elegance. Here, heritage is not the past—it is the pulse of a contemporary lifestyle, where Vietnamese identity is defined by sophistication and timeless vision.
+
+section.section-about-timeline#timeline-section
+	.max-w-full.container-fluid
+		.timeline-wrapper(data-aos="fade-up")
+			.swiper.timeline-slider
+				.swiper-wrapper
+					//- Render Slides from 2012 to 2018
+					each year, index in [2012, 2013, 2014, 2015, 2016, 2017, 2018]
+						.swiper-slide
+							.slide-grid
+								//- Left Content
+								.grid-left
+									.content-wrap
+										h3.slide-title JUDGE OF VIETNAM'S <br> NEXT TOP MODEL
+										.slide-info
+											.year-label= year
+											p Became the youngest judge in the first season of the show, making a significant impact on the Vietnamese fashion industry.
+										.bg-year-watermark= year
+									
+									.polaroid-group
+										.wrapper-ratio
+											+PugImg('./img/Picture-removebg.png')
+
+								//- Right Image
+								.grid-right
+									.main-image
+										img(src="./img/aodai4.png" alt="Timeline Event")
+
+			.timeline-nav-container.container.max-w-full(data-aos="fade-up")
+				.dots-list
+					.timeline-track
+					.timeline-progress
+					each year, index in [2012, 2013, 2014, 2015, 2016, 2017, 2018]
+						.dot-item(class=index===0 ? 'current active' : '', data-index=index)
+							span.year= year
+							.dot-circle
+				
+				.slider-controls
+					.btn-nav.prev
+						i.fa-light.fa-chevron-left
+					.btn-nav.next
+						i.fa-light.fa-chevron-right
+
+section.section-about-explore
+	.container.max-w-full
+		h2.explore-title(data-aos="fade-up") EXPLORE THE WORLD OF HUY VO
+		.explore-list
+			//- Item 1
+			.explore-item(data-aos="fade-up" data-aos-delay="0")
+				img(src="./img/aodai1.png" alt="Timeless Perfection")
+				a.btn-explore.primary-white(href="#") EXPLORE TIMELESS PERFECTION
+			
+			//- Item 2
+			.explore-item(data-aos="fade-up" data-aos-delay="150")
+				img(src="./img/aodai1.png" alt="Wedding Dress")
+				a.btn-explore.primary-white(href="#") EXPLORE A WEDDING DRESS
+			
+			//- Item 3
+			.explore-item(data-aos="fade-up" data-aos-delay="300")
+				img(src="./img/aodai1.png" alt="Luxe & Pearl")
+				a.btn-explore.primary-white(href="#") EXPLORE THE SPARKLES OF LUXE & PEARL

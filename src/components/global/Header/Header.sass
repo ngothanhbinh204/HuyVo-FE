@@ -3,7 +3,7 @@
 // ================================================
 
 .header
-    @apply w-full fixed top-0 left-0 z-50 transition-all duration-300 p-4
+    @apply w-full fixed top-0 left-0 z-50 transition-all duration-300 p-4 pb-0
     // border-bottom: 1px solid rgba(0, 0, 0, 0.05)
     
     // &.scrolled
@@ -20,11 +20,8 @@
     .header-wrapper
         @apply flex items-center justify-between py-4 
         @screen lg
-            @apply py-4
+            @apply py-4 min-h-60
     
-    // ----------------------------------------
-    // LEFT MENU (Desktop)
-    // ----------------------------------------
     .header-left
         @apply hidden
         @screen lg

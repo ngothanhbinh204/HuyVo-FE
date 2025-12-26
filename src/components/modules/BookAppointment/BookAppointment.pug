@@ -1,0 +1,67 @@
+section.section-book-appointment.wrapper-gap-top
+	.container
+		h2.title(data-aos="fade-up") Book Appointment
+		.appointment-form(data-aos="fade-up" data-aos-delay="200")
+			form(action="#" method="POST")
+				.form-grid
+					.form-group
+						input(type="text" placeholder="Nhập Họ")
+					.form-group
+						input(type="text" placeholder="Nhập Tên")
+					.form-group
+						input(type="email" placeholder="Email")
+					.form-group
+						input(type="tel" placeholder="Số điện thoại")
+					.form-group
+						input(type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="DD/MM/YY")
+						i.icon.right.fa-regular.fa-calendar
+					.form-group.input-with-icon-left
+						select
+							option 8:00 am - 9:00 am
+							option 9:00 am - 10:00 am
+							option 10:00 am - 11:00 am
+						i.icon.left.fa-regular.fa-clock
+						i.icon.right.fa-regular.fa-chevron-down
+					.form-group.full
+						select
+							option Chọn Chi nhánh
+							option Chi nhánh Hồ Chí Minh
+							option Chi nhánh Hà Nội
+						i.icon.right.fa-regular.fa-chevron-down
+					.form-group.full
+						textarea(placeholder="Nhập yêu cầu")
+					.form-group.full
+						button.btn-submit(type="submit") Submit
+
+		//- 
+			--------------------------------------------------------------------------
+			HƯỚNG DẪN TÍCH HỢP WP CONTACT FORM 7
+			--------------------------------------------------------------------------
+			Copy code dưới đây vào khung soạn thảo của CF7 (lưu ý class bao quanh):
+			
+			<div class="form-grid">
+				<div class="form-group">[text* your-lastname placeholder "Nhập Họ"]</div>
+				<div class="form-group">[text* your-firstname placeholder "Nhập Tên"]</div>
+				<div class="form-group">[email* your-email placeholder "Email"]</div>
+				<div class="form-group">[tel* your-phone placeholder "Số điện thoại"]</div>
+				<div class="form-group">
+					[date* your-date placeholder "DD/MM/YY"]
+					<i class="icon right fa-regular fa-calendar"></i>
+				</div>
+				<div class="form-group input-with-icon-left">
+					[select your-time "8:00 am - 9:00 am" "9:00 am - 10:00 am"]
+					<i class="icon left fa-regular fa-clock"></i>
+					<i class="icon right fa-regular fa-chevron-down"></i>
+				</div>
+				<div class="form-group full">
+					[select your-branch "Chọn Chi nhánh" "HCM" "HN"]
+					<i class="icon right fa-regular fa-chevron-down"></i>
+				</div>
+				<div class="form-group full">
+					[textarea your-message placeholder "Nhập yêu cầu"]
+				</div>
+				<div class="form-group full">
+					[submit class:btn-submit "SUBMIT"]
+				</div>
+			</div>
+			--------------------------------------------------------------------------

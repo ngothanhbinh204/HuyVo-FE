@@ -1,0 +1,43 @@
+.section-book-appointment
+	@apply pb-10 lg:pb-20 xl:pb-30
+	.title
+		@apply text-center font-normal uppercase tracking-wider text-black
+		@apply title-36 py-10 lg:py-12 xl:py-15 font-normal
+	.appointment-form
+		@apply bg-white mx-auto border border-utility-gray03
+		@apply py-15 px-10 max-w-815
+		.form-grid
+			@apply grid grid-cols-1 md:grid-cols-2 gap-6
+		.form-group
+			@apply relative
+			&.full
+				@apply md:col-span-2
+		
+		input, select, textarea
+			@apply w-full border border-primary-black01 text-primary-black02 outline-none transition-all duration-300 appearance-none bg-transparent rounded-none
+			@apply body-14 placeholder:text-[#999]
+			&:focus
+				@apply border-black
+		
+		input, select
+			@apply h-15 px-5
+		
+		textarea
+			@apply resize-none
+			@apply h-25 py-5 px-5
+
+		.icon
+			@apply absolute top-1/2 -translate-y-1/2 text-primary-black02 pointer-events-none
+			@apply rem:text-[18px]
+			&.right
+				@apply right-[20px]
+			&.left
+				@apply left-[20px]
+
+		.input-with-icon-left
+			input, select
+				@apply pl-10
+
+		.btn-submit
+			@apply mt-4 w-full bg-black rounded-none text-white uppercase font-medium tracking-[2px] cursor-pointer flex items-center justify-center transition-all duration-300 hover:bg-primary-black02 border-none
+			@apply h-15

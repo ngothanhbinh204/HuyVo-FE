@@ -1,5 +1,5 @@
-section.section-collections-list
-	@apply py-8 lg:py-16 pb-0 lg:pb-0
+.section-collections-list
+	@apply py-8 pb-16 lg:pb-0
 	// Hero Image
 	.hero-image-section
 		@apply w-full mb-10 lg:mb-16 xl:mb-20 
@@ -12,7 +12,8 @@ section.section-collections-list
 	// Collections List
 	.collections-list-wrapper
 		@apply w-full flex flex-col gap-2.5
-
+	.breadcrumb-wrapper
+		@apply mt-4
 
 
 .collection-banner-item
@@ -37,10 +38,10 @@ section.section-collections-list
 		.btn-primary-3
 			@apply py-4
 		@screen lg
-			@apply text-left max-w-[500px]
+			@apply text-left max-w-573
 
 	.banner-heading
-		@apply title-42 font-medium uppercase tracking-wide text-white mb-3
+		@apply title-42 font-medium uppercase tracking-wide text-white mb-3 leading-none
 
 		@screen lg
 			@apply mb-4.5

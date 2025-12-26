@@ -2,11 +2,11 @@ mixin Quote(text)
 	.global-quote-section&attributes(attributes)
 		.quote-wrapper
 			.quote-icon.icon-left
-				i.fa-sharp.fa-solid.fa-quote-left
+				img(class="quote-left-icon", src="./img/quote.svg")
 			h2.quote-text
 				if block
 					block
 				else
 					| !{text}
 			.quote-icon.icon-right
-				i.fa-sharp.fa-solid.fa-quote-right
+				img(class="quote-right-icon", src="./img/quote-right.svg")

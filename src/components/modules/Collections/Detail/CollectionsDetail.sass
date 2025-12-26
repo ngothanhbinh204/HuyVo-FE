@@ -1,0 +1,85 @@
+.section-collections-detail
+	@apply py-8 pb-16 lg:pb-0
+	// Hero Image
+	.hero-image-section
+		@apply w-full mb-10 lg:mb-16 xl:mb-20 
+
+		.hero-image-wrapper
+			@apply w-full h-full img-ratio ratio:pt-[850_1512]
+			img
+				@apply w-full h-full object-cover transition-transform duration-[1.5s] ease-out
+
+	// Collections List
+	.collections-list-wrapper
+		@apply w-full flex flex-col gap-2.5
+	.breadcrumb-wrapper
+		@apply mt-4
+	.section-title 
+		@apply title-42 font-medium uppercase tracking-[1.5px] text-primary-black05 my-7 lg:my-10 xl:my-20 leading-none w-full text-center
+
+
+
+// ================================================
+// SECTION HOME POPULAR PRODUCTS
+// ================================================
+
+.sticky-section
+	.sticky-action
+		@apply py-6 xl:py-10 flex justify-start items-center
+	.sticky-wrapper
+		@apply flex flex-col gap-10
+		@screen lg
+			@apply flex-row gap-20
+	.sticky-left
+		@screen lg
+			@apply flex-1
+	.sticky-grid
+		@apply grid grid-cols-2 gap-2 lg:gap-6
+
+	.sticky-item
+		.item-image
+			@apply relative img-ratio ratio:pt-[711_400] overflow-hidden
+
+			img
+				@apply w-full h-full object-cover transition-transform duration-500
+			.item-number
+				@apply absolute bottom-0 left-0 p-3 body-14 font-medium text-primary-black02 uppercase
+
+		&:hover
+			.item-image img
+				@apply scale-105
+
+
+	.sticky-content
+		@screen lg
+			@apply max-w-[528px]
+			min-width: r(530px)
+
+		.content-inner
+			@apply space-y-5
+			@screen lg
+				@apply sticky
+				top: 120px
+
+	.section-heading
+		@apply title-32 font-medium uppercase tracking-[1.5] text-primary-black05
+
+	.section-desc
+		@apply space-y-5 body-14 text-primary-black05
+
+		p
+			@apply leading-normal text-justify
+.backstage-moments
+	@apply py-10 lg:py-20 xl:py-30
+	.backstage-grid
+		@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-5
+		.backstage-item
+			.item-image
+				@apply relative img-ratio ratio:pt-[610_343] overflow-hidden
+
+				img
+					@apply w-full h-full object-cover transition-transform duration-500
+
+			&:hover
+				.item-image img
+					@apply scale-105

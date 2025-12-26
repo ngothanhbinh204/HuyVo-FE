@@ -1,0 +1,48 @@
+include ../../../global/Quote/Quote.pug
+
+section.section-collections-detail.wrapper-gap-top
+	.container.max-w-full
+		.breadcrumb-wrapper
+			ul.breadcrumb
+				li: a(href="#") HOME
+				li: span / COLLECTIONS
+				li: span.active / A WEDDING DRESS
+
+	h3.section-title A WEDDING DRESS
+	.hero-image-section
+		.container.max-w-full
+			.hero-image-wrapper
+				+PugImg('./img/banner_collection_1.jpg')
+
+
+	.sticky-section.just-image
+		.container.max-w-full
+			.sticky-wrapper
+				.sticky-left
+					.sticky-grid
+						- for(var i = 1; i <= 4; i++)
+							.sticky-item
+								.item-image
+									+PugImg('./img/collection_detail_sticky.jpg')
+									.item-number= i < 10 ? '0' + i : i
+					
+					
+
+				.sticky-content
+					.content-inner
+						h2.section-heading POPULAR PRODUCTS
+						.section-desc
+							p Madame Ao Dai by Huy Vo Atelier, the virtuosity of our master artisans is flawlessly embodied in the ethereal flow of the silk
+							p the graceful drape of the fabric, and the meticulous seams that only the most discerning eyes can truly appreciate. Our collection is the culmination of extensive research, dedicated to capturing the very soul of the Ao Dai throughout Vietnamese history. For 36 months, we conducted countless trials to achieve absolute harmony—ensuring a seamless fusion of the 
+							p Ao Dai’s precious heritage with contemporary aesthetics, bridging the past, present, and future. As the national treasure of Vietnam, we envision the Ao Dai being worn with the utmost grace, nobility, and purity. Symbolically, our designs evoke a timeless nostalgia, deeply connected to the spirit of the homeland that Vietnamese people across the globe hold dear. Every piece is 100% handcrafted in Vietnam with Love and Meticulousness, from the selection of premium fabrics to the artisanal workmanship, ensuring a perfect fit in every detail. For Huy Vo, sustainability, uncompromising quality, and intergenerational longevity remain our core values.
+						.sticky-action
+							a.btn-primary-1(href="#") View More
+				
+			.backstage-moments
+				.h2.heading-subtitle Backstage Moments
+				.backstage-grid
+					- for(var i = 1; i <= 4; i++)
+						.backstage-item
+							.item-image
+								+PugImg('./img/collection_2.jpg')
+

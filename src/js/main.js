@@ -11,6 +11,7 @@ import { header } from "./header";
 import { heroBanner } from "./heroBanner";
 import { swiperInit } from "./swiper";
 import { initProductMediaScroll, initSizeGuidePopup, initProductMediaSliderMobile } from "./shopDetail";
+import { initAboutCmp } from "./about";
 $(document).ready(function () {
   setBackgroundElement();
   stickElementToEdge();
@@ -23,6 +24,7 @@ $(document).ready(function () {
   initProductMediaScroll();
   initProductMediaSliderMobile();
   initSizeGuidePopup();
+  initAboutCmp();
 });
 
 /*==================== Aos Init ====================*/
