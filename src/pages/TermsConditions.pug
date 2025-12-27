@@ -1,0 +1,57 @@
+extends ./_layout/_default.pug
+
+block var
+	- var title = 'Terms & Conditions'
+	- var bodyClass = 'page-policy'
+
+block main
+	include ../components/modules/Policy/Policy
+	.policy-page.wrapper-gap-top
+			.container.max-w-full
+				include ../components/global/Breadcrumb/breadcrumb
+				.policy-header
+					.container
+						h1.page-title Terms & Conditions
+				.policy-content
+					.content-container
+						+PolicyMenu("terms-conditions")
+						.policy-main
+							.policy-body
+								h2 MEASURES TO SUPPORT ACCESSIBILITY
+
+								p We are dedicated to ensuring our website, viktor-rolf.com, is perceivable, operable, understandable, and robust for every visitor. To uphold this commitment, we are taking the following comprehensive steps:
+
+								ul
+									li
+										strong Our Processes:
+										|  We are integrating accessibility considerations into our internal web design and development processes. This ensures that features and content are built with accessibility in mind, allowing us to adhere to the European Accessibility Act guidelines and best practices.
+									li
+										strong Continuous Evaluation:
+										|  We are continuously evaluating and updating our website to identify and address potential accessibility barriers. This ongoing process involves regular audits and assessments of our digital content and functionality to ensure we are always improving accessibility for persons with disabilities.
+									li
+										strong Feedback Mechanism:
+										|  We actively encourage and value input from our website users regarding any accessibility limitations they may encounter.
+
+								h2 ASSESSMENT APPROACH & CONFORMANCE STATUS
+
+								p Huy-Vo assessed the accessibility of Huy-Vo by aligning with the principles of the European Accessibility Act and international standards such as the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
+
+								p The Web Content Accessibility Guidelines (WCAG) define requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.
+
+								p Huy-Vo is partially conformant with WCAG 2.1 level AA. Partially conformant means that some parts of the content do not fully conform to the accessibility standard.
+
+								h2 LIMITATIONS & FEEDBACK
+
+								p We acknowledge that our website is not yet fully compliant with all aspects of the European Accessibility Act, as we have just begun this journey. You may encounter some limitations as we continue our work to enhance accessibility. Your feedback is crucial to us as we strive to create a more accessible experience.
+
+								p If you encounter any accessibility barriers or have suggestions for improvement, please don't hesitate to reach out via the form below. We aim to reply to all feedback within 5 business days.
+
+								p Your input will help us identify and address issues promptly, guiding our ongoing efforts to make huyvo.com accessible to everyone.
+
+								//- Date Statement
+								+PolicyDateStatement("25 June 2025")
+
+								//- Contact Form (CF7 Compatible)
+								//- In WordPress: Replace with [contact-form-7 id="xxx" title="Contact Form"]
+								+PolicyContactForm("SEND MESSAGE")
+

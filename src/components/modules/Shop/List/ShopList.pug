@@ -1,3 +1,6 @@
+include ../../../global/ProductItem/ProductItem
+include ../../../global/ShopToolbar/ShopToolbar
+
 section.section-shop-list
 	//- Banner Hero
 	.shop-banner
@@ -25,47 +28,27 @@ section.section-shop-list
 		//- Page Title
 		h1.page-title ALL PRODUCTS
 
-		//- Filter Bar
-		.shop-toolbar
-			.shop-filters
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span CATEGORY
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span TYPE
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span SIZE
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span COLORS
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span MATERIAL
-						i.fa-light.fa-chevron-down
-			
-			.product-count
-				span 120 PRODUCTS
+		//- Filter Toolbar (Component)
+		+ShopToolbar(120)
 
 		//- Product Grid
 		.shop-grid
 			- for(var i = 1; i <= 12; i++)
-				.product-item
-					.product-img
-						+PugImg('./img/aodai1.png')
-						.product-actions
-							button.add-to-cart-btn ADD TO CART
-					.product-info
-						.product-tags
-							if i % 3 == 0
-								span.product-tag NEW
-						h3.product-name
-							a(href="#") LẬP HỒNG XUÂN SAKURA
-						p.product-price 7.700.000 ₫
+				-
+					var productData = {
+						name: "LẬP HỒNG XUÂN SAKURA",
+						price: "7.700.000 ₫",
+						imgPrimary: "./img/aodai1.png",
+						imgHover: "./img/aodai2.png",
+						link: "#",
+						tag: i % 3 === 0 ? "NEW" : "",
+						sizes: ["XS", "S", "M", "L"],
+						colors: [
+							{ color: "#000080", name: "Navy" },
+							{ color: "#F5F5DC", name: "Beige" }
+						]
+					}
+				+ProductItem(productData)
+
 		.btn-action
 			a.btn-primary-1(href="#") View More

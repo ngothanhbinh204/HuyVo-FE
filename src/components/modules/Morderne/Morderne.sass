@@ -25,41 +25,7 @@
 
 	// PAGE TITLE
 	.page-title
-		@apply title-30 font-normal uppercase tracking-wide text-primary-black05 mb-8
-		@screen md
-			@apply text-3xl mb-10
-		@screen lg
-			@apply text-[32px] tracking-wider mb-10
-
-	// TOOLBAR & FILTERS
-	.shop-toolbar
-		@apply flex flex-col gap-6 mb-10
-		@screen lg
-			@apply flex-row items-center justify-between mb-12
-
-	.shop-filters
-		@apply grid grid-cols-2 gap-3 w-full
-		@screen md
-			@apply flex flex-wrap items-center gap-4
-		@screen lg
-			@apply w-auto
-
-		.filter-dropdown
-			@apply relative
-
-		.filter-trigger
-			@apply flex items-center justify-between w-full h-12 px-5 border border-utility-gray03 bg-white transition-all duration-300
-			@apply text-[11px] md:text-xs font-medium text-primary-black04 uppercase tracking-widest
-			@screen md
-				@apply w-[160px] cursor-pointer
-			
-			i
-				@apply text-[10px] transition-transform duration-300 text-primary-black04
-
-			&:hover
-				@apply border-primary-black05 text-primary-black05
-				i
-					@apply text-primary-black05
+		@apply title-32 font-normal uppercase tracking-wide text-primary-black05 pt-5 pb-7.5
 
 	.product-count
 		@apply text-[10px] md:text-xs font-medium text-primary-black04 uppercase tracking-widest text-right mt-2 lg:mt-0

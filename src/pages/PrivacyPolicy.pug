@@ -1,0 +1,67 @@
+extends ./_layout/_default.pug
+
+block var
+	- var title = 'Privacy Policy'
+	- var bodyClass = 'page-policy'
+
+block main
+	include ../components/modules/Policy/Policy
+	.policy-page.wrapper-gap-top
+		.container.max-w-full
+			include ../components/global/Breadcrumb/breadcrumb
+			.policy-header
+				.container
+					h1.page-title Privacy Policy
+			.policy-content
+				.content-container
+					+PolicyMenu("privacy-policy")
+					.policy-main
+						.policy-body
+							h2 INFORMATION NOTICE ON THE PROCESSING OF PERSONAL DATA PURSUANT TO ARTICLES 13 AND 14 OF EU REGULATION 679/2016 ("GDPR")
+
+							p Your privacy is extremely important to us, please read this information notice carefully.
+
+							p We wish to inform you in a complete and transparent manner about the personal data processing that the companies listed in paragraph 1 below will carry out on your personal data provided by you and/or collected in the context of the contacts you will possibly have with us, including for example the following:
+
+							ul
+								li contacting our Customer Service.
+								li visiting the website https://www.huyvo.com/(hereinafter the "Site") and/or the other websites referring to the brand, interacting with our pages on the social networks (e.g., Facebook, Instagram, Pinterest, YouTube, Tik Tok.)
+
+							h2 1. WHO COLLECT YOUR PERSONAL DATA
+
+							p The companies collecting and processing personal data as autonomous data controllers (hereinafter the "Data Controllers" or the "Companies") or as joint controllers are:
+
+							ul
+								li
+									strong OTB S.p.A. ("OTB"),
+									|  with registered office in Italy, Breganze (Vi), Via dell'Industria 2, 36042, telephone +012345678, email privacy@huyvo.net; OTB's Data Protection Officer ("DPO") can be contacted at privacy@huyvo.net;
+								li
+									strong Huy-Vo,
+									|  with registered office in the Netherlands, 1013 AP Amsterdam, Danzigerkade 55 telephone +012345678, email privacy@huyvo.com.
+
+							p OTB and Huy-Va carry out some activities as joint controllers, taking jointly the decisions regarding the purposes and means of personal data processing. Hereafter, the term "Joint Controllers" means Huy-Va and OTB jointly considered when they process data as joint controllers.
+
+							p To facilitate your understanding of the processing activities carried out by the above-mentioned subjects as Controllers or Joint Controllers, we have prepared this document explaining which processing activities each Company carries out autonomously.
+
+							p Please consider that said processing activities are not intended for minors and the Data Controllers do not knowingly collect or solicit personal data from anyone under the age of 16. If you are less than 16 years old, please refrain from provide any personal data. This does not affect the applicable contract law such as the rules on the validity, formation, or effect of a contract in relation to a child.
+
+							h2 2. WHAT PERSONAL DATA WE PROCESS
+
+							p Each Company collects different categories of personal data according to the purpose for which it processes them. Herein below, we specify which categories of personal data are collected; in the following paragraph we will explain for what purposes each Data Controller processes each category of data or by the Joint Controllers as appropriate (hereinafter also "Personal Data" if processed jointly).
+
+							ul
+								li
+									strong Biographical Data:
+									|  name, middle name, surname, date of birth, gender;
+								li
+									strong Contact Data:
+									|  address of residence (street, city, province, state, zip code), domicile, email address, telephone number, mobile number;
+								li
+									strong Sales Data:
+									|  shipping and billing address, method of delivery and payment, name of the credit card holder and expiry date of the card, information requested by the customer service, VAT number and/or tax code, passport number (the passport number will be used only for purposes related to payment where required by a law and within the limits of that law), Global Blue card number;
+								li
+									strong Tracking of Newsletters and Actions Data:
+									|  information relating to the opening of newsletters or links
+								li
+									strong Purchase Data:
+									|  detail of the purchased products (e.g., size, price, discount, model, collection, calculated spending level, abandoned cart, etc.); when purchasing a product to be delivered to another person or a Gift Card to be sent to another beneficiary, you will be required to enter data of the recipient.

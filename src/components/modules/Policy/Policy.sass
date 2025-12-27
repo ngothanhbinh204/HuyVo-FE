@@ -1,0 +1,214 @@
+// ==========================================================
+// POLICY PAGES STYLES
+// Used for: Terms & Conditions, Privacy Policy, Sustainability
+// ==========================================================
+
+.policy-page
+	@apply bg-[#f5f5f5]
+	.breadcrumb-wrapper
+		@apply mt-4
+	.policy-header
+		@apply py-5 lg:py-10 text-center
+
+		.page-title
+			@apply title-36 font-normal uppercase tracking-widest text-primary-black05
+
+	// Main Content Area
+	.policy-content
+		@apply pb-16 lg:pb-24
+		.content-container
+			@apply flex flex-col lg:flex-row justify-center gap-6 lg:gap-16 relative
+
+
+// ==========================================================
+// SIDEBAR MENU
+// Responsive: 
+//   - Mobile/Tablet: Horizontal scrollable menu AT TOP
+//   - Desktop: Fixed sidebar on left
+// ==========================================================
+.policy-sidebar
+	// Mobile: Horizontal scrollable
+	@apply w-full overflow-x-auto overflow-y-hidden
+	@apply -mx-4 px-4 lg:mx-0 lg:px-0
+	// Desktop: Fixed sidebar
+	@apply lg:w-[255px] lg:flex-shrink-0 lg:overflow-visible
+	@apply lg:absolute lg:left-0 lg:top-0
+	@apply pb-4 lg:pb-0 border-b lg:border-b-0 border-primary-black01
+	// Hide scrollbar on mobile
+	-ms-overflow-style: none
+	scrollbar-width: none
+	&::-webkit-scrollbar
+		@apply hidden
+
+	.policy-menu
+		// Mobile: Horizontal layout
+		@apply flex flex-row lg:flex-col gap-4 lg:gap-5
+		@apply whitespace-nowrap lg:whitespace-normal
+		
+
+		.menu-item
+			@apply relative flex-shrink-0
+
+			a, .btn-hover
+				@apply block body-14 text-primary-black03 transition-colors duration-300 hover:text-primary-black05
+
+			// Current/Active state with line indicator
+			&.current
+				a, .btn-hover
+					@apply text-primary-black05 font-medium
+					// Desktop: left padding for line
+					@apply lg:pl-8
+
+				// Line indicator - only show on desktop
+				&::before
+					content: ''
+					@apply hidden lg:block
+					@apply absolute left-0 top-1/2 -translate-y-1/2 w-4.5 h-1 bg-primary-black05
+
+				// Mobile: Underline indicator instead
+				&::after
+					content: ''
+					@apply block lg:hidden
+					@apply absolute left-0 bottom-0 w-full h-0.5 bg-primary-black05
+
+// ==========================================================
+// MAIN CONTENT
+// ==========================================================
+.policy-main
+	@apply flex-1 max-w-full lg:max-w-[750px]
+
+// Policy Content Typography
+.policy-body
+	@apply text-primary-black05 body-16 leading-relaxed
+
+	// Heading styles with spacing
+	h1, h2, h3, h4, h5, h6
+		@apply body-14 font-extrabold leading-[20px] uppercase tracking-wider text-primary-black05 mt-10 mb-5
+
+
+	> :first-child
+		&:is(h1, h2, h3, h4, h5, h6)
+			@apply mt-0
+
+	> :last-child
+		&:is(h1, h2, h3, h4, h5, h6)
+			@apply mb-0
+
+	// Paragraph spacing
+	p
+		@apply mb-2 leading-1.3
+
+		&:last-child
+			@apply mb-0
+
+	// List styles
+	ul
+		@apply list-disc pl-6 mb-2 space-y-2
+
+		li
+			@apply leading-relaxed
+
+			ul
+				@apply mt-2 mb-0
+
+	// Links
+	a
+		@apply text-primary-black05 underline hover:text-primary-black04 transition-colors
+
+// ==========================================================
+// DATE STATEMENT BOX
+// ==========================================================
+.policy-date-box
+	@apply bg-white py-6 px-8 text-center mt-10 mb-10
+
+	.date-label
+		@apply body-14 text-primary-black04 mb-1
+
+	.date-value
+		@apply body-14 text-primary-black04
+
+// ==========================================================
+// CONTACT FORM - CF7 Compatible
+// ==========================================================
+.policy-form-wrapper
+	@apply mt-15
+
+	.form-title
+		@apply body-16 font-normal uppercase tracking-[1.5px] leading-none text-primary-black05 text-center mb-8
+
+.policy-form
+	@apply w-full
+
+	.form-row
+		@apply flex flex-col md:flex-row gap-4 mb-4
+
+		&:last-child
+			@apply mb-0
+
+	.form-col
+		@apply flex-1
+
+		&.full
+			@apply w-full
+
+	.form-group
+		@apply w-full
+
+	.form-input,
+	.form-textarea
+		@apply w-full px-5 py-5 bg-white border border-primary-black01
+		@apply body-14 text-primary-black05 placeholder:text-primary-black02
+		@apply transition-all duration-300
+		@apply focus:border-primary-black05 focus:outline-none
+
+	.form-textarea
+		@apply resize-none min-h-[150px]
+
+	.btn-submit
+		@apply w-full py-4.5 px-8
+		@apply bg-primary-black05 text-white
+		@apply body-14 uppercase tracking-widest font-medium
+		@apply transition-all duration-300
+		@apply hover:bg-primary-black04
+		@apply cursor-pointer
+
+// ==========================================================
+// PDF DOWNLOAD ITEMS
+// ==========================================================
+.pdf-group
+	@apply mb-10
+
+	&:last-child
+		@apply mb-0
+
+	.pdf-group-title
+		@apply body-18 font-extrabold uppercase tracking-wider text-primary-black05 mb-5
+		&:first-child
+			@apply mt-0
+		
+		
+
+.pdf-list
+	@apply flex flex-col
+
+.pdf-item
+	@apply flex items-center gap-3.5 py-7.5 border-t border-[#DFDFE1]
+
+	&:last-child
+		@apply border-b
+
+	.pdf-icon
+		@apply w-8 h-10 flex-shrink-0
+
+		img
+			@apply w-full h-full object-contain
+
+	.pdf-info
+		@apply flex-1
+
+		.pdf-title
+			@apply body-16 text-primary-black05
+
+	.pdf-download
+		@apply body-16 text-primary-black04 underline hover:text-primary-black05 transition-colors flex-shrink-0
+

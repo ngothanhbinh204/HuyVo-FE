@@ -2,7 +2,7 @@ const plugin = require("tailwindcss/plugin");
 
 /**
  * TAILWIND CONFIG - PRODUCTION READY
- *
+ * 
  * Refactored theo chuẩn frontend production:
  * - Không scale layout theo viewport
  * - Không ép root font-size
@@ -42,12 +42,12 @@ module.exports = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem", // 16px mobile
-        sm: "1.5rem", // 24px
-        md: "2rem", // 32px
-        lg: "2.5rem", // 40px
-        xl: "2.5rem", // 40px
-        "2xl": "2.5rem", // 40px
+        DEFAULT: "1rem",      // 16px mobile
+        sm: "1.5rem",         // 24px
+        md: "2rem",           // 32px
+        lg: "2.5rem",         // 40px
+        xl: "2.5rem",         // 40px
+        "2xl": "2.5rem",      // 40px
       },
       screens: {
         xs: "100%",
@@ -55,7 +55,7 @@ module.exports = {
         md: "100%",
         lg: "100%",
         xl: "100%",
-        "2xl": "1512px", // Fixed max-width at design reference
+        "2xl": "1512px",      // Fixed max-width at design reference
       },
     },
 
@@ -66,62 +66,62 @@ module.exports = {
     spacing: {
       0: "0",
       px: "1px",
-      0.5: "0.125rem", // 2px
-      1: "0.25rem", // 4px
-      1.5: "0.375rem", // 6px
-      2: "0.5rem", // 8px
-      2.5: "0.625rem", // 10px
-      3: "0.75rem", // 12px
-      3.5: "0.875rem", // 14px
-      4: "1rem", // 16px
-      4.5: "1.125rem", // 18px
-      5: "1.25rem", // 20px
-      5.5: "1.375rem", // 22px
-      6: "1.5rem", // 24px
-      6.5: "1.625rem", // 26px
-      7: "1.75rem", // 28px
-      7.5: "1.875rem", // 30px
-      8: "2rem", // 32px
-      8.5: "2.125rem", // 34px
-      9: "2.25rem", // 36px
-      9.5: "2.375rem", // 38px
-      10: "2.5rem", // 40px
-      10.5: "2.625rem", // 42px
-      11: "2.75rem", // 44px
-      11.5: "2.875rem", // 46px
-      12: "3rem", // 48px
-      12.5: "3.125rem", // 50px
-      13: "3.25rem", // 52px
-      14: "3.5rem", // 56px
-      15: "3.75rem", // 60px
-      16: "4rem", // 64px
-      17: "4.25rem", // 68px
-      17.5: "4.375rem", // 70px
-      18: "4.5rem", // 72px
-      19: "4.75rem", // 76px
-      20: "5rem", // 80px
-      22: "5.5rem", // 88px
-      22.5: "5.625rem", // 90px
-      24: "6rem", // 96px
-      25: "6.25rem", // 100px
-      26: "6.5rem", // 104px
-      28: "7rem", // 112px
-      30: "7.5rem", // 120px
-      32: "8rem", // 128px
-      34: "8.5rem", // 136px
-      36: "9rem", // 144px
-      40: "10rem", // 160px
-      42: "10.5rem", // 168px
-      44: "11rem", // 176px
-      48: "12rem", // 192px
-      50: "12.5rem", // 200px
-      52: "13rem", // 208px
-      56: "14rem", // 224px
-      60: "15rem", // 240px
-      64: "16rem", // 256px
-      72: "18rem", // 288px
-      80: "20rem", // 320px
-      96: "24rem", // 384px
+      0.5: "0.125rem",    // 2px
+      1: "0.25rem",       // 4px
+      1.5: "0.375rem",    // 6px
+      2: "0.5rem",        // 8px
+      2.5: "0.625rem",    // 10px
+      3: "0.75rem",       // 12px
+      3.5: "0.875rem",    // 14px
+      4: "1rem",          // 16px
+      4.5: "1.125rem",    // 18px
+      5: "1.25rem",       // 20px
+      5.5: "1.375rem",    // 22px
+      6: "1.5rem",        // 24px
+      6.5: "1.625rem",    // 26px
+      7: "1.75rem",       // 28px
+      7.5: "1.875rem",    // 30px
+      8: "2rem",          // 32px
+      8.5: "2.125rem",    // 34px
+      9: "2.25rem",       // 36px
+      9.5: "2.375rem",    // 38px
+      10: "2.5rem",       // 40px
+      10.5: "2.625rem",   // 42px
+      11: "2.75rem",      // 44px
+      11.5: "2.875rem",   // 46px
+      12: "3rem",         // 48px
+      12.5: "3.125rem",   // 50px
+      13: "3.25rem",      // 52px
+      14: "3.5rem",       // 56px
+      15: "3.75rem",      // 60px
+      16: "4rem",         // 64px
+      17: "4.25rem",      // 68px
+      17.5: "4.375rem",   // 70px
+      18: "4.5rem",       // 72px
+      19: "4.75rem",      // 76px
+      20: "5rem",         // 80px
+      22: "5.5rem",       // 88px
+      22.5: "5.625rem",   // 90px
+      24: "6rem",         // 96px
+      25: "6.25rem",      // 100px
+      26: "6.5rem",       // 104px
+      28: "7rem",         // 112px
+      30: "7.5rem",       // 120px
+      32: "8rem",         // 128px
+      34: "8.5rem",       // 136px
+      36: "9rem",         // 144px
+      40: "10rem",        // 160px
+      42: "10.5rem",      // 168px
+      44: "11rem",        // 176px
+      48: "12rem",        // 192px
+      50: "12.5rem",      // 200px
+      52: "13rem",        // 208px
+      56: "14rem",        // 224px
+      60: "15rem",        // 240px
+      64: "16rem",        // 256px
+      72: "18rem",        // 288px
+      80: "20rem",        // 320px
+      96: "24rem",        // 384px
       full: "100%",
       screen: "100vw",
       "2full": "200%",
@@ -144,34 +144,34 @@ module.exports = {
     // FONT SIZE - rem chuẩn với line-height
     // ==========================================================
     fontSize: {
-      xs: ["0.75rem", { lineHeight: "1rem" }], // 12px
-      sm: ["0.875rem", { lineHeight: "1.25rem" }], // 14px
-      base: ["1rem", { lineHeight: "1.5rem" }], // 16px
-      lg: ["1.125rem", { lineHeight: "1.75rem" }], // 18px
-      xl: ["1.25rem", { lineHeight: "1.75rem" }], // 20px
-      "2xl": ["1.5rem", { lineHeight: "2rem" }], // 24px
-      "3xl": ["1.875rem", { lineHeight: "2.25rem" }], // 30px
-      "4xl": ["2.25rem", { lineHeight: "2.5rem" }], // 36px
-      "5xl": ["2.5rem", { lineHeight: "1" }], // 40px
-      "6xl": ["3rem", { lineHeight: "1" }], // 48px
-      "7xl": ["4.5rem", { lineHeight: "1" }], // 72px
-      "8xl": ["5.25rem", { lineHeight: "1" }], // 84px
-      "9xl": ["6rem", { lineHeight: "1" }], // 96px
+      xs: ["0.75rem", { lineHeight: "1rem" }],           // 12px
+      sm: ["0.875rem", { lineHeight: "1.25rem" }],       // 14px
+      base: ["1rem", { lineHeight: "1.5rem" }],          // 16px
+      lg: ["1.125rem", { lineHeight: "1.75rem" }],       // 18px
+      xl: ["1.25rem", { lineHeight: "1.75rem" }],        // 20px
+      "2xl": ["1.5rem", { lineHeight: "2rem" }],         // 24px
+      "3xl": ["1.875rem", { lineHeight: "2.25rem" }],    // 30px
+      "4xl": ["2.25rem", { lineHeight: "2.5rem" }],      // 36px
+      "5xl": ["2.5rem", { lineHeight: "1" }],            // 40px
+      "6xl": ["3rem", { lineHeight: "1" }],              // 48px
+      "7xl": ["4.5rem", { lineHeight: "1" }],            // 72px
+      "8xl": ["5.25rem", { lineHeight: "1" }],           // 84px
+      "9xl": ["6rem", { lineHeight: "1" }],              // 96px
       // Custom sizes for design matching
-      "15px": ["0.9375rem", { lineHeight: "1.4" }], // 15px
-      28: ["1.75rem", { lineHeight: "1.3" }], // 28px
-      30: ["1.875rem", { lineHeight: "1.3" }], // 30px
-      32: ["2rem", { lineHeight: "1.2" }], // 32px
-      38: ["2.375rem", { lineHeight: "1.2" }], // 38px
-      40: ["2.5rem", { lineHeight: "1.2" }], // 40px
-      42: ["2.625rem", { lineHeight: "1.2" }], // 42px
-      48: ["3rem", { lineHeight: "1.1" }], // 48px
-      60: ["3.75rem", { lineHeight: "1.1" }], // 60px
-      64: ["4rem", { lineHeight: "1.1" }], // 64px
-      80: ["5rem", { lineHeight: "1.1" }], // 80px
-      96: ["6rem", { lineHeight: "1" }], // 96px
-      120: ["7.5rem", { lineHeight: "1" }], // 120px
-      140: ["8.75rem", { lineHeight: "1" }], // 140px
+      "15px": ["0.9375rem", { lineHeight: "1.4" }],      // 15px
+      28: ["1.75rem", { lineHeight: "1.3" }],            // 28px
+      30: ["1.875rem", { lineHeight: "1.3" }],           // 30px
+      32: ["2rem", { lineHeight: "1.2" }],               // 32px
+      38: ["2.375rem", { lineHeight: "1.2" }],           // 38px
+      40: ["2.5rem", { lineHeight: "1.2" }],             // 40px
+      42: ["2.625rem", { lineHeight: "1.2" }],           // 42px
+      48: ["3rem", { lineHeight: "1.1" }],               // 48px
+      60: ["3.75rem", { lineHeight: "1.1" }],            // 60px
+      64: ["4rem", { lineHeight: "1.1" }],               // 64px
+      80: ["5rem", { lineHeight: "1.1" }],               // 80px
+      96: ["6rem", { lineHeight: "1" }],                 // 96px
+      120: ["7.5rem", { lineHeight: "1" }],              // 120px
+      140: ["8.75rem", { lineHeight: "1" }],             // 140px
     },
 
     // ==========================================================
@@ -281,20 +281,12 @@ module.exports = {
     // ==========================================================
     extend: {
       // Min/Max Width
-      letterSpacing: {
-        "1px": "1px",
-        "1.5px": "1.5px",
-        "2px": "2px",
-        "2.5px": "2.5px",
-        "3px": "3px",
-        "4px": "4px",
-      },
       minWidth: {
         fit: "fit-content",
-        40: "2.5rem", // 40px
-        124: "7.75rem", // 124px
-        130: "8.125rem", // 130px
-        160: "10rem", // 160px
+        40: "2.5rem",       // 40px
+        124: "7.75rem",     // 124px
+        130: "8.125rem",    // 130px
+        160: "10rem",       // 160px
       },
       maxWidth: {
         fit: "fit-content",
@@ -302,19 +294,19 @@ module.exports = {
         124: "7.75rem",
         130: "8.125rem",
         160: "10rem",
-        300: "18.75rem", // 300px
-        573: "35.8125rem", // 573px
-        815: "50.9375rem", // 815px
-        1512: "94.5rem", // 1512px - Design reference
+        300: "18.75rem",    // 300px
+        573: "35.8125rem",  // 573px
+        815: "50.9375rem",  // 815px
+        1512: "94.5rem",    // 1512px - Design reference
       },
       minHeight: {
         fit: "fit-content",
         40: "2.5rem",
-        60: "3.75rem", // 60px
+        60: "3.75rem",      // 60px
         124: "7.75rem",
         130: "8.125rem",
         160: "10rem",
-        680: "42.5rem", // 680px
+        680: "42.5rem",     // 680px
       },
       maxHeight: {
         fit: "fit-content",
@@ -396,18 +388,12 @@ module.exports = {
 
       // Background Image
       backgroundImage: {
-        "workflow-gradient":
-          "linear-gradient(142deg, #FFF 14.64%, #D7D6D6 88.5%)",
-        "linear-1":
-          "linear-gradient(90deg, #181830 -0.01%, #1D1D38 19.26%, #141228 40.12%, #2C223A 75.47%, #231B33 99.98%)",
-        "linear-top-to-bottom":
-          "linear-gradient(180deg, #C2CCE7 0%, #F5F8FF 47.6%)",
-        "linear-1-top-to-bottom":
-          "linear-gradient(180deg, #C2CCE7 0%, #DCE2F3 77.36%, #FFF 99.22%)",
-        "linear-1-bottom-to-top":
-          "linear-gradient(180deg, #FFF 0%, #E3EBFF 41%, #C2CCE7 100%)",
-        "linear-2":
-          "linear-gradient(180deg, #FFF 0%, #E3EBFF 41%, #C2CCE7 100%)",
+        "workflow-gradient": "linear-gradient(142deg, #FFF 14.64%, #D7D6D6 88.5%)",
+        "linear-1": "linear-gradient(90deg, #181830 -0.01%, #1D1D38 19.26%, #141228 40.12%, #2C223A 75.47%, #231B33 99.98%)",
+        "linear-top-to-bottom": "linear-gradient(180deg, #C2CCE7 0%, #F5F8FF 47.6%)",
+        "linear-1-top-to-bottom": "linear-gradient(180deg, #C2CCE7 0%, #DCE2F3 77.36%, #FFF 99.22%)",
+        "linear-1-bottom-to-top": "linear-gradient(180deg, #FFF 0%, #E3EBFF 41%, #C2CCE7 100%)",
+        "linear-2": "linear-gradient(180deg, #FFF 0%, #E3EBFF 41%, #C2CCE7 100%)",
       },
 
       // Background Position/Size
@@ -429,26 +415,26 @@ module.exports = {
       // BORDER RADIUS - Fixed rem values
       // ==========================================================
       borderRadius: {
-        1: "0.25rem", // 4px
-        2: "0.5rem", // 8px
-        3: "0.75rem", // 12px
-        4: "1rem", // 16px
-        5: "1.25rem", // 20px
-        6: "1.5rem", // 24px
-        7: "1.75rem", // 28px
-        8: "2rem", // 32px
-        9: "2.25rem", // 36px
-        10: "2.5rem", // 40px
-        11: "2.75rem", // 44px
-        12: "3rem", // 48px
-        13: "3.25rem", // 52px
-        14: "3.5rem", // 56px
-        15: "3.75rem", // 60px
-        16: "4rem", // 64px
-        17: "4.25rem", // 68px
-        18: "4.5rem", // 72px
-        19: "4.75rem", // 76px
-        20: "5rem", // 80px
+        1: "0.25rem",       // 4px
+        2: "0.5rem",        // 8px
+        3: "0.75rem",       // 12px
+        4: "1rem",          // 16px
+        5: "1.25rem",       // 20px
+        6: "1.5rem",        // 24px
+        7: "1.75rem",       // 28px
+        8: "2rem",          // 32px
+        9: "2.25rem",       // 36px
+        10: "2.5rem",       // 40px
+        11: "2.75rem",      // 44px
+        12: "3rem",         // 48px
+        13: "3.25rem",      // 52px
+        14: "3.5rem",       // 56px
+        15: "3.75rem",      // 60px
+        16: "4rem",         // 64px
+        17: "4.25rem",      // 68px
+        18: "4.5rem",       // 72px
+        19: "4.75rem",      // 76px
+        20: "5rem",         // 80px
       },
 
       // ==========================================================
@@ -653,14 +639,7 @@ module.exports = {
   // PLUGINS
   // ==========================================================
   plugins: [
-    plugin(function ({
-      addBase,
-      addComponents,
-      addVariant,
-      matchUtilities,
-      addUtilities,
-      theme,
-    }) {
+    plugin(function ({ addBase, addComponents, addVariant, matchUtilities, addUtilities, theme }) {
       addBase({});
 
       // ==========================================================

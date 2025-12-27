@@ -1,0 +1,92 @@
+//- ==========================================================
+//- WELCOME POPUPS COMPONENT
+//- Popup 1: Select Shipping Location
+//- Popup 2: Newsletter Subscribe
+//- Features:
+//-   - Show only on first visit (localStorage check)
+//-   - CF7 compatible form structure
+//-   - Sequential: Shipping -> Subscribe -> Done
+//- ==========================================================
+
+//- Shipping Location Popup
+mixin PopupShippingLocation()
+	.popup-overlay#popup-shipping(data-popup="shipping")
+		.popup-container
+			button.popup-close(type="button" aria-label="Close popup")
+				i.fa-light.fa-xmark
+			
+			.popup-content
+				h2.popup-title SELECT YOUR SHIPPING LOCATION
+				p.popup-desc Please note that the items in your cart will be shipped to your selected country.
+				
+				.popup-form
+					.form-row
+						.form-col
+							label.form-label Country
+							.select-wrapper
+								select.form-select#shipping-country(name="country")
+									option(value="vietnam" selected) Vietnam
+									option(value="usa") United States
+									option(value="uk") United Kingdom
+									option(value="japan") Japan
+									option(value="korea") South Korea
+									option(value="singapore") Singapore
+									option(value="other") Other
+								i.fa-light.fa-chevron-down
+						
+						.form-col
+							label.form-label Language
+							.select-wrapper
+								select.form-select#shipping-language(name="language")
+									option(value="vietnamese" selected) Vietnamese
+									option(value="english") English
+								i.fa-light.fa-chevron-down
+					
+					.form-actions
+						button.btn-submit(type="button" data-action="submit-shipping") SHOP NOW
+
+//- Newsletter Subscribe Popup
+mixin PopupNewsletter()
+	.popup-overlay#popup-newsletter(data-popup="newsletter")
+		.popup-container
+			button.popup-close(type="button" aria-label="Close popup")
+				i.fa-light.fa-xmark
+			
+			.popup-content
+				.popup-logo
+					img(src="./img/LogoHuyVo.svg" alt="HUY VO")
+				
+				h2.popup-title SUBSCRIBE TO OUR NEWSLETTER TO STAY TO DATE WITH THE LATEST FROM #[strong HUY-VO FASHION] NEWS
+				
+				//- CF7 Compatible Form Structure
+				//- In WordPress: Replace with [contact-form-7 id="xxx" title="Newsletter"]
+				.wpcf7
+					form.wpcf7-form.popup-newsletter-form(method="post" action="#")
+						.form-group
+							label.form-label-float *EMAIL ADDRESS
+							input.wpcf7-text.form-input(type="email" name="email" required placeholder=" ")
+						
+						p.form-note
+							| Yes, I want to hear from HUY-VO Fashion. By clicking subscribe you're agreeing to our 
+							a(href="PrivacyPolicy.html") Privacy Policy
+							| .
+						
+						.form-checkbox
+							label.checkbox-wrapper
+								input.wpcf7-checkbox(type="checkbox" name="marketing-consent" value="yes")
+								span.checkbox-custom
+								span.checkbox-label YES, I ALSO WANT TO HEAR FROM #[strong HUY-VO FASHION.]
+						
+						p.form-note.small
+							| By checking this box, you also agree to receive marketing emails and other communications from HUY-VO Fashion. To learn more, view our 
+							a(href="PrivacyPolicy.html") Privacy Policy
+							| .
+						
+						.form-actions
+							button.wpcf7-submit.btn-submit(type="submit") SUBSCRIBE
+
+//- Combined Popups Container (include in layout)
+mixin WelcomePopups()
+	.welcome-popups-wrapper
+		+PopupShippingLocation()
+		+PopupNewsletter()

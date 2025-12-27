@@ -1,0 +1,140 @@
+// ==========================================================
+// SHOP TOOLBAR COMPONENT STYLES
+// Filter dropdowns with clear button
+// ==========================================================
+
+.shop-toolbar
+	@apply flex flex-col gap-6
+	@screen lg
+		@apply flex-row items-center justify-between mb-12
+
+.shop-filters
+	@apply grid grid-cols-2 gap-4 w-full
+	@screen md
+		@apply flex flex-wrap items-center gap-4
+	@screen lg
+		@apply w-auto
+
+// ==========================================================
+// FILTER DROPDOWN
+// ==========================================================
+.filter-dropdown
+	@apply relative
+
+	// Trigger Button
+	.filter-trigger
+		@apply relative flex items-center gap-3 justify-between w-full h-12.5 px-7.5
+		@apply border border-utility-gray03 bg-white
+		@apply body-14 font-medium text-primary-black04 uppercase tracking-widest
+		@apply transition-all duration-300 cursor-pointer
+		@screen md
+			@apply min-w-[130px]
+
+		.filter-label
+			@apply flex-1 text-left
+
+		i.fa-chevron-down
+			@apply body-14 transition-transform duration-300
+
+		// Clear button (X)
+		.filter-clear
+			@apply absolute -top-2 -right-2 w-5 h-5
+			@apply flex items-center justify-center
+			@apply text-[10px] text-primary-black03 bg-primary-black01 rounded-full
+			@apply opacity-0 pointer-events-none scale-75
+			@apply transition-all duration-200
+			@apply hover:bg-primary-black05 hover:text-white
+			transform: translate(30%, -30%)
+
+			i
+				@apply text-[8px]
+
+		// Hover state
+		&:hover
+			@apply border-primary-black05
+
+			.filter-label,
+			i.fa-chevron-down
+				@apply text-primary-black05
+
+	// Open state
+	&.is-open
+		.filter-trigger
+			@apply border-primary-black05
+
+			i.fa-chevron-down
+				@apply rotate-180 text-primary-black05
+
+		.filter-dropdown-menu
+			@apply opacity-100 visible translate-y-0
+
+	// Selected state (has value)
+	&.has-value
+		.filter-trigger
+			@apply border-primary-black05 bg-primary-black05
+
+			.filter-label,
+			i.fa-chevron-down
+				@apply text-white
+
+			.filter-clear
+				@apply opacity-100 pointer-events-auto scale-100
+
+// ==========================================================
+// DROPDOWN MENU
+// ==========================================================
+.filter-dropdown-menu
+	@apply absolute top-full left-0 w-full min-w-[180px] mt-1
+	@apply bg-white border border-utility-gray03 shadow-lg
+	@apply opacity-0 invisible translate-y-[-10px]
+	@apply transition-all duration-300 ease-out z-50
+	@apply max-h-[280px] overflow-y-auto
+
+	// Scrollbar styling
+	&::-webkit-scrollbar
+		@apply w-1.5
+
+	&::-webkit-scrollbar-track
+		@apply bg-utility-gray03
+
+	&::-webkit-scrollbar-thumb
+		@apply bg-utility-gray03 rounded-full
+
+		&:hover
+			@apply bg-primary-black04
+
+.filter-options
+	@apply list-none p-0 m-0
+
+.filter-option
+	@apply border-b border-utility-gray03 last:border-b-0
+
+	a
+		@apply flex items-center justify-between px-5 py-3
+		@apply body-14 text-primary-black04
+		@apply transition-all duration-200
+		@apply hover:bg-utility-gray03 hover:text-primary-black05
+
+		.option-label
+			@apply flex-1
+
+		.option-count
+			@apply text-xs text-primary-black03 ml-2
+
+	// Selected option
+	&.is-selected
+		a
+			@apply bg-primary-black05 text-white
+
+			.option-count
+				@apply text-white/70
+
+		&:hover a
+			@apply bg-primary-black04
+
+// ==========================================================
+// PRODUCT COUNT
+// ==========================================================
+.product-count
+	@apply body-14 font-medium text-primary-black04 uppercase tracking-widest
+	@apply text-right mt-2 lg:mt-0 whitespace-nowrap

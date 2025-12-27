@@ -1,0 +1,76 @@
+mixin ProductItem()
+	.product-item
+		.product-img
+			a.product-link(href="#")
+				.product-images
+					+PugImg('./img/aodai1.png')(class="img-main")
+					+PugImg('./img/aodai2.png')(class="img-hover")
+
+		.product-info
+			.product-tags
+				span.product-tag NEW
+
+			h3.product-name
+				a(href="#") LẬP HỒNG XUÂN SAKURA
+
+			p.product-price 7.700.000 ₫
+		.product-variants
+			ul.variant-sizes
+				li: a( href="#" title="XS") XS
+				li: a( href="#" title="S") S
+				li: a( href="#" title="M") M
+				li: a( href="#" title="L") L
+
+			ul.variant-colors
+				li: a(style="background:blue" href="#" title="Black")
+				li: a(style="background:beige" href="#" title="Beige")
+
+//- ==========================================================
+//- PRODUCT ITEM SWAP
+//- Kết hợp: Swap image khi hover + Product variants hiển thị khi hover
+//- ==========================================================
+mixin ProductItemSwap(data = {})
+	-
+		// Default data
+		const defaultData = {
+			name: "LẬP HỒNG XUÂN SAKURA",
+			price: "7.700.000 ₫",
+			imgPrimary: "./img/aodai1.png",
+			imgHover: "./img/aodai4.png",
+			link: "#",
+			tag: "",
+			sizes: ["XS", "S", "M", "L"],
+			colors: [
+				{ color: "#000080", name: "Navy" },
+				{ color: "#F5F5DC", name: "Beige" }
+			]
+		};
+		const product = Object.assign({}, defaultData, data);
+
+	.product-item-swap
+		a.product-link(href=product.link)
+			//- Image Swap Container
+			.product-swap-img
+				.img-primary
+					+PugImg(product.imgPrimary)
+				.img-hover
+					+PugImg(product.imgHover)
+
+			//- Product Info Overlay (trong link để clickable)
+			.product-swap-info
+				if product.tag
+					.product-tag= product.tag
+				h3.product-name= product.name
+				p.product-price= product.price
+
+		//- Product Variants (ngoài link, hiển thị khi hover)
+		.product-variants
+			if product.sizes && product.sizes.length
+				ul.variant-sizes
+					each size in product.sizes
+						li: a(href="#" title=size)= size
+
+			if product.colors && product.colors.length
+				ul.variant-colors
+					each colorItem in product.colors
+						li: a(style=`background:${colorItem.color}` href="#" title=colorItem.name)

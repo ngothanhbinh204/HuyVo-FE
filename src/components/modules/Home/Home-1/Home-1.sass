@@ -3,24 +3,11 @@
 // ================================================
 
 .section-home-banner
-	@apply relative w-full overflow-hidden
-	
-	// Fixed aspect ratio: 1512/900
-	&::before
-		content: ''
-		@apply block w-full
-		padding-top: calc(900 / 1512 * 100%)
-	
+	@apply relative w-full overflow-hidden img-ratio ratio:pt-[900_1512]
 	.banner-wrapper
 		@apply absolute inset-0 w-full h-full
-	
-	// ----------------------------------------
-	// VIDEO & POSTER MEDIA
-	// ----------------------------------------
 	.banner-media
 		@apply absolute inset-0 w-full h-full z-0
-		
-		// Poster Image - hiển thị trước khi video load
 		.banner-poster
 			@apply absolute inset-0 w-full h-full z-1 transition-opacity duration-500
 			

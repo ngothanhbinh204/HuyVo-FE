@@ -1,0 +1,79 @@
+//- ==========================================================
+//- POLICY LAYOUT COMPONENT
+//- Used for: Terms & Conditions, Privacy Policy, Sustainability
+//- Features:
+//-   - Breadcrumb at top
+//-   - Page title with py-10
+//-   - Sidebar menu (WordPress compatible)
+//-   - Content area with custom heading spacing
+//- ==========================================================
+
+include ../../mixin
+
+//- Sidebar Menu Mixin - WordPress compatible structure
+mixin PolicyMenu(currentPage = "")
+	nav.policy-sidebar
+		ul.policy-menu
+			-
+				var menuItems = [
+					{ title: "Contact Us", slug: "contact-us", url: "#" },
+					{ title: "Terms & Conditions", slug: "terms-conditions", url: "TermsConditions.html" },
+					{ title: "Privacy Policy", slug: "privacy-policy", url: "PrivacyPolicy.html" },
+					{ title: "Return Policy", slug: "return-policy", url: "#" },
+					{ title: "Shipping Policy", slug: "shipping-policy", url: "#" },
+					{ title: "Payment Options", slug: "payment-options", url: "#" },
+					{ title: "Size & Fit Guide", slug: "size-fit-guide", url: "#" },
+					{ title: "Sustainability", slug: "sustainability", url: "Sustainability.html" },
+					{ title: "Care Guide", slug: "care-guide", url: "#" }
+				]
+			each item in menuItems
+				li.menu-item(class=item.slug === currentPage ? "current" : "")
+					//- a(href=item.url)= item.title
+					+BtnHover(item.title, item.url, "text-only")(class="")
+					
+
+//- PDF Download Item Mixin - For Sustainability page
+mixin PdfItem(title = "Document Title", downloadUrl = "#")
+	.pdf-item
+		.pdf-icon
+			img(src="./img/pdf-icon.svg" alt="PDF")
+		.pdf-info
+			span.pdf-title= title
+		a.pdf-download(href=downloadUrl download) Download
+
+//- PDF Group Mixin - For grouping documents by category
+mixin PdfGroup(groupTitle = "")
+	.pdf-group
+		if groupTitle
+			h3.pdf-group-title= groupTitle
+		.pdf-list
+			block
+
+//- Date Statement Box
+mixin PolicyDateStatement(date = "25 June 2025")
+	.policy-date-box
+		p.date-label Date
+		p.date-value This statement was created on #{date}.
+
+//- Contact Form Mixin - WordPress Contact Form 7 compatible
+//- In WordPress, replace this with: [contact-form-7 id="xxx" title="Policy Form"]
+mixin PolicyContactForm(title = "SEND MESSAGE")
+	.policy-form-wrapper
+		h3.form-title= title
+		//- CF7 wrapper structure for easy WordPress integration
+		.wpcf7
+			form.wpcf7-form.policy-form(method="post" action="#")
+				.form-row
+					.form-col
+						.form-group
+							input.wpcf7-text.form-input(type="text" name="first-name" placeholder="Nhập Họ" required)
+					.form-col
+						.form-group
+							input.wpcf7-text.form-input(type="text" name="last-name" placeholder="Nhập Tên" required)
+				.form-row
+					.form-col.full
+						.form-group
+							textarea.wpcf7-textarea.form-textarea(name="message" placeholder="Nhập yêu cầu" rows="5" required)
+				.form-row
+					.form-col.full
+						button.wpcf7-submit.btn-submit(type="submit") SEND MESSAGE

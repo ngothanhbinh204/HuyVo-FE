@@ -1,0 +1,226 @@
+// ==========================================================
+// WELCOME POPUPS STYLES
+// Shipping Location & Newsletter Subscribe
+// ==========================================================
+
+// ==========================================================
+// OVERLAY & CONTAINER
+// ==========================================================
+.popup-overlay
+	@apply fixed inset-0 z-[9999]
+	@apply flex items-center justify-center
+	@apply bg-black/60 backdrop-blur-sm
+	@apply opacity-0 invisible pointer-events-none
+	@apply transition-all duration-300
+
+	// Active state
+	&.is-active
+		@apply opacity-100 visible pointer-events-auto
+
+		.popup-container
+			@apply scale-100 opacity-100
+
+.popup-container
+	@apply relative w-full max-w-[800px] mx-4
+	@apply bg-white p-6 lg:p-10
+	@apply scale-95 opacity-0
+	@apply transition-all duration-300 ease-out
+	@apply max-h-[90vh] overflow-y-auto
+
+	// Scrollbar styling
+	&::-webkit-scrollbar
+		@apply w-1.5
+
+	&::-webkit-scrollbar-track
+		@apply bg-utility-100
+
+	&::-webkit-scrollbar-thumb
+		@apply bg-utility-gray03 rounded-full
+
+// ==========================================================
+// CLOSE BUTTON
+// ==========================================================
+.popup-close
+	@apply absolute top-4 right-4 lg:top-6 lg:right-6
+	@apply w-10 h-10 flex items-center justify-center
+	@apply text-xl text-primary-black04
+	@apply transition-all duration-300 cursor-pointer
+	@apply hover:text-primary-black05
+
+// ==========================================================
+// CONTENT
+// ==========================================================
+.popup-content
+	@apply text-center
+
+.popup-logo
+	img
+		@apply h-10 lg:h-15 mx-auto
+
+.popup-title
+	@apply title-24 font-normal uppercase tracking-wider text-primary-black05 my-7.5 text-start
+	@apply leading-relaxed
+
+	strong
+		@apply font-extrabold text-primary-1
+
+.popup-desc
+	@apply title-20 font-normal text-primary-black04 mb-8 text-start
+
+// ==========================================================
+// FORM ELEMENTS
+// ==========================================================
+.popup-form,
+.popup-newsletter-form
+	@apply text-left
+
+.form-row
+	@apply flex flex-col md:flex-row gap-4 mb-6
+
+.form-col
+	@apply flex-1
+
+.form-label
+	@apply block title-20 font-normal text-primary-black04 mb-2
+
+.form-label-float
+	@apply block title-20 font-normal uppercase tracking-wider text-primary-black04 mb-2
+
+// Select Wrapper
+.select-wrapper
+	@apply relative
+
+	select.form-select
+		@apply w-full h-12.5 px-5 pr-12
+		@apply bg-white border border-utility-gray03
+		@apply title-20 font-normal text-primary-black05
+		@apply appearance-none cursor-pointer
+		@apply transition-all duration-300
+		@apply focus:border-primary-black05 focus:outline-none
+
+	i
+		@apply absolute right-4 top-1/2 -translate-y-1/2
+		@apply text-sm text-primary-black04 pointer-events-none
+
+// Text Input
+.form-input
+	@apply w-full h-12.5 px-5
+	@apply bg-white border border-utility-gray03
+	@apply title-20 font-normal text-primary-black05
+	@apply transition-all duration-300
+	@apply focus:border-primary-black05 focus:outline-none
+
+	&::placeholder
+		@apply text-transparent
+
+// Form Group (for floating label effect)
+.form-group
+	@apply relative
+
+	.form-label-float
+		@apply absolute left-5 top-1/2 -translate-y-1/2
+		@apply transition-all duration-200 pointer-events-none
+		@apply title-20 font-normal text-primary-black04
+
+	.form-input
+		@apply pt-5
+
+		&:focus,
+		&:not(:placeholder-shown)
+			& + .form-label-float,
+			~ .form-label-float
+				@apply top-2 text-xs
+
+	// Fieldset style (border with label on top)
+	&.fieldset-style
+		@apply border border-utility-gray03 p-4 pt-6
+
+		.form-label-float
+			@apply static mb-2 translate-y-0
+
+// ==========================================================
+// CHECKBOX
+// ==========================================================
+.form-checkbox
+	@apply my-6
+
+.checkbox-wrapper
+	@apply flex items-start gap-3 cursor-pointer
+
+	input[type="checkbox"]
+		@apply sr-only
+
+	.checkbox-custom
+		@apply flex-shrink-0 w-8 h-8 mt-0.5
+		@apply border border-primary-black04
+		@apply transition-all duration-200
+		@apply relative
+
+		&::after
+			content: '\f00c'
+			font-family: 'Font Awesome 6 Pro'
+			font-weight: 400
+			@apply absolute inset-0 flex items-center justify-center
+			@apply text-xs text-white
+			@apply opacity-0 transition-opacity duration-200
+
+	input:checked + .checkbox-custom
+		@apply bg-primary-black05 border-primary-black05
+
+		&::after
+			@apply opacity-100
+
+	.checkbox-label
+		@apply title-24 text-primary-black05 uppercase leading-tight
+
+		strong
+			@apply font-bold
+
+// ==========================================================
+// FORM NOTES
+// ==========================================================
+.form-note
+	@apply title-24 font-normal text-primary-black03 my-4 leading-1.3
+
+	&.small
+		@apply title-24 font-normal
+
+	a
+		@apply underline
+		@apply hover:text-primary-black04 transition-colors
+
+// ==========================================================
+// ACTIONS
+// ==========================================================
+.form-actions
+	@apply flex justify-center mt-8
+
+.btn-submit
+	@apply inline-flex items-center justify-center
+	@apply min-w-[180px] py-4.5 px-8 body-14
+	@apply bg-primary-black05 text-white #{!important}
+	@apply uppercase tracking-widest font-normal
+	@apply transition-all duration-300 cursor-pointer
+	@apply hover:bg-primary-black04
+
+// ==========================================================
+// NEWSLETTER SPECIFIC
+// ==========================================================
+#popup-newsletter
+	.popup-container
+		@apply max-w-[650px]
+
+	.popup-title
+		@apply title-28 leading-1.3 text-start
+
+	.form-group.fieldset-style
+		@apply border border-utility-gray03
+
+		.form-input
+			@apply border-0 h-auto py-4
+
+	.form-actions
+		@apply mt-10
+
+		.btn-submit
+			@apply w-full title-28 font-normal h-[92px] px-10

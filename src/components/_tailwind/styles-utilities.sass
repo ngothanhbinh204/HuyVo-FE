@@ -18,3 +18,56 @@
 			@apply hidden
 		-ms-overflow-style: none // IE and Edge
 		scrollbar-width: none // Firefox
+
+.btn-hover
+	position: relative
+	display: inline-block
+	overflow: hidden
+	color: var(--btn-text)
+	@apply text-primary-black05
+
+	.btn-inner
+		position: relative
+		overflow: hidden
+		z-index: 1
+
+	.text
+		display: block
+		transition: transform .44s ease
+
+	.hover-text
+		position: absolute
+		top: 100%
+		left: 0
+		width: 100%
+
+		&::before
+			content: attr(data-text)
+			display: block
+
+	&.with-bg
+		&::before
+			content: ""
+			position: absolute
+			inset: 0
+			@apply bg-primary-black05
+			transform: translateY(100%)
+			transition: transform .33s ease
+			z-index: 0
+
+		&:hover
+			&::before
+				transform: translateY(0)
+
+			.text
+				transform: translateY(-100%)
+				@apply text-white
+
+		&:not(:hover)
+			&::before
+				transition-duration: 0s
+
+	&.text-only
+		&:hover
+			.text
+				transform: translateY(-100%)

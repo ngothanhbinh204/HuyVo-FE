@@ -12,6 +12,8 @@ import { heroBanner } from "./heroBanner";
 import { swiperInit } from "./swiper";
 import { initProductMediaScroll, initSizeGuidePopup, initProductMediaSliderMobile } from "./shopDetail";
 import { initAboutCmp } from "./about";
+import "../components/global/ShopToolbar/ShopToolbar"; // Shop filter dropdown
+import "../components/global/Popup/Popup"; // Welcome popups (Shipping + Newsletter)
 $(document).ready(function () {
   setBackgroundElement();
   stickElementToEdge();

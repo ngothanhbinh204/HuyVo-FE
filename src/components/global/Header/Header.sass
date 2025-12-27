@@ -18,9 +18,7 @@
             @apply px-6
     
     .header-wrapper
-        @apply flex items-center justify-between py-4 
-        @screen lg
-            @apply py-4 min-h-60
+        @apply flex items-center justify-between py-2 lg:min-h-60
     
     .header-left
         @apply hidden
@@ -28,14 +26,12 @@
             @apply block
         
         > .menu-list
-            @apply flex items-center gap-6
-            @screen xl
-                @apply gap-8
+            @apply flex items-center gap-y-6 gap-x-2.5
     
     // Menu Items
     .menu-item
         > .header-link
-            @apply inline-flex items-center body-14 font-normal uppercase cursor-pointer transition-all duration-300
+            @apply inline-flex items-center leading-5 body-14 px-2.5 py-3 font-normal uppercase cursor-pointer transition-all duration-300
             letter-spacing: 0.15em
             
             .link-text
@@ -144,7 +140,7 @@
         > *
             @apply text-primary-black05
         .column-title
-            @apply body-16 font-bold uppercase tracking-widest py-2.5 text-primary-black05		
+            @apply body-16 font-extrabold uppercase tracking-widest py-2.5 text-primary-black05		
         .menu-list
             @apply flex flex-col
             
@@ -188,14 +184,14 @@
     
     // Images Column
     .mega-menu-images
-        @apply grid grid-cols-2 gap-4 row-span-2 items-center
+        @apply grid grid-cols-2 gap-5 row-span-2 items-center
         
         .image-wrapper
             @apply overflow-hidden rounded-sm h-full
             &:first-child
-                @apply img-ratio ratio:pt-[222_395]
+                @apply img-ratio ratio:pt-[395_222]
             &:last-child
-                @apply img-ratio ratio:pt-[222_277]
+                @apply img-ratio ratio:pt-[277_222]
             img
                 @apply w-full h-full object-cover transition-transform duration-300
                 
@@ -204,10 +200,10 @@
     
     // Footer
     .mega-menu-footer
-        @apply col-span-3 pt-8 mt-4 border-t border-neutral-200
+        @apply col-span-3 pt-8 mt-4 
         
         .shop-all-link
-            @apply inline-flex items-center gap-2 body-14 font-semibold uppercase tracking-widest transition-all duration-300
+            @apply inline-flex items-center gap-5 body-14 font-normal uppercase tracking-widest transition-all duration-300
             letter-spacing: 0.15em
             
             i
@@ -278,15 +274,14 @@
             @apply mb-2
             
             .menu-item-header
-                @apply flex items-center justify-between gap-10 w-fit
-                max-width: r(215px)
+                @apply flex items-center justify-between gap-10 -md:w-[250px] 
             
             .category-title
-                @apply body-14 font-bold uppercase tracking-widest text-primary-black05 py-3 block flex-1
+                @apply body-16 font-extrabold uppercase tracking-widest text-primary-black05 py-3 block flex-1
                 letter-spacing: 0.1em
             
             .submenu-toggle
-                @apply sq-10 flex items-center justify-center cursor-pointer text-primary-black05
+                @apply sq-5 flex items-center justify-center cursor-pointer text-primary-black05
                 
                 i
                     @apply text-xs transition-transform duration-300
@@ -309,7 +304,7 @@
                         @apply flex items-center justify-between body-14 text-primary-black05 py-3.5 transition-all duration-300
                         
                         i
-                            @apply text-xs text-primary-black03
+                            @apply text-xs text-primary-black03 transition-transform duration-300
                         
                         &:hover
                             @apply pl-1
@@ -321,15 +316,34 @@
                     &.has-arrow
                         a
                             @apply pr-0
+                    
+                    // Nested Submenu (Level 2)
+                    &.has-submenu
+                        &.active
+                            > a i
+                                transform: rotate(90deg)
+                            
+                            .submenu-level2
+                                @apply max-h-screen opacity-100 mb-2
+                        
+                        .submenu-level2
+                            @apply flex flex-col pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-300
+                            
+                            .menu-item
+                                a
+                                    @apply py-2 text-primary-black03 body-14
+                                    
+                                    &:hover
+                                        @apply text-primary-black05
     
     // Mobile Menu Footer
     .mobile-menu-footer
-        @apply px-8 py-6 border-t border-neutral-100 mt-auto
+        @apply px-8 py-6 mt-auto
         @screen sm
             @apply px-10
         
         .shop-all-link
-            @apply inline-flex items-center gap-2 body-14 font-bold uppercase tracking-widest text-primary-black05 transition-all duration-300
+            @apply inline-flex items-center gap-5 body-14 font-normal uppercase tracking-widest text-primary-black05 transition-all duration-300
             letter-spacing: 0.1em
             
             i

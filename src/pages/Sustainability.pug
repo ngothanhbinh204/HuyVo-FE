@@ -1,0 +1,40 @@
+extends ./_layout/_default.pug
+
+block var
+	- var title = 'Sustainability'
+	- var bodyClass = 'page-policy'
+
+block main
+	include ../components/modules/Policy/Policy
+	.policy-page.wrapper-gap-top
+		.container.max-w-full
+			include ../components/global/Breadcrumb/breadcrumb
+			.policy-header
+				.container
+					h1.page-title Sustainability
+
+			.policy-content
+				.content-container
+					+PolicyMenu("sustainability")
+
+					.policy-main
+						.policy-body
+							+PdfGroup("ESG DOCUMENTS")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+
+							//- Executive Summary
+							+PdfGroup("EXECUTIVE SUMMARY")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+
+							//- Reports
+							+PdfGroup("REPORTS")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+
+							//- Modern Slavery Statements
+							+PdfGroup("MODERN SLAVERY STATEMENTS")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")
+								+PdfItem("Huy Vo Atelier - Huy Vo Atelier Presentation 2024", "#")

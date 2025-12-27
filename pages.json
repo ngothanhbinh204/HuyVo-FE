@@ -28,6 +28,18 @@
     {
       "enabled": false,
       "src": "NewsList.pug"
+    },
+    {
+      "enabled": false,
+      "src": "TermsConditions.pug"
+    },
+    {
+      "enabled": false,
+      "src": "PrivacyPolicy.pug"
+    },
+    {
+      "enabled": false,
+      "src": "Sustainability.pug"
     }
   ]
 }

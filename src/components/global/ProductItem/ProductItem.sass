@@ -1,0 +1,192 @@
+.product-item
+	@apply relative flex flex-col
+	.product-img
+		@apply relative overflow-hidden mb-5
+		@apply transition-all duration-300
+		border: 1px dotted transparent
+
+		.product-images
+			@apply relative img-ratio ratio:pt-[610_343]
+
+			img
+				@apply absolute inset-0 w-full h-full object-cover transition-all duration-300
+
+			.img-hover
+				@apply opacity-0
+
+		&:hover
+			.img-main
+				@apply opacity-0
+			.img-hover
+				@apply opacity-100
+	&:hover
+		.product-img
+			border: 1px dotted text-primary-1
+	.product-actions
+		@apply absolute bottom-5 left-0 w-full flex justify-center
+		@apply opacity-100 translate-y-0 transition-all duration-300
+
+		.add-to-cart-btn
+			@apply bg-white text-primary-black05 px-6 py-2
+			@apply body-14 uppercase tracking-wide transition-all duration-300
+			&:hover
+				@apply bg-primary-black05 text-white
+
+	// Desktop hover only
+	@screen lg
+		.product-actions
+			@apply opacity-0 translate-y-4
+
+		&:hover
+			.product-actions
+				@apply opacity-100 translate-y-0
+
+	.product-info
+		.product-tags
+			@apply absolute top-0 left-0 flex gap-3
+
+			.product-tag
+				@apply p-3 body-14 uppercase text-primary-black04
+
+	.product-name
+		@apply title-20 uppercase py-2.5 text-primary-black05 font-normal
+		a
+			@apply transition-all duration-300
+			&:hover
+				@apply underline
+
+	.product-price
+		@apply body-16 font-medium text-primary-black04
+
+	.product-variants
+		@apply mt-3 flex flex-col gap-3
+
+	.variant-sizes
+		@apply flex gap-4 flex-wrap
+
+		a
+			@apply body-14 uppercase transition-all relative
+			&:after
+				content: ''
+				@apply absolute bottom-0 left-0 w-0 h-[1px] bg-primary-black05
+				@apply transition-all duration-300 mt-1
+			&:hover
+				&:after
+					@apply w-full
+
+	.variant-colors
+		@apply flex gap-2
+		a
+			@apply block border border-primary-black04
+			width: 10px
+			height: 10px
+
+	@screen lg
+		.product-variants
+			@apply absolute left-0 right-0 bottom-0
+			@apply opacity-0 translate-y-4 pointer-events-none
+			@apply transition-all duration-300 bg-white p-4
+
+		&:hover
+			.product-variants
+				@apply opacity-100 translate-y-0 pointer-events-auto
+
+// ==========================================================
+// PRODUCT ITEM SWAP
+// Swap image + Product variants hover
+// ==========================================================
+.product-item-swap
+	@apply relative block
+
+	// Product Link (wraps image and info)
+	.product-link
+		@apply block relative
+
+	// Image Swap Container
+	.product-swap-img
+		@apply relative w-full img-ratio ratio:pt-[600_400] overflow-hidden bg-utility-gray03
+
+		.img-primary,
+		.img-hover
+			@apply absolute inset-0 w-full h-full transition-all duration-500 ease-in-out
+
+			img
+				@apply w-full h-full object-cover
+
+		.img-primary
+			@apply opacity-100 scale-100 z-10
+
+		.img-hover
+			@apply opacity-0 scale-105 z-20
+
+	// Info Overlay
+	.product-swap-info
+		@apply absolute bottom-0 left-0 w-full p-4 lg:p-5 z-30
+
+		.product-tag
+			@apply inline-block body-14 uppercase text-primary-black04 mb-2
+
+		.product-name
+			@apply body-14 font-medium text-primary-black05 uppercase tracking-wide mb-1
+
+		.product-price
+			@apply body-14 text-primary-black04 font-normal
+
+	// Product Variants (hover reveal)
+	.product-variants
+		@apply flex flex-col gap-3 mt-3
+		@apply opacity-100 visible
+		@apply transition-all duration-300
+
+	.variant-sizes
+		@apply flex gap-4 flex-wrap
+
+		a
+			@apply body-14 uppercase transition-all relative text-primary-black05
+			&:after
+				content: ''
+				@apply absolute bottom-0 left-0 w-0 h-[1px] bg-primary-black05
+				@apply transition-all duration-300
+			&:hover
+				&:after
+					@apply w-full
+
+	.variant-colors
+		@apply flex gap-2
+		a
+			@apply block border border-primary-black04
+			width: 10px
+			height: 10px
+
+			&:hover
+				@apply border-primary-black05
+
+	// Desktop: variants hidden by default, show on hover
+	@screen lg
+		.product-variants
+			@apply absolute left-0 right-0 bottom-0
+			@apply opacity-0 translate-y-4 pointer-events-none
+			@apply bg-white p-4 z-40
+
+		&:hover
+			.product-swap-img
+				.img-primary
+					@apply opacity-0
+
+				.img-hover
+					@apply opacity-100 scale-100
+
+			.product-variants
+				@apply opacity-100 translate-y-0 pointer-events-auto
+
+	// Mobile: swap on tap, variants always visible
+	@media (max-width: 1023px)
+		&:hover,
+		&:focus-within
+			.product-swap-img
+				.img-primary
+					@apply opacity-0
+
+				.img-hover
+					@apply opacity-100 scale-100
+

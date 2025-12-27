@@ -1,3 +1,6 @@
+include ../../global/ProductItem/ProductItem
+include ../../global/ShopToolbar/ShopToolbar
+
 section.section-moderne-heritage
 	//- Reuse Banner from Shop
 	.shop-banner
@@ -25,36 +28,12 @@ section.section-moderne-heritage
 		//- Page Title
 		h1.page-title MODERNE HERITAGE
 
-		//- Filter Bar (Reuse Shop)
-		.shop-toolbar
-			.shop-filters
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span CATEGORY
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span TYPE
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span SIZE
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span COLORS
-						i.fa-light.fa-chevron-down
-				.filter-dropdown
-					button.filter-trigger(type="button")
-						span MATERIAL
-						i.fa-light.fa-chevron-down
-			
-			.product-count
-				span 12 PRODUCTS
+		//- Filter Toolbar (Component)
+		+ShopToolbar(12)
 
 		//- Category Blocks Wrapper
 		.moderne-heritage-content
-			//- Category Block 1
+			//- Category Block 1: AO DAI MADAME
 			.category-block
 				.category-block-header
 					h2.category-title AO DAI MADAME
@@ -68,19 +47,24 @@ section.section-moderne-heritage
 							.swiper-wrapper
 								- for(var i = 1; i <= 6; i++)
 									.swiper-slide
-										.product-card-swap
-											.product-card-img
-												.img-primary
-													+PugImg('./img/aodai1.png')
-												.img-hover
-													+PugImg('./img/aodai4.png')
-												.product-card-info
-													h3.product-name LẬP HỒNG XUÂN SAKURA
-													p.product-price 7.700.000 ₫
+										-
+											var productMadame = {
+												name: "LẬP HỒNG XUÂN SAKURA",
+												price: "7.700.000 ₫",
+												imgPrimary: "./img/aodai1.png",
+												imgHover: "./img/aodai4.png",
+												link: "#",
+												sizes: ["XS", "S", "M", "L"],
+												colors: [
+													{ color: "#000080", name: "Navy" },
+													{ color: "#F5F5DC", name: "Beige" }
+												]
+											}
+										+ProductItemSwap(productMadame)
 					.nav-btn.nav-next
 						i.fa-light.fa-chevron-right
 
-			//- Category Block 2
+			//- Category Block 2: AO DAI MONSIEUR
 			.category-block
 				.category-block-header
 					h2.category-title AO DAI MONSIEUR
@@ -94,14 +78,20 @@ section.section-moderne-heritage
 							.swiper-wrapper
 								- for(var i = 1; i <= 6; i++)
 									.swiper-slide
-										.product-card-swap
-											.product-card-img
-												.img-primary
-													+PugImg('./img/aodai3.png')
-												.img-hover
-													+PugImg('./img/aodai4.png')
-												.product-card-info
-													h3.product-name LẬP HỒNG XUÂN SAKURA
-													p.product-price 7.700.000 ₫
+										-
+											var productMonsieur = {
+												name: "LẬP HỒNG XUÂN SAKURA",
+												price: "7.700.000 ₫",
+												imgPrimary: "./img/aodai3.png",
+												imgHover: "./img/aodai4.png",
+												link: "#",
+												sizes: ["S", "M", "L", "XL"],
+												colors: [
+													{ color: "#2F4F4F", name: "Dark Slate" },
+													{ color: "#8B4513", name: "Brown" }
+												]
+											}
+										+ProductItemSwap(productMonsieur)
 					.nav-btn.nav-next
 						i.fa-light.fa-chevron-right
+

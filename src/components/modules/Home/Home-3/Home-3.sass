@@ -3,15 +3,15 @@
 // ================================================
 
 .section-home-new-arrivals
-	@apply py-10 xl:py-15
+	@apply pt-6 lg:pt-10 xl:pt-15
 
 	// Section Header (Title + View All)
 	.section-header
 		@apply mb-10
 		.title-wrapper
-			@apply flex flex-col gap-2
+			@apply flex flex-col gap-3.5
 			.section-heading
-				@apply title-32 font-medium uppercase tracking-wide text-primary-black05
+				@apply title-32 font-medium uppercase tracking-wide text-primary-black05 leading-none
 			.view-all-link
 				@apply title-20 text-primary-black04 transition-colors
 				&:hover
@@ -27,7 +27,7 @@
 			top: 50%
 
 			i
-				@apply title-20 text-primary-black04
+				@apply title-24 text-primary-black04
 
 			&:hover
 				i
@@ -53,46 +53,3 @@
 		@apply relative 
 		.swiper
 			@apply w-full
-
-// ================================================
-// PRODUCT ITEM CARD
-// ================================================
-
-.product-item
-	@apply relative
-	.product-img
-		@apply relative img-ratio ratio:pt-[610_343] overflow-hidden mb-5
-		img
-			@apply w-full h-full object-cover transition-transform duration-500
-		
-	&:hover
-		img
-			@apply scale-105
-
-	.product-actions
-		@apply absolute bottom-5 left-0 w-full flex justify-center opacity-0 translate-y-4 transition-all duration-300
-		
-		.add-to-cart-btn
-			@apply bg-white text-primary-black05 px-6 py-2 body-14 uppercase tracking-wide transition-all duration-300 cursor-pointer
-			&:hover
-				@apply bg-primary-black05 text-white
-		
-		// Show on hover
-		.group:hover &
-			@apply opacity-100 translate-y-0
-
-	.product-info
-		.product-tags
-			@apply flex gap-3 absolute top-0 left-0
-			.product-tag
-				@apply p-3 body-14 font-medium text-primary-black04 uppercase
-
-		.product-name
-			@apply title-20 font-medium uppercase py-2.5 text-primary-black05
-			a
-				@apply transition-all duration-300
-				&:hover
-					@apply underline
-
-		.product-price
-			@apply body-16 font-medium text-primary-black04

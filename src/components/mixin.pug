@@ -56,3 +56,42 @@ mixin HeaderLanguage()
 					li 
 						a(href="") 
 							span EN
+
+//- Button hover slide text
+//- Usage:
+//- +BtnHover("SEASONAL SALE", "with-bg")
+//- +BtnHover("SEASONAL SALE", "text-only")
+mixin BtnHover(text, href = null, variant = "", options = {})
+	-
+		const {
+			target = null,
+			rel = null,
+			disabled = false
+		} = options
+
+	if href
+		a(
+			href=href
+			target=target
+			rel=rel
+			aria-disabled=disabled
+			class=`btn-hover ${variant} ${attributes.class || ""}`
+		)&attributes(attributes)
+			span.btn-inner
+				span.text.main-text= text
+				span.text.hover-text(
+					aria-hidden="true"
+					data-text=text
+				)
+	else
+		button(
+			type="button"
+			disabled=disabled
+			class=`btn-hover ${variant} ${attributes.class || ""}`
+		)&attributes(attributes)
+			span.btn-inner
+				span.text.main-text= text
+				span.text.hover-text(
+					aria-hidden="true"
+					data-text=text
+				)

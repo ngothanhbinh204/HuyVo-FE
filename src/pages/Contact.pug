@@ -1,0 +1,41 @@
+extends ./_layout/_default.pug
+
+block var
+	- var title = 'Contact Us'
+	- var bodyClass = 'page-contact'
+
+block main
+	include ../components/modules/Contact/Contact
+
+	.contact-page.wrapper-gap-top
+		.container.max-w-full
+			include ../components/global/Breadcrumb/breadcrumb
+			
+			.policy-header
+				h1.page-title Contact Us
+
+			.contact-hero-banner
+				.banner-wrapper
+					+PugImg('./img/banner_collection_1.jpg')
+
+		-
+			var showroomHCM = {
+				title: "SHOWROOM HỒ CHÍ MINH",
+				image: "./img/banner_collection_1.jpg",
+				hotline: "093 177 45 99",
+				address: "149 Nguyen Cuu Van, Ward 17, Binh Thanh, Vietnam",
+				mapLink: "https://maps.google.com/?q=149+Nguyen+Cuu+Van+Ward+17+Binh+Thanh+Vietnam"
+			}
+		+ShowroomSection(showroomHCM, false)
+		-
+			var showroomHN = {
+				title: "SHOWROOM HÀ NỘI",
+				image: "./img/aodai2.png",
+				hotline: "093 177 45 99",
+				address: "71 Van Phuc, Lieu Giai, Ba Dinh, Ha Noi, Vietnam",
+				mapLink: "https://maps.google.com/?q=71+Van+Phuc+Lieu+Giai+Ba+Dinh+Ha+Noi+Vietnam"
+			}
+		+ShowroomSection(showroomHN, true)
+
+		//- Center Info Section
+		+ContactCenterInfo()

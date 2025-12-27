@@ -1,0 +1,140 @@
+// ==========================================================
+// CONTACT PAGE STYLES
+// ==========================================================
+
+// ==========================================================
+// PAGE LAYOUT
+// ==========================================================
+.contact-page
+	@apply bg-[#f5f5f5]
+
+	// Header (reuse from policy)
+	.policy-header
+		@apply py-5 lg:py-10 text-center
+
+		.page-title
+			@apply title-36 font-normal uppercase tracking-widest text-primary-black05
+
+// ==========================================================
+// HERO BANNER
+// ==========================================================
+.contact-hero-banner
+	@apply w-full
+
+	.banner-wrapper
+		@apply img-ratio ratio:pt-[604_1432]
+
+		img
+			@apply w-full h-full object-cover
+
+// ==========================================================
+// SHOWROOM SECTIONS
+// ==========================================================
+.contact-showroom
+	@apply w-full
+
+	.showroom-grid
+		@apply grid grid-cols-1 lg:grid-cols-2
+
+	.showroom-image
+		.img-wrapper
+			@apply w-full h-full img-ratio ratio:pt-[602_756]
+
+			img
+				@apply w-full h-full object-cover
+
+	.showroom-content
+		@apply flex items-center
+		@apply p-6 md:p-10 lg:p-15 xl:p-20
+		@apply bg-white
+
+	.content-inner
+		@apply w-full max-w-[576px] flex flex-col gap-5
+
+	.showroom-title
+		@apply title-36 font-normal uppercase tracking-wider text-primary-black05 py-1 lg:py-5
+
+	// Reversed layout
+	&.reversed
+		.showroom-grid
+			@apply lg:grid-cols-2
+
+		.showroom-image
+			@apply lg:order-2
+
+		.showroom-content
+			@apply lg:order-1
+
+// ==========================================================
+// CONTACT INFO ITEMS
+// ==========================================================
+.contact-info-list
+	@apply flex flex-col gap-5
+
+.contact-info-item
+	@apply flex items-start gap-3
+
+	.info-icon
+		@apply w-5 h-5 flex-shrink-0 flex items-center justify-center text-primary-black05
+		@apply mt-0.5
+
+		i
+			@apply body-16
+
+	.info-content
+		@apply inline-block gap-1
+
+	.info-label
+		@apply body-18 text-primary-black05
+
+	.info-value
+		@apply body-18 text-primary-black05
+
+		&:hover
+			@apply text-primary-black04
+
+// ==========================================================
+// BUTTON DIRECTION
+// ==========================================================
+.btn-direction
+	@apply my-4 lg:my-7.5 w-fit
+	@apply inline-flex items-center gap-3
+	@apply py-3.5 px-7.5
+	@apply border border-primary-black05
+	@apply body-14 uppercase tracking-widest text-primary-black05
+	@apply transition-all duration-300
+	@apply hover:bg-primary-black05 hover:text-white
+
+	i
+		@apply text-sm transition-transform duration-300
+
+	&:hover
+		i
+			@apply translate-x-1
+
+// ==========================================================
+// CENTER INFO SECTION
+// ==========================================================
+.contact-center-info
+	@apply py-16 lg:py-24 bg-[#f5f5f5]
+
+	.center-content
+		@apply flex flex-col items-center text-center gap-10
+
+	.info-block
+		@apply space-y-5
+
+		.block-title
+			@apply body-14 uppercase tracking-widest text-primary-black02 font-extrabold
+
+		.block-content
+			@apply flex flex-col items-center gap-1
+
+			p, a
+				@apply body-14 text-primary-black04
+
+			a
+				@apply hover:text-primary-black05 transition-colors
+
+	.link-underline
+		@apply underline decoration-1 underline-offset-4

@@ -1,0 +1,66 @@
+//- ==========================================================
+//- CONTACT PAGE COMPONENT
+//- Features:
+//-   - Header with page title
+//-   - Hero banner (604/1432 ratio)
+//-   - Showroom sections with image + content layout
+//-   - Footer info section (centered)
+//- ==========================================================
+
+include ../../mixin
+
+//- Contact Info Item Mixin
+mixin ContactInfoItem(icon, label, value, href = null)
+	.contact-info-item
+		.info-icon
+			i(class=icon)
+		.info-content
+			span.info-label= label + ":"
+			if href
+				a.info-value(href=href)= value
+			else
+				span.info-value= value
+
+//- Showroom Section Mixin
+mixin ShowroomSection(data, reversed = false)
+	section.contact-showroom(class=reversed ? "reversed" : "")
+		.showroom-grid
+			.showroom-image
+				.img-wrapper
+					+PugImg(data.image)
+			.showroom-content
+				.content-inner.space-y-5
+					h2.showroom-title= data.title
+					.contact-info-list
+						if data.hotline
+							+ContactInfoItem("fa-light fa-phone", "Hotline", data.hotline, "tel:" + data.hotline.replace(/\s/g, ''))
+						if data.address
+							+ContactInfoItem("fa-light fa-location-dot", "Address", data.address, data.mapLink)
+					if data.mapLink
+						a.btn-direction(href=data.mapLink target="_blank")
+							span GET DIRECTIONS
+							i.fa-regular.fa-arrow-right
+
+//- Center Info Section Mixin
+mixin ContactCenterInfo()
+	section.contact-center-info
+		.container
+			.center-content
+				.info-block
+					h3.block-title HEAD OFFICE
+					.block-content
+						p Mon to Sat: 10AM - 8PM
+						p 71 Van Phuc, Lieu Giai, Ba Dinh, Ha Noi, Vietnam
+						p 093 177 45 99
+						a(href="mailto:info@houseofpremiere.com") info@houseofpremiere.com
+
+				.info-block
+					h3.block-title SOCIAL
+					.block-content
+						a(href="https://www.facebook.com/HuyVoAtelier" target="_blank") https://www.facebook.com/HuyVoAtelier
+						a(href="https://instagram.com/huyvo.atelier" target="_blank") instagram.com/huyvo.atelier
+
+				.info-block
+					h3.block-title STORE APPOINTMENT
+					.block-content
+						a.link-underline(href="#") Request an appointment

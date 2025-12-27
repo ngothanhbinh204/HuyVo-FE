@@ -2,6 +2,7 @@ block var
 	const plugins = '../../../../plugins'
 block mixin
 	include ../../components/mixin.pug
+	include ../../components/global/Popup/Popup.pug
 doctype html
 
 html(lang="en")
@@ -26,5 +27,10 @@ html(lang="en")
 			block main
 		block footer
 			include ../../components/global/footer/footer.pug
+		
+		//- Welcome Popups (Shipping Location + Newsletter)
+		+WelcomePopups()
+		
 		script(src="./js/core.min.js")
 		script(src="./js/main.min.js")
+

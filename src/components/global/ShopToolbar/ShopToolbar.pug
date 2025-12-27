@@ -1,0 +1,88 @@
+//- ==========================================================
+//- SHOP TOOLBAR COMPONENT
+//- Filter dropdowns with WordPress-compatible structure
+//- Features:
+//-   - Dropdown filters for Category, Type, Size, Colors, Material
+//-   - Clear selection button (X) when filter is selected
+//-   - WordPress taxonomy compatible data attributes
+//- ==========================================================
+
+//- Filter Dropdown Mixin
+//- @param name - Filter name/label
+//- @param taxonomy - WordPress taxonomy slug (e.g., "product_cat", "pa_size")
+//- @param options - Array of {value, label, count} objects
+mixin FilterDropdown(name, taxonomy, options = [])
+	.filter-dropdown(data-taxonomy=taxonomy)
+		button.filter-trigger(type="button" data-filter-name=name)
+			span.filter-label= name
+			i.fa-light.fa-chevron-down
+			//- Clear button (hidden by default, shown when selected)
+			span.filter-clear(data-clear title="Clear filter")
+				i.fa-solid.fa-xmark
+		
+		.filter-dropdown-menu
+			ul.filter-options
+				each opt in options
+					li.filter-option(data-value=opt.value)
+						a(href="#" data-filter-value=opt.value)
+							span.option-label= opt.label
+							if opt.count !== undefined
+								span.option-count (#{opt.count})
+
+//- Shop Toolbar Component
+mixin ShopToolbar(productCount = 0)
+	.shop-toolbar
+		.shop-filters
+			//- Category Filter
+			-
+				var categoryOptions = [
+					{ value: "ao-dai-madame", label: "Ao Dai Madame", count: 24 },
+					{ value: "ao-dai-monsieur", label: "Ao Dai Monsieur", count: 18 },
+					{ value: "wedding", label: "Wedding Collection", count: 12 },
+					{ value: "ready-to-wear", label: "Ready to Wear", count: 36 }
+				]
+			+FilterDropdown("CATEGORY", "product_cat", categoryOptions)
+
+			//- Type Filter
+			-
+				var typeOptions = [
+					{ value: "ao-dai", label: "Áo Dài", count: 45 },
+					{ value: "dress", label: "Dress", count: 28 },
+					{ value: "accessories", label: "Accessories", count: 15 }
+				]
+			+FilterDropdown("TYPE", "product_type", typeOptions)
+
+			//- Size Filter
+			-
+				var sizeOptions = [
+					{ value: "xs", label: "XS", count: 20 },
+					{ value: "s", label: "S", count: 35 },
+					{ value: "m", label: "M", count: 40 },
+					{ value: "l", label: "L", count: 30 },
+					{ value: "xl", label: "XL", count: 15 }
+				]
+			+FilterDropdown("SIZE", "pa_size", sizeOptions)
+
+			//- Colors Filter
+			-
+				var colorOptions = [
+					{ value: "white", label: "White", count: 25 },
+					{ value: "black", label: "Black", count: 30 },
+					{ value: "red", label: "Red", count: 18 },
+					{ value: "pink", label: "Pink", count: 22 },
+					{ value: "blue", label: "Blue", count: 15 }
+				]
+			+FilterDropdown("COLORS", "pa_color", colorOptions)
+
+			//- Material Filter
+			-
+				var materialOptions = [
+					{ value: "silk", label: "Silk", count: 40 },
+					{ value: "satin", label: "Satin", count: 25 },
+					{ value: "velvet", label: "Velvet", count: 15 },
+					{ value: "lace", label: "Lace", count: 20 }
+				]
+			+FilterDropdown("MATERIAL", "pa_material", materialOptions)
+
+		.product-count
+			span #{productCount} PRODUCTS

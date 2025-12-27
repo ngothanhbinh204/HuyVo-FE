@@ -38,7 +38,7 @@
 
 	// View More Button
 	.popular-action
-		@apply mt-6 flex justify-center items-center
+		@apply mt-6 lg:mt-10 flex justify-center items-center
 
 	// ----------------------------------------
 	// RIGHT COLUMN: Content (Sticky)
@@ -54,10 +54,15 @@
 				top: 120px
 
 	.section-heading
-		@apply title-32 font-medium uppercase tracking-[1.5] text-primary-black05 mb-6
+		@apply title-32 font-medium uppercase tracking-[1.5] text-primary-black05 mb-5
 
 	.section-desc
 		@apply space-y-5 body-14
 
 		p
-			@apply leading-normal text-primary-black04 text-justify
+			@apply leading-[22px] text-primary-black04 text-justify tracking-[0.5px]
+
+.section-home-quote
+	@apply  py-20 pt-10 lg:py-30 lg:pt-20 xl:py-40 xl:pt-30
+	.global-quote-section
+		@apply text-primary-1 max-w-[70%] mx-auto mb-0

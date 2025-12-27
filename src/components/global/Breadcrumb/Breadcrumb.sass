@@ -4,14 +4,14 @@
 		@apply h-[calc(48/1512*100rem)] flex items-center overflow-auto
 		a
 			&:first-child
-				@apply text-0
+				@apply text-base
 				&::before
 					content: '\f015'
 					@apply font-awesome text-sm
 		a,span
 			@apply text-sm text-[#333333] whitespace-nowrap
 		span.separator
-			@apply text-0 inline-flex
+			@apply text-base inline-flex
 			&::before
 				content: "\f054"
 				@apply font-awesome font-normal text-sm mx-2
@@ -25,3 +25,8 @@
 			@apply hover:text-primary-black05 transition-colors duration-300
 		.active
 			@apply text-primary-black05
+
+.wrapper-gap-top
+	.container
+		.breadcrumb-wrapper
+			@apply mt-4

@@ -2,13 +2,10 @@
 header.header
 	.container
 		.header-wrapper
-			//- Left Menu (Desktop) - WordPress nav_menu compatible
 			nav.header-left
 				ul.menu.menu-list
-					//- Menu Item with Mega Menu (SHOP)
 					li.menu-item.menu-item-has-children.has-dropdown
-						a.header-link(href="#")
-							span.link-text SHOP
+						+BtnHover("Shop", "#", "with-bg")(class="header-link")
 						//- Mega Menu Dropdown
 						.mega-menu
 							.container
@@ -80,11 +77,13 @@ header.header
 											i.fa-regular.fa-arrow-up-right
 					//- Menu Item without dropdown
 					li.menu-item
-						a.header-link(href="#")
-							span.link-text COLLECTIONS
+						+BtnHover("Collections", "/CollectionsList.html", "with-bg")(class="header-link")
 					li.menu-item
-						a.header-link(href="#")
-							span.link-text SALE
+						+BtnHover("Sale", "#", "with-bg")(class="header-link")
+					li.menu-item
+						+BtnHover("Popup P&L", "#", "with-bg")(class="header-link" data-popup-trigger="newsletter")
+					li.menu-item
+						+BtnHover("Subscription", "#", "with-bg")(class="header-link" data-popup-trigger="shipping")
 			
 			//- Center Logo
 			a.logo(href="/")
@@ -139,10 +138,15 @@ header.header
 							button.submenu-toggle(type="button" aria-label="Toggle submenu")
 								i.fa-light.fa-chevron-down
 						ul.sub-menu
-							li.menu-item.has-arrow
+							li.menu-item.menu-item-has-children.has-submenu
 								a(href="#")
 									span READY TO WEAR
 									i.fa-light.fa-chevron-right
+								ul.sub-menu.submenu-level2
+									li.menu-item
+										a(href="#") TOPS
+									li.menu-item
+										a(href="#") BOTTOMS
 							li.menu-item.has-arrow
 								a(href="#")
 									span BAG & ACCESSORIES
