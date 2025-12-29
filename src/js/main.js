@@ -10,8 +10,9 @@ import {
 import { header } from "./header";
 import { heroBanner } from "./heroBanner";
 import { swiperInit } from "./swiper";
-import { initProductMediaScroll, initSizeGuidePopup, initProductMediaSliderMobile } from "./shopDetail";
+import { initProductMediaScroll, initSizeGuidePopup, initProductMediaSliderMobile, initProductDescScroll } from "./shopDetail";
 import { initAboutCmp } from "./about";
+import { initHome4 } from "./home";
 import "../components/global/ShopToolbar/ShopToolbar"; // Shop filter dropdown
 import "../components/global/Popup/Popup"; // Welcome popups (Shipping + Newsletter)
 $(document).ready(function () {
@@ -26,7 +27,9 @@ $(document).ready(function () {
   initProductMediaScroll();
   initProductMediaSliderMobile();
   initSizeGuidePopup();
+  initProductDescScroll();
   initAboutCmp();
+  initHome4();
 });
 
 /*==================== Aos Init ====================*/

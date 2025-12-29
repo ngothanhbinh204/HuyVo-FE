@@ -7,7 +7,7 @@
 
 	// Main Wrapper: 2 columns layout
 	.popular-wrapper
-		@apply flex flex-col gap-10
+		@apply flex flex-col-reverse gap-10
 		@screen lg
 			@apply flex-row gap-20
 
@@ -60,9 +60,46 @@
 		@apply space-y-5 body-14
 
 		p
-			@apply leading-[22px] text-primary-black04 text-justify tracking-[0.5px]
+			@apply leading-[22px] text-primary-black05 text-justify tracking-[0.5px]
+	
+		// Mobile Readmore Styles
+		.section-desc-wrapper
+			@apply relative transition-all duration-500 ease-in-out
+			
+			// Mobile only styles (< lg)
+			@media (max-width: 1023.98px)
+				max-height: 66px // approx 3 lines (22px * 3)
+				overflow: hidden
+				
+				&::after
+					content: ''
+					@apply absolute bottom-0 left-0 w-full h-10 pointer-events-none transition-opacity duration-300
+					background: linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0))
+				
+				&.is-expanded
+					max-height: 500px // arbitray large height or use JS to set actual scrollHeight
+					
+					&::after
+						opacity: 0
+
+			// Desktop Reset
+			@screen lg
+				max-height: none !important
+
+		.section-desc-more
+			@apply mt-3 flex justify-center lg:hidden
+
+			.btn-readmore
+				@apply flex items-center gap-2 text-primary-1 font-medium body-14 uppercase tracking-widest cursor-pointer hover:text-primary-black05 transition-colors duration-300
+
+				.icon
+					@apply text-[12px] transition-transform duration-300
+				
+				&.active
+					.icon
+						@apply rotate-180
 
 .section-home-quote
 	@apply  py-20 pt-10 lg:py-30 lg:pt-20 xl:py-40 xl:pt-30
 	.global-quote-section
-		@apply text-primary-1 max-w-[70%] mx-auto mb-0
+		@apply text-primary-1 max-w-[80%] lg:max-w-[70%] mx-auto mb-0

@@ -18,7 +18,7 @@
             @apply px-6
     
     .header-wrapper
-        @apply flex items-center justify-between py-2 lg:min-h-60
+        @apply flex items-center justify-between py-2 lg:min-h-60 relative
     
     .header-left
         @apply hidden
@@ -56,15 +56,13 @@
                     transform: translateY(0)
     
     // ----------------------------------------
-    // CENTER LOGO
+    // CENTER LOGO - Absolute on Desktop
     // ----------------------------------------
-    .header-center
-        @apply absolute left-1/2 transform -translate-x-1/2
-        @screen lg
-            @apply static transform-none
-    
     .logo
-        @apply flex items-center transition-opacity		
+        @apply flex items-center transition-opacity
+        
+        @screen lg
+            @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
         
         &:hover
             @apply opacity-70
@@ -79,7 +77,7 @@
     
     .header-icon
         @apply transition-all duration-300 cursor-pointer text-base flex items-center justify-center
-        @apply sq-6
+        @apply w-auto h-6
         
         &:hover
             @apply opacity-60

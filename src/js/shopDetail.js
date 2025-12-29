@@ -265,3 +265,47 @@ export function initSizeGuidePopup() {
     });
   });
 }
+/**
+ * Product Description Scroll Effect
+ * Scroll Up -> Hide desc
+ * Scroll Down -> Show desc
+ */
+export function initProductDescScroll() {
+  const desc = document.querySelector(".product-desc");
+  if (!desc) return;
+
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  let isScrolling;
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      // Desktop only check
+      if (window.innerWidth < 1024) {
+        desc.classList.remove("collapsed");
+        return;
+      }
+
+      const st = window.pageYOffset || document.documentElement.scrollTop;
+
+      // Ignore top bounce or small movements
+      if (st < 0) return;
+      if (Math.abs(lastScrollTop - st) < 5) return;
+
+      window.cancelAnimationFrame(isScrolling);
+
+      isScrolling = window.requestAnimationFrame(() => {
+        if (st < lastScrollTop) {
+          // Scroll UP -> Hide
+          // Only hide if we are not at the very top (optional UX choice, sticking to request)
+            desc.classList.remove("collapsed");
+        } else {
+          // Scroll DOWN -> Show
+          desc.classList.add("collapsed");
+        }
+        lastScrollTop = st;
+      });
+    },
+    { passive: true }
+  );
+}

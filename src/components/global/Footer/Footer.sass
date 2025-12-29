@@ -46,28 +46,20 @@
     .footer-newsletter
         .newsletter-form
             .form-group
-                @apply flex flex-col gap-4 border border-primary-black02 px-4
-                @screen md
-                    @apply flex-row gap-0
+                @apply flex flex-row gap-0 border border-primary-black02 pl-4
+                >p
+                    @apply flex flex-row justify-between items-center w-full
 
         .newsletter-input
-            @apply w-full h-12 bg-transparent text-white body-14 px-4 outline-none border border-white/20
+            @apply w-full h-12 bg-transparent text-white body-14 px-4 outline-none h-12 border-none px-0
             @apply placeholder:text-utility-gray03
             
             &:focus
                 @apply border-white
-            
-            @screen md
-                @apply h-12 border-none px-0
 
         .newsletter-btn
-            @apply w-full h-12 bg-white text-primary-black05 body-14 uppercase font-medium transition-all duration-300
-            @apply hover:bg-utility-gray03
-            
-            @screen md
-                @apply w-auto bg-transparent text-white px-0 h-12 hover:bg-transparent hover:text-utility-gray03
-
-    // FOOTER BOTTOM
+            @apply h-12 text-primary-black05 body-14 font-extrabold transition-all duration-300
+            @apply w-auto bg-transparent text-white px-0 hover:bg-transparent hover:text-utility-gray03
     .footer-bottom
         @apply py-6 border-t border-white/10 mt-8
         @screen lg

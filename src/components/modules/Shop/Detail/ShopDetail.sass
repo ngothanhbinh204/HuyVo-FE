@@ -104,7 +104,19 @@
 
 	// Description
 	.product-desc
-		@apply text-primary-black04 py-5 lg:py-10 leading-relaxed body-14 mx-auto
+		@apply text-primary-black04 leading-relaxed body-14 mx-auto
+		
+		.desc-wrapper
+			@apply py-5 lg:py-10 transition-all duration-500 ease-in-out overflow-hidden
+			max-height: 500px 
+			opacity: 1
+
+		&.collapsed
+			.desc-wrapper
+				max-height: 0
+				opacity: 0
+				padding-top: 1rem
+				padding-bottom: 0
 
 	// Attributes
 	.product-attributes
@@ -306,3 +318,101 @@
 				
 				&:first-child
 					@apply bg-[#EFEFEF] text-black font-medium text-left px-4 uppercase tracking-wide
+
+	// ================= WOOCOMMERCE VARIATIONS COMPATIBILITY =================
+.product-info-inner
+	table.variations
+		@apply w-full border-collapse mb-10
+		
+		tbody
+			@apply flex flex-col gap-5 items-center w-full
+
+		tr
+			@apply flex flex-col items-center w-full space-y-7.5
+			display: flex
+			
+			td, th
+				@apply block p-0 w-full
+			
+			// VALUE COLUMN (Options)
+			td.value, td.attribute-options
+				@apply flex items-center justify-center relative
+				
+				select
+					display: none
+				
+				// Reset Variations Link
+				.reset_variations
+					@apply hidden
+
+				// Swatches Wrapper
+				ul.variable-items-wrapper
+					@apply flex flex-wrap items-center justify-center gap-2 m-0 p-0 list-none shadow-none bg-transparent
+
+					li.variable-item
+						@apply m-0 p-0 shadow-none rounded-none bg-transparent transition-all duration-300 relative cursor-pointer flex items-center justify-center border-0 overflow-visible
+						
+						.variable-item-contents
+							@apply static w-full h-full flex items-center justify-center overflow-visible
+						
+						// Force override plugin styles
+						&.selected, &:hover, &:focus
+							box-shadow: none !important
+							background: transparent !important
+							outline: none !important
+
+					// ---------------- COLOR OVERRIDES ----------------
+					&.color-variable-items-wrapper
+						li.variable-item
+							@apply w-6 h-6 border-transparent
+						
+							span.variable-item-span-color
+								@apply w-full h-full block scale-100 m-0 shadow-none border-0 rounded-none transform-none
+
+					.color-variable-item
+						.selected:not(.no-stock)
+							.variable-item-contents	
+								&::after
+									content: ''
+									@apply absolute -bottom-2 left-0 w-full h-[1px] bg-primary-black05 opacity-100 transition-opacity duration-300
+							
+					// ---------------- SIZE OVERRIDES ----------------
+					&.button-variable-items-wrapper
+						@apply gap-9
+						
+						li.variable-item
+							@apply h-8 min-w-[24px] w-auto bg-transparent
+							
+							span.variable-item-span-button
+								@apply text-primary-black04 body-16 bg-transparent transition-colors p-0 leading-8
+								height: auto
+								padding: 0
+						
+
+			// LABEL COLUMN
+			th.label
+				@apply text-center
+				label, .attribute-label
+					@apply text-primary-black04 tracking-widest body-14 font-medium uppercase m-0 inline-block
+
+		// Specific Layout for Size Group to include Guide Link
+		tr.size-group
+			td.value
+				@apply justify-between
+				width: 100% !important
+				
+				ul.variable-items-wrapper
+					@apply flex-1 justify-center
+				
+				.size-guide-link
+					@apply underline text-primary-black03 hover:text-primary-black05 body-14 tracking-wide underline-offset-1 whitespace-nowrap ml-10
+
+
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item.selected:not(.no-stock) .variable-item-contents:before,
+.woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).image-variable-item.selected:not(.no-stock) .variable-item-contents:before,
+.product-info-inner table.variations tr td.attribute-options ul.variable-items-wrapper.button-variable-items-wrapper li.variable-item.selected span:before,
+.product-info-inner table.variations tr td.attribute-options ul.variable-items-wrapper.button-variable-items-wrapper li.variable-item:hover span:before,
+.product-info-inner table.variations tr td.value ul.variable-items-wrapper.button-variable-items-wrapper li.variable-item.selected span:before,
+.product-info-inner table.variations tr td.value ul.variable-items-wrapper.button-variable-items-wrapper li.variable-item:hover span:before
+				content: ''
+				@apply absolute -bottom-2 left-0 w-full h-[1px] bg-primary-black04 opacity-100 transition-opacity duration-300 bg-none

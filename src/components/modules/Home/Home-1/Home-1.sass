@@ -3,7 +3,7 @@
 // ================================================
 
 .section-home-banner
-	@apply relative w-full overflow-hidden img-ratio ratio:pt-[900_1512]
+	@apply relative w-full overflow-hidden img-ratio -lg:pt-[31rem] lg:ratio:pt-[900_1512]
 	.banner-wrapper
 		@apply absolute inset-0 w-full h-full
 	.banner-media
@@ -27,6 +27,7 @@
 		.sound-toggle
 			@apply absolute z-10 flex items-center justify-center cursor-pointer transition-all duration-300
 			@apply sq-12 bg-white/10 backdrop-blur-sm rounded-full border border-white/20
+			display: none !important
 			bottom: 20px
 			left: 20px
 			
