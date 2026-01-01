@@ -1,0 +1,25 @@
+{
+    "key": "group_product_detail",
+    "title": "Product Detail Fields",
+    "fields": [],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "Custom fields for WooCommerce product detail page",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766834961
+}

@@ -1,0 +1,415 @@
+.page-content .woocommerce
+	@apply w-full mx-auto
+	@apply flex flex-col lg:flex-row gap-8 lg:gap-16
+	&-MyAccount-navigation
+		@apply lg:col-span-3
+
+		ul
+			@apply list-none m-0 p-0 flex flex-col gap-1
+
+			li
+				@apply m-0 p-0 relative
+
+				// Navigation Links
+				a
+					@apply block py-3 text-primary-black04 transition-all duration-300
+					@apply body-14 font-medium uppercase tracking-wide
+					@apply hover:text-primary-black05
+					text-decoration: none
+					@apply border-l-2 border-transparent pl-4
+
+				// Active State (Policy Sidebar Style)
+				&.is-active
+					a
+						@apply text-primary-black05 font-bold pl-5
+						@apply border-primary-black05
+
+	// Content Area
+	&-MyAccount-content
+		@apply lg:col-span-9 space-y-8
+
+		// Typography
+		p
+			@apply text-primary-black04 leading-relaxed mb-6 body-14
+		
+		h2, h3
+			@apply title-24 font-normal uppercase text-primary-black05 mb-6
+
+		strong
+			@apply font-bold text-primary-black05
+
+		a
+			@apply text-primary-black05 underline decoration-primary-black03 underline-offset-4
+			@apply transition-colors duration-200
+			&:hover
+				@apply text-primary-black04 decoration-primary-black05
+
+		// Notices / Alerts
+		.woocommerce-notices-wrapper
+			@apply mb-8 empty:hidden
+
+		.woocommerce-message, 
+		.woocommerce-info, 
+		.woocommerce-error
+			@apply p-5 mb-6 border-t-2 flex items-center shadow-none text-sm
+			@apply bg-utility-gray03/50 text-primary-black05
+
+		.woocommerce-message, .woocommerce-info
+			@apply border-primary-black05
+
+		.woocommerce-error
+			@apply border-red-600 text-red-600 bg-red-50
+
+		// Forms (Edit Account, Address) - Matched Policy Forms
+		form
+			.woocommerce-form-row
+				@apply mb-6 block relative
+
+				label
+					@apply block body-14 font-medium text-primary-black05 mb-2 uppercase tracking-wide
+
+				.input-text, select
+					@apply w-full px-5 py-4 bg-white border border-primary-black01
+					@apply body-14 text-primary-black05 placeholder:text-primary-black02
+					@apply transition-all duration-300
+					@apply focus:border-primary-black05 focus:outline-none rounded-none
+
+				// Password Strength
+				.woocommerce-password-strength
+					@apply mt-2 text-xs font-bold uppercase tracking-wide
+
+					&.strong
+						@apply text-green-600
+					&.short, &.bad
+						@apply text-red-600
+					&.good
+						@apply text-yellow-600
+
+			fieldset
+				@apply border border-primary-black01 p-8 mb-8
+
+				legend
+					@apply px-4 text-lg font-bold uppercase text-primary-black05
+
+		// Tables (Orders, Downloads) - Clean & Minimal
+		table.shop_table
+			@apply w-full text-left border-collapse mb-10
+			@apply border-t border-primary-black01
+
+			thead
+				th
+					@apply py-4 text-xs font-bold text-primary-black05 uppercase tracking-widest border-b border-primary-black01
+
+			tbody
+				tr
+					@apply border-b border-primary-black01/50 transition-colors
+					&:hover
+						@apply bg-utility-gray03/30
+
+				td
+					@apply py-5 body-14 text-primary-black04 align-middle
+
+				// Buttons inside tables (View, Download)
+				.woocommerce-button.button
+					@apply px-5 py-2 text-xs font-bold uppercase tracking-wider bg-transparent border border-primary-black03 text-primary-black05 rounded-none
+					@apply hover:bg-black hover:text-white hover:border-black transition-all
+
+		// Addresses
+		address
+			@apply not-italic text-primary-black04 border border-primary-black01 p-6 rounded-none mb-6
+
+			.title
+				@apply flex justify-between items-center mb-6 border-b border-primary-black01 pb-4
+				h3
+					@apply float-none mb-0
+				
+				.edit
+					@apply text-xs font-bold uppercase tracking-wider text-primary-black05 underline hover:text-primary-black03
+
+		// Buttons (Global & Specific) - Matched ShopDetail Actions
+		button.button, 
+		input.button,
+		a.button
+			@apply inline-flex items-center justify-center
+			@apply px-8 py-4 rounded-none
+			@apply body-14 font-extrabold uppercase tracking-[0.1em]
+			@apply transition-all duration-300 
+			@apply cursor-pointer no-underline focus:outline-none
+
+			// Primary Button (Save changes, etc)
+			&[name="save_account_details"], 
+			&[type="submit"]:not(.search-submit)
+				@apply bg-black text-white hover:bg-primary-black05/90 border border-transparent
+				@apply w-full md:w-auto
+
+			// Secondary / Default Button
+			&:not([type="submit"])
+				@apply bg-transparent text-primary-black05 border border-primary-black05 hover:bg-black hover:text-white
+
+		// Order Details (Review Order)
+		.order_details
+			@apply list-none m-0 p-0 bg-utility-gray03/30 border border-primary-black01 p-6 grid grid-cols-1 md:grid-cols-4 gap-6 mb-10
+
+			li
+				@apply text-sm text-primary-black04
+				strong
+					@apply block text-primary-black05 body-14 font-bold mt-2 uppercase
+
+		// Responsive Tables
+		@media (max-width: 640px)
+			table.shop_table_responsive
+				@apply block w-full border-t-0
+
+				thead
+					@apply hidden
+
+				tbody, tr, td
+					@apply block w-full
+
+				tr
+					@apply mb-6 border border-primary-black01 p-5
+
+				td
+					@apply px-0 py-3 flex justify-between items-center text-right border-0 border-b border-primary-black01/10 last:border-0
+					&:before
+						content: attr(data-title)
+						@apply font-bold text-primary-black05 text-left pr-4 uppercase text-xs tracking-wide
+
+
+.page-content .woocommerce
+	// Clear floats generated by Woo default
+	.clear
+		@apply clear-both hidden
+
+	// Navigation – Mobile horizontal scroll
+	@media (max-width: 1023px)
+		&-MyAccount-navigation
+			@apply col-span-full overflow-x-auto
+			@apply w-full 
+
+			ul
+				@apply flex-row gap-6 whitespace-nowrap
+				justify-content: safe center
+
+			.woocommerce-MyAccount-navigation-link
+				a
+					@apply border-l-0 border-b-2 pb-3 pl-0
+				&.is-active
+					a
+						@apply border-b-primary-black05 pl-0
+
+	
+
+	.woocommerce-form-row--wide,
+	.form-row-wide
+		@apply w-full clear-both
+
+	// Password input wrappers
+	.password-input
+		@apply relative block
+
+		.show-password-input
+			@apply absolute right-4 top-1/2 -translate-y-1/2
+			@apply w-5 h-5 bg-no-repeat bg-center opacity-50
+			@apply transition-opacity duration-200
+			cursor: pointer
+
+			&:hover
+				@apply opacity-80
+
+	// Disabled & readonly inputs
+	input[disabled],
+	input[readonly]
+		@apply bg-utility-gray03 cursor-not-allowed opacity-70
+
+	// Notices empty state safeguard
+	.woocommerce-notices-wrapper:empty
+		@apply hidden
+
+	// Submit row spacing
+	form.edit-account
+		p:last-of-type
+			@apply mt-10 flex flex-col md:flex-row gap-4
+
+	// Accessibility focus
+	a:focus-visible,
+	button:focus-visible,
+	input:focus-visible
+		@apply outline-none ring-2 ring-primary-black05 ring-offset-2
+
+
+.page-content .woocommerce
+	.woocommerce-MyAccount-content,
+	.woocommerce-MyAccount-navigation
+		@apply -lg:w-full #{!important}
+	// Address page intro text
+	.woocommerce-MyAccount-content > p
+		@apply body-14 text-primary-black04 mb-8 max-w-2xl
+
+	// Address columns wrapper
+	.u-columns.woocommerce-Addresses
+		@apply flex flex-col gap-8
+
+	// Single address card
+	.woocommerce-Address
+		@apply border border-primary-black01 p-8 bg-white space-y-6
+		width: 100% !important
+
+		// Header (title + edit link)
+		.woocommerce-Address-title
+			@apply flex flex-col md:flex-row justify-between items-start gap-4 border-b border-primary-black01 pb-4
+
+			h2
+				@apply title-20 uppercase text-primary-black05 m-0
+
+			.edit
+				@apply text-xs font-bold uppercase tracking-wider
+				@apply text-primary-black05 underline underline-offset-4
+				@apply transition-colors duration-200
+				&:hover
+					@apply text-primary-black03
+
+		// Address content
+		address
+			@apply not-italic body-14 text-primary-black04 leading-relaxed
+
+	// Empty address state
+	.woocommerce-Address address:empty
+		@apply italic text-primary-black02
+
+	// Mobile spacing tweak
+	@media (max-width: 640px)
+		.u-columns.woocommerce-Addresses
+			@apply gap-6
+
+
+.page-content .woocommerce
+	/* ===== Layout ===== */
+	@media (min-width: 768px)
+		@apply flex gap-10
+
+	/* ===== Notices ===== */
+	.woocommerce-notices-wrapper
+		@apply mb-6
+
+	.woocommerce-error,
+	.woocommerce-message,
+	.woocommerce-info
+		@apply px-4 py-3 mb-4 border text-sm
+
+	.woocommerce-error
+		@apply border-red-500 text-red-600 bg-red-50
+
+	.woocommerce-message
+		@apply border-green-500 text-green-600 bg-green-50
+
+	/* ===== Edit Address Form ===== */
+	form
+		@apply space-y-5
+
+		h2
+			@apply title-20 uppercase text-primary-black05 mb-4
+
+		.woocommerce-address-fields
+			@apply space-y-8
+
+			&__field-wrapper
+				@apply grid grid-cols-1 md:grid-cols-2 gap-x-6
+
+		.form-row
+			@apply flex flex-col gap-2
+
+			&.form-row-first,
+			&.form-row-last
+				@apply md:col-span-1
+
+			&.form-row-wide
+				@apply md:col-span-2
+
+			label
+				@apply body-14 font-medium text-primary-black05
+
+			.required
+				@apply text-red-500 ml-0.5
+
+			.optional
+				@apply text-xs text-primary-black03 ml-1
+
+			&.woocommerce-invalid
+				input,
+				select,
+				.select2-selection
+					@apply border-red-500
+
+			&.woocommerce-validated
+				input,
+				select
+					@apply border-green-500
+
+		.woocommerce-input-wrapper
+			input.input-text,
+			textarea,
+			select
+				@apply w-full px-4 py-3 bg-white
+				@apply border border-primary-black02
+				@apply body-14 text-primary-black05
+				@apply transition-all duration-200
+
+				&:focus
+					@apply outline-none border-primary-black05
+
+				&::placeholder
+					@apply text-primary-black03
+
+		/* ===== Select2 ===== */
+		.select2-container
+			@apply w-full
+
+		.select2-selection--single
+			@apply h-[48px] px-4
+			@apply border border-primary-black02 bg-white
+			@apply flex items-center
+
+		.select2-selection__rendered
+			@apply body-14 text-primary-black05 p-0
+
+		.select2-selection__arrow
+			@apply right-3
+
+		/* ===== Submit Button ===== */
+		button.button
+			@apply inline-flex items-center justify-center
+			@apply px-8 py-3
+			@apply bg-primary-black05 text-white
+			@apply body-14 font-medium uppercase
+			@apply transition-all duration-200
+
+			&:hover
+				@apply bg-primary-black04
+
+	/* ===== Mobile Fine-tune ===== */
+	@media (max-width: 640px)
+		.woocommerce-address-fields__field-wrapper
+			@apply gap-y-5
+
+		input,
+		select
+			@apply text-sm
+
+.woocommerce-EditAccountForm 
+	.woocommerce-form-row--first,
+	.form-row-first
+		@apply w-full md:w-1/2 md:pr-4 float-left
+		@apply my-0 #{!important}
+	.woocommerce-form-row--last,
+	.form-row-last
+		@apply w-full md:w-1/2 md:pl-4 float-right
+		@apply my-0 #{!important}
+
+.woocommerce-address-fields__field-wrapper
+	.woocommerce-form-row--first,
+	.form-row-first
+		@apply w-full #{!important}
+	.woocommerce-form-row--last,
+	.form-row-last
+		@apply w-full #{!important}

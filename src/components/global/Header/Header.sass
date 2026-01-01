@@ -54,22 +54,15 @@
                 .mega-menu
                     @apply opacity-100 visible
                     transform: translateY(0)
-    
-    // ----------------------------------------
-    // CENTER LOGO - Absolute on Desktop
-    // ----------------------------------------
-    .logo
+
+    .logo,
+    .custom-logo-link
         @apply flex items-center transition-opacity
         
         @screen lg
             @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
         
-        &:hover
-            @apply opacity-70
     
-    // ----------------------------------------
-    // RIGHT ICONS
-    // ----------------------------------------
     .header-right
         @apply flex items-center gap-3
         @screen lg

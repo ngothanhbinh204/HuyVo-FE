@@ -46,8 +46,8 @@ class WelcomePopups {
 	}
 
 	shouldShowPopups() {
-		// Check localStorage
-		const welcomeShown = localStorage.getItem(this.options.storageKey);
+		// Check sessionStorage
+		const welcomeShown = sessionStorage.getItem(this.options.storageKey);
 		return !welcomeShown;
 	}
 
@@ -57,6 +57,7 @@ class WelcomePopups {
 			btn.addEventListener('click', (e) => {
 				const popup = e.target.closest('.popup-overlay');
 				this.closePopup(popup);
+				this.markAsComplete();
 				// Don't auto-show next popup when manually closing
 			});
 		});
@@ -66,6 +67,7 @@ class WelcomePopups {
 			overlay.addEventListener('click', (e) => {
 				if (e.target === overlay) {
 					this.closePopup(overlay);
+					this.markAsComplete();
 				}
 			});
 		});
@@ -76,6 +78,7 @@ class WelcomePopups {
 				const activePopup = document.querySelector('.popup-overlay.is-active');
 				if (activePopup) {
 					this.closePopup(activePopup);
+					this.markAsComplete();
 				}
 			}
 		});
@@ -228,7 +231,7 @@ class WelcomePopups {
 	}
 
 	markAsComplete() {
-		localStorage.setItem(this.options.storageKey, JSON.stringify({
+		sessionStorage.setItem(this.options.storageKey, JSON.stringify({
 			shown: true,
 			timestamp: new Date().toISOString()
 		}));
@@ -238,7 +241,7 @@ class WelcomePopups {
 
 	// Public methods for external control
 	reset() {
-		localStorage.removeItem(this.options.storageKey);
+		sessionStorage.removeItem(this.options.storageKey);
 		localStorage.removeItem(this.options.shippingStorageKey);
 		localStorage.removeItem(this.options.newsletterStorageKey);
 		this.currentPopupIndex = 0;

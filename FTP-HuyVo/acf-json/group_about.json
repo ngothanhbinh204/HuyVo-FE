@@ -1,0 +1,406 @@
+{
+    "key": "group_about",
+    "title": "About Page Fields",
+    "fields": [
+        {
+            "key": "field_about_hero",
+            "label": "Hero Section",
+            "name": "about_hero",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Hero section content with quote and banner",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_quote_text",
+                    "label": "Quote Text",
+                    "name": "quote_text",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter the quote text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "Huy Vo's designs evoke an irresistible sense of elegance and allure...",
+                    "new_lines": "br"
+                },
+                {
+                    "key": "field_quote_author",
+                    "label": "Author Text",
+                    "name": "quote_author",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the author name (e.g., - HUY VO -)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "- HUY VO -",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_hero_banner",
+                    "label": "Hero Banner Image",
+                    "name": "hero_banner",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the hero banner image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_about_identity",
+            "label": "Identity Section",
+            "name": "about_identity",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Identity section with background image, logo and description",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_identity_bg_image",
+                    "label": "Background Image",
+                    "name": "identity_bg_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the background image for identity section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_identity_logo",
+                    "label": "Logo\/Icon Image",
+                    "name": "identity_logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the logo or icon image (SVG recommended)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_identity_description",
+                    "label": "Description",
+                    "name": "identity_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Enter the description text (supports multiple paragraphs)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_about_timeline",
+            "label": "Timeline Items",
+            "name": "about_timeline",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add timeline items. Each item will be displayed as a slide in the timeline slider.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_timeline_year",
+            "button_label": "Add Timeline Item",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_timeline_year",
+                    "label": "Year",
+                    "name": "timeline_year",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the year (e.g., 2012)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": 2012,
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_about_timeline"
+                },
+                {
+                    "key": "field_timeline_title",
+                    "label": "Title",
+                    "name": "timeline_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the title for this timeline item",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "80",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "JUDGE OF VIETNAM'S NEXT TOP MODEL",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_about_timeline"
+                },
+                {
+                    "key": "field_timeline_description",
+                    "label": "Description",
+                    "name": "timeline_description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Enter the description text for this timeline item",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 3,
+                    "placeholder": "",
+                    "new_lines": "br",
+                    "parent_repeater": "field_about_timeline"
+                },
+                {
+                    "key": "field_timeline_polaroid_image",
+                    "label": "Polaroid Image",
+                    "name": "timeline_polaroid_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the polaroid style image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_about_timeline"
+                },
+                {
+                    "key": "field_timeline_main_image",
+                    "label": "Main Image",
+                    "name": "timeline_main_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the main image for this timeline item",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_about_timeline"
+                }
+            ]
+        },
+        {
+            "key": "field_about_explore",
+            "label": "Explore Section",
+            "name": "about_explore",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Explore section with title and explore items",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_explore_title",
+                    "label": "Title",
+                    "name": "explore_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the explore section title",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "EXPLORE THE WORLD OF HUY VO",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_explore_items",
+                    "label": "Explore Items",
+                    "name": "explore_items",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "Add explore items with image and button",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "collection"
+                    ],
+                    "post_status": "",
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "post_type",
+                        "taxonomy"
+                    ],
+                    "return_format": "id",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "elements": "",
+                    "bidirectional": 0,
+                    "bidirectional_target": []
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template_about.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for About page template",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766907311
+}

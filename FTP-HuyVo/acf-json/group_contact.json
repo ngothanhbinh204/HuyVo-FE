@@ -1,0 +1,338 @@
+{
+    "key": "group_contact",
+    "title": "Contact Page Fields",
+    "fields": [
+        {
+            "key": "field_contact_hero_banner",
+            "label": "Hero Banner",
+            "name": "contact_hero_banner",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload the hero banner image for the contact page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,svg,gif,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_contact_showrooms",
+            "label": "Showrooms",
+            "name": "contact_showrooms",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add showroom locations. Each showroom will be displayed in a section with image and contact information.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_showroom_title",
+            "button_label": "Add Showroom",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_showroom_title",
+                    "label": "Showroom Title",
+                    "name": "showroom_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the showroom title (e.g., SHOWROOM HỒ CHÍ MINH, SHOWROOM HÀ NỘI)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "SHOWROOM HỒ CHÍ MINH",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_contact_showrooms"
+                },
+                {
+                    "key": "field_showroom_image",
+                    "label": "Showroom Image",
+                    "name": "showroom_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the showroom image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_contact_showrooms"
+                },
+                {
+                    "key": "field_showroom_phone",
+                    "label": "Phone Number",
+                    "name": "showroom_phone",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the phone number",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "093 177 45 99",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_contact_showrooms"
+                },
+                {
+                    "key": "field_showroom_address",
+                    "label": "Address",
+                    "name": "showroom_address",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the full address",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "149 Nguyen Cuu Van, Ward 17, Binh Thanh, Vietnam",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_contact_showrooms"
+                },
+                {
+                    "key": "field_showroom_map_link",
+                    "label": "Google Maps Link",
+                    "name": "showroom_map_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "Enter the Google Maps URL for directions",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "https:\/\/maps.google.com\/?q=...",
+                    "parent_repeater": "field_contact_showrooms"
+                }
+            ]
+        },
+        {
+            "key": "field_head_office",
+            "label": "Head Office",
+            "name": "head_office",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Head office information displayed in the center info section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_head_office_hours",
+                    "label": "Opening Hours",
+                    "name": "head_office_hours",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the opening hours",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Mon to Sat: 10AM - 8PM",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_head_office_address",
+                    "label": "Address",
+                    "name": "head_office_address",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the head office address",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "71 Van Phuc, Lieu Giai, Ba Dinh, Ha Noi, Vietnam",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_head_office_phone",
+                    "label": "Phone Number",
+                    "name": "head_office_phone",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the phone number",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "093 177 45 99",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_head_office_email",
+                    "label": "Email",
+                    "name": "head_office_email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "Enter the email address",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "info@houseofpremiere.com",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_social_links",
+            "label": "Socials",
+            "name": "socials",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Social media links displayed in the center info section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6950c97106c6d",
+                    "label": "Social",
+                    "name": "social",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "allow_in_bindings": 0,
+                    "parent_repeater": "field_social_links"
+                }
+            ]
+        },
+        {
+            "key": "field_store_appointment_link",
+            "label": "Store Appointment Link",
+            "name": "store_appointment_link",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "Enter the link for store appointment booking",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template_contact.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for Contact page template with showrooms and contact information",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766902138
+}

@@ -1,0 +1,694 @@
+{
+    "key": "group_home",
+    "title": "Home Page Fields",
+    "fields": [
+        {
+            "key": "field_tab_banner",
+            "label": "Banner Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_home_banner",
+            "label": "Banner Section",
+            "name": "home_banner",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Hero banner section with video and content",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_banner_poster",
+                    "label": "Banner Poster Image",
+                    "name": "banner_poster",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the poster image for the video banner",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_banner_video",
+                    "label": "Banner Video",
+                    "name": "banner_video",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "Upload the video file for the banner (MP4 recommended)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "mp4,webm,ogg"
+                },
+                {
+                    "key": "field_banner_text_line_1",
+                    "label": "Banner Text Line 1",
+                    "name": "banner_text_line_1",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the first line of banner text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "A touch of heritage to",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_banner_text_line_2",
+                    "label": "Banner Text Line 2",
+                    "name": "banner_text_line_2",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the second line of banner text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "modern lifestyle.",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_banner_subtitle",
+                    "label": "Banner Subtitle",
+                    "name": "banner_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the banner subtitle",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "THE HEALER",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_banner_logo",
+                    "label": "Banner Logo",
+                    "name": "banner_logo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the logo image for the banner",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "thumbnail"
+                }
+            ]
+        },
+        {
+            "key": "field_tab_explore",
+            "label": "Explore Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_home_explore",
+            "label": "Explore Section",
+            "name": "home_explore",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Explore section with subtitle, heading and slider images",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_explore_subtitle",
+                    "label": "Subtitle",
+                    "name": "explore_subtitle",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the explore section subtitle",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "EXPLORE",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_explore_heading",
+                    "label": "Heading",
+                    "name": "explore_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the explore section heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "MODERN HERITAGE",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_explore_images",
+                    "label": "Explore Images",
+                    "name": "explore_images",
+                    "aria-label": "",
+                    "type": "gallery",
+                    "instructions": "Upload images for the explore slider",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min": 0,
+                    "max": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "insert": "append",
+                    "preview_size": "medium"
+                }
+            ]
+        },
+        {
+            "key": "field_tab_new_arrivals",
+            "label": "New Arrivals Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_home_new_arrivals",
+            "label": "New Arrivals Section",
+            "name": "home_new_arrivals",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "New arrivals section with products",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_new_arrivals_heading",
+                    "label": "Heading",
+                    "name": "new_arrivals_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the section heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "NEW ARRIVALS",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_new_arrivals_category",
+                    "label": "Product Category",
+                    "name": "new_arrivals_category",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "Select the WooCommerce product category to display products from",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "product_cat",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "field_type": "select",
+                    "allow_null": 1,
+                    "allow_in_bindings": 1,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": []
+                }
+            ]
+        },
+        {
+            "key": "field_tab_popular",
+            "label": "Popular Products Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_home_popular",
+            "label": "Popular Products Section",
+            "name": "home_popular",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Popular products section with images and content",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_popular_images",
+                    "label": "Popular Images",
+                    "name": "popular_images",
+                    "aria-label": "",
+                    "type": "gallery",
+                    "instructions": "Upload images for the popular products grid (will be numbered 01, 02, 03, 04...)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min": 0,
+                    "max": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "insert": "append",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_popular_heading",
+                    "label": "Heading",
+                    "name": "popular_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the section heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "POPULAR PRODUCTS",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_popular_description",
+                    "label": "Description",
+                    "name": "popular_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Enter the description text",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_tab_banner_cta",
+            "label": "Banner CTA Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_home_banner_cta",
+            "label": "Banner CTA Section",
+            "name": "home_banner_cta",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Call-to-action banner section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_cta_banner_image",
+                    "label": "Banner Image",
+                    "name": "cta_banner_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the banner image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_home_banner_cta"
+                },
+                {
+                    "key": "field_cta_heading",
+                    "label": "Heading",
+                    "name": "cta_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the banner heading",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "DISCOVER YOUR STYLE",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_home_banner_cta"
+                },
+                {
+                    "key": "field_cta_button",
+                    "label": "Button",
+                    "name": "cta_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Enter the button link (e.g., Explore Collection)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_home_banner_cta"
+                }
+            ]
+        },
+        {
+            "key": "field_tab_categories",
+            "label": "Categories Section",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_home_categories",
+            "label": "Categories Section",
+            "name": "home_categories",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add category cards for the categories section",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Category",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_category_card_image",
+                    "label": "Image",
+                    "name": "category_card_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the category card image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_home_categories"
+                },
+                {
+                    "key": "field_category_card_title",
+                    "label": "Title",
+                    "name": "category_card_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the category title",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "TIMELESS PERFECTION",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_home_categories"
+                },
+                {
+                    "key": "field_category_card_button",
+                    "label": "Button",
+                    "name": "category_card_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Enter the explore button link",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_home_categories"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template_home.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for Home page template",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766910978
+}

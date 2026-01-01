@@ -1,0 +1,267 @@
+{
+    "key": "group_collection",
+    "title": "Collection Fields",
+    "fields": [
+        {
+            "key": "field_6950dc1047909",
+            "label": "Thumb 2",
+            "name": "thumb_2",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "allow_in_bindings": 0,
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_collection_hero_image",
+            "label": "Hero Image",
+            "name": "collection_hero_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload the hero banner image for the collection detail page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,svg,gif,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_sticky_images",
+            "label": "Sticky Images",
+            "name": "sticky_images",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add images for the sticky section. Each image will be displayed with a sequential number.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Image",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_sticky_image",
+                    "label": "Image",
+                    "name": "sticky_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Upload the image for sticky section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_sticky_images"
+                }
+            ]
+        },
+        {
+            "key": "field_sticky_content",
+            "label": "Sticky Content",
+            "name": "sticky_content",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Content displayed in the sticky section on the right side",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_sticky_heading",
+                    "label": "Heading",
+                    "name": "sticky_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the heading text (e.g., POPULAR PRODUCTS)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "POPULAR PRODUCTS",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_sticky_description",
+                    "label": "Description",
+                    "name": "sticky_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "Enter the description content",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
+                },
+                {
+                    "key": "field_sticky_button",
+                    "label": "Button",
+                    "name": "sticky_button",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Enter the button link (e.g., View More)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
+            "key": "field_backstage_moments",
+            "label": "Backstage Moments",
+            "name": "backstage_moments",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Backstage moments section with heading and gallery images",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_backstage_heading",
+                    "label": "Heading",
+                    "name": "backstage_heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the heading for backstage moments section",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Backstage Moments",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                },
+                {
+                    "key": "field_backstage_gallery",
+                    "label": "Gallery Images",
+                    "name": "backstage_gallery",
+                    "aria-label": "",
+                    "type": "gallery",
+                    "instructions": "Upload images for the backstage moments gallery",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min": 0,
+                    "max": 0,
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                    "insert": "append",
+                    "preview_size": "medium"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "collection"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for Collection post type",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766906908
+}

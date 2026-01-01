@@ -1,0 +1,12 @@
+@import url("./cart.css");
+@import url("./checkout.css");
+@import url("./account.css");
+@import url("./checkout.css");
+
+:root {
+  --primary-color: #0e1010;
+  --secondary-color: #fff;
+  --white-color: #fff;
+  --black-color: #000;
+  --black-tone-04: #504b4c;
+}

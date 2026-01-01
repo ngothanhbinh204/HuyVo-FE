@@ -1,0 +1,134 @@
+{
+    "key": "group_product_detail",
+    "title": "Product Detail Fields",
+    "fields": [
+        {
+            "key": "field_product_care_guide",
+            "label": "Care Guide",
+            "name": "product_care_guide",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter the care instructions for this product. This will be displayed in the Care Guide tab on the product detail page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Do not wash, do not bleach. Do not tumble dry. Iron at low temperature. Professional dry clean only.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_product_shipping_returns",
+            "label": "Shipping & Returns",
+            "name": "product_shipping_returns",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter shipping and returns information for this product. This will be displayed in the Shipping & Returns tab on the product detail page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Free shipping on all orders over $500. Returns accepted within 14 days of delivery.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_product_size_guide_enable",
+            "label": "Enable Size Guide",
+            "name": "product_size_guide_enable",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable custom size guide for this product. If disabled, default size guide will be used.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_product_size_guide_content",
+            "label": "Size Guide Content",
+            "name": "product_size_guide_content",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Enter custom size guide content for this product. Leave empty to use default size guide.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_product_size_guide_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_product_additional_info",
+            "label": "Additional Information",
+            "name": "product_additional_info",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Enter any additional information about this product that should be displayed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 4,
+            "placeholder": "",
+            "new_lines": "br"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for WooCommerce product detail page",
+    "show_in_rest": 0,
+    "modified": 1700000000
+}
+

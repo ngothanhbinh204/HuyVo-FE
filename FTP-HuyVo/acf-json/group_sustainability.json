@@ -1,0 +1,164 @@
+{
+    "key": "group_sustainability",
+    "title": "Sustainability Page Fields",
+    "fields": [
+        {
+            "key": "field_sustainability_pdf_groups",
+            "label": "PDF Groups",
+            "name": "sustainability_pdf_groups",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add PDF groups for the Sustainability page. Each group can contain multiple PDF items.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_pdf_group_title",
+            "button_label": "Add PDF Group",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_pdf_group_title",
+                    "label": "Group Title",
+                    "name": "group_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the title for this PDF group (e.g., ESG DOCUMENTS, EXECUTIVE SUMMARY, etc.)",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "ESG DOCUMENTS",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_sustainability_pdf_groups"
+                },
+                {
+                    "key": "field_pdf_items",
+                    "label": "PDF Items",
+                    "name": "pdf_items",
+                    "aria-label": "",
+                    "type": "repeater",
+                    "instructions": "Add PDF items to this group",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "layout": "table",
+                    "pagination": 0,
+                    "min": 0,
+                    "max": 0,
+                    "collapsed": "",
+                    "button_label": "Add PDF Item",
+                    "rows_per_page": 20,
+                    "sub_fields": [
+                        {
+                            "key": "field_pdf_icon",
+                            "label": "PDF Icon",
+                            "name": "pdf_icon",
+                            "aria-label": "",
+                            "type": "image",
+                            "instructions": "Upload or select the PDF icon image",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "jpg,jpeg,png,svg,gif,webp",
+                            "preview_size": "thumbnail",
+                            "parent_repeater": "field_pdf_items"
+                        },
+                        {
+                            "key": "field_pdf_title",
+                            "label": "PDF Title",
+                            "name": "pdf_title",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "Enter the title\/name of the PDF document",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "40",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "placeholder": "Huy Vo Atelier - Huy Vo Atelier Presentation 2024",
+                            "prepend": "",
+                            "append": "",
+                            "parent_repeater": "field_pdf_items"
+                        },
+                        {
+                            "key": "field_pdf_file",
+                            "label": "PDF File",
+                            "name": "pdf_file",
+                            "aria-label": "",
+                            "type": "file",
+                            "instructions": "Upload the PDF file for download",
+                            "required": 1,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "30",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": "pdf",
+                            "parent_repeater": "field_pdf_items"
+                        }
+                    ],
+                    "parent_repeater": "field_sustainability_pdf_groups"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template_sustainability.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for Sustainability page template with PDF groups and items",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766852939
+}

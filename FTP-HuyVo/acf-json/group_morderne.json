@@ -1,0 +1,218 @@
+{
+    "key": "group_morderne",
+    "title": "Morderne Page Fields",
+    "fields": [
+        {
+            "key": "field_morderne_banner",
+            "label": "Banner Image",
+            "name": "morderne_banner",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload the banner image for the Morderne page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,svg,gif,webp",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_morderne_description",
+            "label": "Description",
+            "name": "morderne_description",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Enter the description text displayed below the banner",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "MADAME HUY VO'S AO DAI IS A BLEND OF THE PRECIOUS HERITAGE OF THE TRADITIONAL DRESS WITH CONTEMPORARY BEAUTY, REPRESENTING A SEAMLESS CONNECTION BETWEEN THE PAST, PRESENT, AND FUTURE.",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_morderne_category_blocks",
+            "label": "Category Blocks",
+            "name": "morderne_category_blocks",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add category blocks for displaying product categories. Each block will show a slider of products from the selected category.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "field_category_title",
+            "button_label": "Add Category Block",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_category_title",
+                    "label": "Category Title",
+                    "name": "category_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Enter the title for this category block (e.g., AO DAI MADAME, AO DAI MONSIEUR)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "allow_in_bindings": 1,
+                    "placeholder": "AO DAI MADAME",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_morderne_category_blocks"
+                },
+                {
+                    "key": "field_view_all_link",
+                    "label": "View All Link",
+                    "name": "view_all_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "Enter the URL for the 'View All' link",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "parent_repeater": "field_morderne_category_blocks"
+                },
+                {
+                    "key": "field_product_category",
+                    "label": "Product Category",
+                    "name": "product_category",
+                    "aria-label": "",
+                    "type": "taxonomy",
+                    "instructions": "Select the WooCommerce product category to display products from",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "product_cat",
+                    "add_term": 0,
+                    "save_terms": 0,
+                    "load_terms": 0,
+                    "return_format": "object",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "allow_in_bindings": 1,
+                    "bidirectional": 0,
+                    "multiple": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_morderne_category_blocks"
+                },
+                {
+                    "key": "field_products_limit",
+                    "label": "Products Limit",
+                    "name": "products_limit",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "Maximum number of products to display in the slider (leave empty for all products)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": 1,
+                    "max": "",
+                    "placeholder": "",
+                    "step": 1,
+                    "prepend": "",
+                    "append": "products",
+                    "parent_repeater": "field_morderne_category_blocks"
+                },
+                {
+                    "key": "field_products_orderby",
+                    "label": "Order By",
+                    "name": "products_orderby",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Select how to order the products",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "date": "Date",
+                        "title": "Title",
+                        "menu_order": "Menu Order",
+                        "price": "Price",
+                        "popularity": "Popularity",
+                        "rating": "Rating",
+                        "rand": "Random"
+                    },
+                    "default_value": "date",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_morderne_category_blocks"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/template_morderne.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for Morderne page template with category blocks and product selection",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1766854143
+}
