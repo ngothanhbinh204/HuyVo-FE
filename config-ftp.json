@@ -1,8 +1,8 @@
 {
   "connection": {
-    "host": "185.250.38.17",
-    "user": "previewcanhcam_thienloc",
-    "password": "w64AbicO3crE4N4j",
+    "host": "160.25.166.25",
+    "user": "huyvo_quataa",
+    "password": "xMEL[lsQ+dPSdG&|",
     "parallel": 10,
     "secure": false,
     "secureOptions": null,
@@ -11,7 +11,7 @@
     "keepalive": 10000
   },
   "deployment": {
-    "basePath": "/public_html/wp-content/themes/canhcamtheme",
+    "basePath": "/public_html/wp-content/themes/huyvo",
     "localFolder": "dist",
     "mappings": {
       "styles": {

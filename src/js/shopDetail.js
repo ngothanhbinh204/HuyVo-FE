@@ -152,10 +152,11 @@ export function initProductMediaScroll() {
 /**
  * Mobile Media Swiper Logic
  */
-export function initProductMediaSliderMobile() {
-  let mainSwiper = null;
-  let thumbSwiper = null;
+// Module-level variables to track state across function calls
+let mainSwiper = null;
+let thumbSwiper = null;
 
+export function initProductMediaSliderMobile() {
   const initSwiper = () => {
     if (window.innerWidth >= 1024) {
       if (mainSwiper && typeof mainSwiper.destroy === "function") {
@@ -206,20 +207,26 @@ export function initProductMediaSliderMobile() {
   // Init on load
   initSwiper();
 
-  // Check on resize
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(() => {
-      initSwiper();
+  // Check on resize - Prevent duplicate listeners
+  if (!window.productMediaMobileResizeAttached) {
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        initSwiper();
 
-      // Also re-trigger desktop scroll init check if switched to desktop
-      if (window.innerWidth >= 1024) {
-        initProductMediaScroll();
-      }
-    }, 200);
-  });
+        // Also re-trigger desktop scroll init check if switched to desktop
+        if (window.innerWidth >= 1024) {
+          initProductMediaScroll();
+        }
+      }, 200);
+    });
+    window.productMediaMobileResizeAttached = true;
+  }
 }
+
+// Window assignment for global reuse
+window.initProductMediaSliderMobile = initProductMediaSliderMobile;
 
 /**
  * Size Guide Popup Logic

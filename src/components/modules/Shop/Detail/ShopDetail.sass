@@ -90,10 +90,12 @@
 	// 			@apply text-primary-black05
 
 	// Title & Price
+	.entry-summary > .price
+		@apply py-1.5
 	.wrapper-inner
 		@apply max-w-573 mx-auto
 	.product-title
-		@apply font-normal uppercase text-primary-black05 w-full title-24 text-center
+		@apply font-normal uppercase text-primary-black05 w-full title-24 text-center py-2.5
 
 	.product-price-wrapper
 		@apply flex items-center justify-center gap-6 w-full body-16
@@ -407,7 +409,13 @@
 				.size-guide-link
 					@apply underline text-primary-black03 hover:text-primary-black05 body-14 tracking-wide underline-offset-1 whitespace-nowrap ml-10
 
-
+.product-item
+	.product-price-wrapper
+		@apply flex flex-row gap-6 w-full body-16
+		.current-price
+			@apply text-primary-black05 font-medium
+		.old-price
+			@apply text-primary-black02 line-through
 .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).color-variable-item.selected:not(.no-stock) .variable-item-contents:before,
 .woo-variation-swatches .variable-items-wrapper .variable-item:not(.radio-variable-item).image-variable-item.selected:not(.no-stock) .variable-item-contents:before,
 .product-info-inner table.variations tr td.attribute-options ul.variable-items-wrapper.button-variable-items-wrapper li.variable-item.selected span:before,

@@ -1,0 +1,270 @@
+.section-checkout
+	@apply bg-white py-16
+
+	.woocommerce
+		@apply max-w-[1440px] mx-auto px-6
+
+	/* ================= GRID ================= */
+	.checkout-woo-inner-form
+		@apply grid grid-cols-1 lg:grid-cols-12 gap-10
+
+	.checkout-woo-inner-form-left
+		@apply lg:col-span-6
+		.form-row-first,
+		.form-row-last
+			@apply w-full #{!important}
+			@apply col-span-12 lg:col-span-6 #{!important}
+		h3
+			@apply title-24 font-medium tracking-[0.15em] uppercase
+			@apply text-primary-black05 pt-5 pb-10
+		#billing_ward_field,
+		#billing_district_field,
+		#billing_state_field
+			@apply col-span-12 lg:col-span-4 #{!important}
+		
+		#ship-to-different-address
+			label
+				@apply flex flex-row-reverse justify-between items-center gap-4
+				.input-checkbox
+					@apply w-6 h-6
+					@apply accent-primary-black05
+				input
+					&:checked
+						@apply bg-primary-black05 #{!important}
+
+	.checkout-woo-inner-form-right
+		@apply lg:col-span-6
+		
+		.section-wrap-box-white
+			@apply sticky top-24 #{!important}
+			@apply p-0 #{!important}
+			
+
+	/* ================= TITLES ================= */
+	.title-line
+		@apply title-24 font-medium tracking-[0.15em] uppercase
+		@apply text-primary-black05 pt-5 pb-10
+
+	/* ================= FORM ================= */
+	.woocommerce-billing-fields__field-wrapper
+		@apply grid grid-cols-1 md:grid-cols-12 gap-x-5
+
+	.form-row
+		@apply flex flex-col gap-2
+		@apply p-0 #{!important}
+
+		&.form-row-wide
+			@apply md:col-span-6 lg:col-span-12
+
+		.woocommerce-billing-fields__field-wrapper
+			label
+				// @apply text-xs uppercase tracking-wide text-primary-black03
+				@apply hidden #{!important}
+
+		.required
+			@apply text-red-500
+
+	input,
+	select,
+	textarea,
+	.select2-container .select2-dropdown,
+	.select2-container .select2-selection,
+	.select2-container .select2-selection--multiple
+		@apply w-full
+		@apply p-5 border border-primary-black01 body-14 text-primary-black05 bg-white transition-all duration-200 rounded-none #{!important}
+
+		&:focus
+			@apply outline-none border-primary-black05
+
+		&::placeholder
+			@apply text-primary-black02
+	.input-radio input[type="checkbox"],
+	.input-radio input[type="radio"]
+			@apply w-6 h-6 accent-primary-black05  #{!important}
+
+	textarea
+		@apply h-auto min-h-[120px] py-4 resize-none
+
+	select
+		@apply appearance-none bg-no-repeat bg-right pr-10
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E")
+		background-position: right 16px center
+
+	/* ================= SHIPPING METHOD ================= */
+	.shipping_method,
+	.wc_payment_methods
+		@apply space-y-4
+
+	.wc_payment_method,
+	.shipping_method li
+		@apply flex items-center justify-between
+		@apply border border-primary-black02 px-5 py-4
+		@apply cursor-pointer transition-all
+
+		&:has(input:checked)
+			@apply border-primary-black05
+
+		label
+			@apply flex items-center gap-3 text-sm text-primary-black05
+
+		input
+			@apply accent-primary-black05 w-6 h-6 #{!important}
+
+		.amount
+			@apply text-sm font-medium text-primary-black05
+
+	/* ================= PAYMENT ================= */
+	.payment_box
+		@apply border border-primary-black02 p-6 mt-4 text-center text-sm text-primary-black03
+
+	/* ================= ORDER SUMMARY ================= */
+	
+
+	.shop_table
+		@apply w-full border-collapse
+
+		tbody tr
+			@apply flex gap-4 py-6 border-b border-primary-black01
+
+		.product-detail
+			@apply flex gap-4 flex-1
+
+			img
+				@apply w-16 h-24 object-cover
+
+			.product-info
+				@apply space-y-1
+
+			.product-name
+				@apply text-sm font-medium text-primary-black05 uppercase
+
+			.product-variation,
+			.product-quantity
+				@apply text-xs text-primary-black03
+
+		.product-total
+			@apply text-sm font-medium text-primary-black05 whitespace-nowrap
+
+		tfoot
+			@apply py-5 lg:py-10
+		tfoot tr
+			@apply flex justify-between py-4 text-sm
+		.cart-subtotal
+			td, th
+				@apply body-16 font-normal
+		.order-total
+			@apply pt-5 border-t border-primary-black02
+
+			td, th
+				@apply title-20 font-normal
+			> *
+				@apply font-normal
+
+	/* ================= BUTTON ================= */
+	button#place_order,
+	.button.alt
+		@apply w-full mt-8 py-4
+		@apply bg-black text-white
+		@apply text-sm uppercase tracking-[0.15em]
+		@apply transition-all
+
+		&:hover
+			@apply bg-primary-black05
+
+	/* ================= MOBILE ================= */
+	@media (max-width: 1024px)
+		.checkout-woo-inner-form
+			@apply gap-12
+
+		.section-wrap-box-white
+			@apply static p-6
+
+.section-checkout
+	.wc_payment_method
+		@apply flex flex-wrap justify-start items-center gap-x-5 gap-y-6
+		@apply border border-primary-black02 p-4 mb-4
+
+		input[type="radio"]
+			@apply sq-5 shrink-0 accent-black
+
+		label
+			@apply body-16 font-medium cursor-pointer text-primary-black04 flex-grow flex justify-between items-center
+			@apply flex flex-wrap #{!important}
+
+		.payment_box
+			@apply w-full mt-3 p-4 bg-gray-50 border border-gray-200 rounded-none body-14
+			&:before,
+			&:after
+				@apply hidden #{!important}
+				content: none #{!important}
+.section-checkout
+	.woocommerce-checkout
+		.woocommerce-checkout-payment
+			@apply bg-transparent #{!important}
+			ul.payment_methods
+				@apply p-0 #{!important}
+				&::before,
+				&::after
+						@apply hidden #{!important}
+
+.woocommerce-checkout-review-order
+	table
+		@apply border-none #{!important}
+		thead
+			@apply hidden #{!important}	
+		tbody
+			@apply max-h-[400px] overflow-y-scroll
+			.cart-item-wrapper
+				@apply p-0 border-none gap-5 #{!important} 
+				@apply justify-start w-full
+				.thumbnail
+					@apply max-w-[67px] max-h-[120px] #{!important}
+					img
+						@apply w-full h-full object-cover #{!important}
+				.product-info
+					@apply pt-0 max-w-full flex-auto w-full
+					.product-name-wrapper
+						@apply flex gap-2 justify-between items-center
+				.variation
+					@apply space-y-2.5
+		.product-meta	
+			@apply pt-0 border-none #{!important}
+		.product-name
+			@apply text-sm font-medium text-primary-black05 uppercase #{!important}
+		.product-quantity
+			@apply body-14 text-primary-black01 mt-2.5 font-normal
+		tfoot
+			@apply block
+			> *
+				@apply font-normal #{!important}
+				@apply body-16  text-primary-black04
+			
+			th,
+			tr,
+			td
+				@apply border-none #{!important}
+			tr
+				.order-total
+					@apply title-24 font-normal #{!important}
+			.cart-subtotal
+				@apply py-0
+
+
+.mini-cart-wrapper .woocommerce-mini-cart-item a.remove
+	@apply body-16 w-fit underline text-utility-gray03 ml-auto font-normal #{!important}
+
+.mini-cart-wrapper
+	@apply overflow-hidden px-10 py-2.5
+	@apply max-h-[60vh] overflow-y-scroll #{!important}
+	.mini-cart-header
+		@apply font-normal border-none
+		.mini-cart-title
+			@apply title-20 font-normal #{!important}
+	.widget_shopping_cart_content
+		@apply p-0 #{!important}
+	.product-info
+		@apply pl-5
+.woocommerce-mini-cart__buttons
+	.buttons
+		a
+			@apply w-full flex-auto font-normal body-18 text-white p-5 #{!important}
