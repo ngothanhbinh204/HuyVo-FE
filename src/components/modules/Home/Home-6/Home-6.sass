@@ -10,7 +10,7 @@
 	@apply relative overflow-hidden
 	
 	.card-image
-		@apply img-ratio ratio:pt-[756_756] w-full
+		@apply img-ratio -md:h-[80vh] ratio:pt-[756_756] w-full
 		
 		img
 			@apply w-full h-full object-cover transition-transform duration-500
@@ -23,12 +23,12 @@
 			@apply p-12
 
 	.card-title
-		@apply title-30 font-light uppercase tracking-[0.5px] text-white mb-4 lg:mb-7
+		@apply text-[34px] font-light uppercase tracking-[0.5px] text-white mb-4 lg:mb-7
 		@apply font-normal #{!important}
 		@screen md
-			@apply title-40 mb-5
-		@screen lg
-			@apply title-42 mb-6
+			@apply title-42 mb-5
+
+			@apply mb-6
 
 	&:hover
 		.card-image img

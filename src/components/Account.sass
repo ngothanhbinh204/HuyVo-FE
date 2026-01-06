@@ -13,7 +13,7 @@
 				// Navigation Links
 				a
 					@apply block py-3 text-primary-black04 transition-all duration-300
-					@apply body-14 font-medium uppercase tracking-wide
+					@apply body-16 font-medium uppercase tracking-wide
 					@apply hover:text-primary-black05
 					text-decoration: none
 					@apply border-l-2 border-transparent pl-4
@@ -30,7 +30,7 @@
 
 		// Typography
 		p
-			@apply text-primary-black04 leading-relaxed mb-6 body-14
+			@apply text-primary-black04 leading-relaxed mb-6 body-16
 		
 		h2, h3
 			@apply title-24 font-normal uppercase text-primary-black05 mb-6
@@ -51,7 +51,7 @@
 		.woocommerce-message, 
 		.woocommerce-info, 
 		.woocommerce-error
-			@apply p-5 mb-6 border-t-2 flex items-center shadow-none text-sm
+			@apply p-5 mb-6 border-t-2 flex items-center shadow-none body-16 
 			@apply bg-utility-gray03/50 text-primary-black05
 
 		.woocommerce-message, .woocommerce-info
@@ -66,11 +66,11 @@
 				@apply mb-6 block relative
 
 				label
-					@apply block body-14 font-medium text-primary-black05 mb-2 uppercase tracking-wide
+					@apply block body-16 font-medium text-primary-black05 mb-2 uppercase tracking-wide
 
 				.input-text, select
 					@apply w-full px-5 py-4 bg-white border border-primary-black01
-					@apply body-14 text-primary-black05 placeholder:text-primary-black02
+					@apply body-16 text-primary-black05 placeholder:text-primary-black02
 					@apply transition-all duration-300
 					@apply focus:border-primary-black05 focus:outline-none rounded-none
 
@@ -98,7 +98,7 @@
 
 			thead
 				th
-					@apply py-4 text-xs font-bold text-primary-black05 uppercase tracking-widest border-b border-primary-black01
+					@apply py-4 body-18 font-bold text-primary-black05 uppercase tracking-widest border-b border-primary-black01
 
 			tbody
 				tr
@@ -107,7 +107,7 @@
 						@apply bg-utility-gray03/30
 
 				td
-					@apply py-5 body-14 text-primary-black04 align-middle
+					@apply py-5 body-16 text-primary-black04 align-middle
 
 				// Buttons inside tables (View, Download)
 				.woocommerce-button.button
@@ -116,7 +116,7 @@
 
 		// Addresses
 		address
-			@apply not-italic text-primary-black04 border border-primary-black01 p-6 rounded-none mb-6
+			@apply not-italic text-primary-black04 border border-primary-black01 p-6 rounded-none mb-6 body-18 leading-[2] space-y-2
 
 			.title
 				@apply flex justify-between items-center mb-6 border-b border-primary-black01 pb-4
@@ -132,7 +132,7 @@
 		a.button
 			@apply inline-flex items-center justify-center
 			@apply px-8 py-4 rounded-none
-			@apply body-14 font-extrabold uppercase tracking-[0.1em]
+			@apply body-16 font-extrabold uppercase tracking-[0.1em]
 			@apply transition-all duration-300 
 			@apply cursor-pointer no-underline focus:outline-none
 
@@ -148,12 +148,21 @@
 
 		// Order Details (Review Order)
 		.order_details
-			@apply list-none m-0 p-0 bg-utility-gray03/30 border border-primary-black01 p-6 grid grid-cols-1 md:grid-cols-4 gap-6 mb-10
+			@apply list-none m-0 bg-utility-gray03/30 border border-primary-black01 p-6 gap-6 mb-10
+			// @apply grid grid-cols-1 md:grid-cols-4
+			tr, td, th 
+				@apply font-normal #{!important}
 
 			li
-				@apply text-sm text-primary-black04
+				@apply body-16 text-primary-black04
 				strong
-					@apply block text-primary-black05 body-14 font-bold mt-2 uppercase
+					@apply block text-primary-black05 body-16 font-bold mt-2 uppercase
+			.wc-item-meta
+				@apply flex flex-col gap-2 mt-5
+				li
+					@apply flex items-end gap-5
+					strong
+						@apply m-0
 
 		// Responsive Tables
 		@media (max-width: 640px)
@@ -165,6 +174,7 @@
 
 				tbody, tr, td
 					@apply block w-full
+					@apply font-normal #{!important}
 
 				tr
 					@apply mb-6 border border-primary-black01 p-5
@@ -244,7 +254,7 @@
 		@apply -lg:w-full #{!important}
 	// Address page intro text
 	.woocommerce-MyAccount-content > p
-		@apply body-14 text-primary-black04 mb-8 max-w-2xl
+		@apply body-16 text-primary-black04 mb-8 max-w-2xl
 
 	// Address columns wrapper
 	.u-columns.woocommerce-Addresses
@@ -271,7 +281,7 @@
 
 		// Address content
 		address
-			@apply not-italic body-14 text-primary-black04 leading-relaxed
+			@apply not-italic body-16 text-primary-black04 leading-relaxed
 
 	// Empty address state
 	.woocommerce-Address address:empty
@@ -295,7 +305,9 @@
 	.woocommerce-error,
 	.woocommerce-message,
 	.woocommerce-info
-		@apply px-4 py-3 mb-4 border text-sm
+		@apply px-4 py-3 mb-4 border body-16 pl-12
+		&:before
+			@apply absolute top-1/2 -translate-y-1/2
 
 	.woocommerce-error
 		@apply border-red-500 text-red-600 bg-red-50
@@ -327,7 +339,7 @@
 				@apply md:col-span-2
 
 			label
-				@apply body-14 font-medium text-primary-black05
+				@apply body-16 font-medium text-primary-black05
 
 			.required
 				@apply text-red-500 ml-0.5
@@ -352,7 +364,7 @@
 			select
 				@apply w-full px-4 py-3 bg-white
 				@apply border border-primary-black02
-				@apply body-14 text-primary-black05
+				@apply body-16 text-primary-black05
 				@apply transition-all duration-200
 
 				&:focus
@@ -371,7 +383,7 @@
 			@apply flex items-center
 
 		.select2-selection__rendered
-			@apply body-14 text-primary-black05 p-0
+			@apply body-16 text-primary-black05 p-0
 
 		.select2-selection__arrow
 			@apply right-3
@@ -381,7 +393,7 @@
 			@apply inline-flex items-center justify-center
 			@apply px-8 py-3
 			@apply bg-primary-black05 text-white
-			@apply body-14 font-medium uppercase
+			@apply body-16 font-medium uppercase
 			@apply transition-all duration-200
 
 			&:hover
@@ -394,7 +406,7 @@
 
 		input,
 		select
-			@apply text-sm
+			@apply body-16
 
 .woocommerce-EditAccountForm 
 	.woocommerce-form-row--first,
@@ -416,3 +428,10 @@
 
 .page-content
 	@apply mb-6 lg:mb-10
+
+.woocommerce-customer-details
+	.woocommerce-columns
+		.woocommerce-column__title
+			@apply title-20 uppercase text-primary-black05 mb-4 #{!important}
+			address
+				@apply not-italic body-18 text-primary-black04 leading-[2] space-y-2

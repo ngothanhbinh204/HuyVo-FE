@@ -1,0 +1,168 @@
+.section-checkout
+	.woocommerce
+		.woocommerce-order
+			
+			@apply mx-auto py-10
+			h1,
+			h2,
+			h3,
+			h4
+				@apply font-normal #{!important}
+
+			// 1. Success Notice
+			.woocommerce-notice
+				@apply text-center py-6 border border-green-500 text-green-700 bg-green-50
+				@apply body-16 font-medium uppercase tracking-wider
+			ul
+				&::before,
+				&::after
+					@apply hidden #{!important}
+					content: none #{!important}
+
+			// 2. Order Overview (Ul)
+			.woocommerce-order-overview
+				@apply list-none p-0 flex flex-col md:flex-row justify-between gap-6
+				@apply border-b border-primary-black01 pb-10
+
+				li
+					@apply text-center flex-1 relative
+					@apply md:border-r md:border-primary-black01 md:last:border-0
+					
+					// Label
+					@apply body-16 text-primary-black04 uppercase tracking-wider mb-2 block
+
+					// Value
+					strong
+						@apply block body-16 font-bold text-primary-black05 mt-2
+
+			// 3. Bank/Bacs Details
+			.woocommerce-bacs-bank-details
+				@apply bg-utility-gray03/20 p-6 lg:p-8
+				
+				h2
+					@apply title-24 lg:title-24 font-normal uppercase tracking-widest text-primary-black05 mb-8 text-center
+
+				h3
+					@apply body-16 font-bold uppercase text-primary-black05 mb-4
+
+				.bacs_details
+					@apply flex flex-col list-none p-0 gap-6
+					
+					li
+						@apply flex flex-col gap-1 p-5 bg-white m-0
+						// Label text (e.g. Bank:)
+						@apply body-16 text-primary-black04
+						@apply border border-primary-black01 #{!important}
+
+						strong
+							@apply body-16 font-bold text-primary-black05
+				.wc-bacs-bank-details-account-name
+					&::before	
+						@apply block body-16 text-primary-black04
+						@apply font-normal #{!important}
+						content: "Tên tài khoản"
+					@apply flex flex-col gap-1 border border-primary-black01 p-5 bg-white mb-6
+					@apply body-16 text-primary-black05
+					@apply font-bold #{!important}
+					
+
+			// 4. Order Details Section
+			.woocommerce-order-details
+				@apply bg-utility-gray03/20 p-6 lg:p-8
+				&__title
+					@apply title-24 lg:title-24 font-normal uppercase tracking-widest text-primary-black05 mb-8 text-center
+
+				// Order Table
+				table.woocommerce-table--order-details
+					@apply w-full border-collapse text-left table-auto #{!important}
+
+					// STABILITY: Override any Flex/Grid bleed
+					&,
+					thead,
+					tbody,
+					tfoot
+						@apply w-full block md:table #{!important}
+					
+					thead
+						@apply table-header-group #{!important}
+					tbody
+						@apply table-row-group #{!important}
+					tfoot
+						@apply table-footer-group #{!important}
+
+					tr
+						@apply table-row border-0 m-0 p-0 bg-transparent #{!important}
+						display: table-row !important
+					
+					th, td
+						@apply table-cell align-top bg-transparent #{!important}
+						display: table-cell !important
+
+					// Header
+					thead
+						tr
+							@apply border-b-[2px] border-primary-black05
+						th
+							@apply py-4 body-16 font-bold uppercase tracking-widest text-primary-black05
+							&.product-name
+								@apply w-[55%] lg:w-[60%] text-left
+							&.product-total
+								@apply w-[45%] lg:w-[40%] text-right
+
+					// Body
+					tbody
+						tr
+							@apply border-b border-primary-black01
+
+						td
+							@apply py-5 md:py-6 border-none
+
+						// Product Name Col
+						.product-name
+							@apply body-16 text-primary-black05 font-medium pr-4 text-left w-[55%] lg:w-[60%]
+							
+							a
+								@apply hover:text-primary-black03 transition-colors duration-300 block mb-1
+
+							.product-quantity
+								@apply font-normal text-primary-black04
+
+							// Meta (Size, etc)
+							.wc-item-meta
+								@apply list-none p-0 mt-2 space-y-1 block
+								li
+									@apply flex gap-2 body-16 text-primary-black04
+									strong
+										@apply font-bold uppercase
+						
+						// Product Total Col
+						.product-total
+							@apply text-right font-bold text-primary-black05 body-16 whitespace-nowrap w-[45%] lg:w-[40%]
+
+					// Footer (Subtotal, Tax, Total)
+					tfoot
+						tr
+							@apply border-b border-primary-black01/50 last:border-0
+							
+						th
+							@apply py-4 text-right body-16 font-medium text-primary-black04 pr-10
+							// "Scope" row th normally acts as the label. It sits in col 1.
+							// We align it right to sit close to the value in col 2.
+						
+						td
+							@apply py-4 text-right body-16 text-primary-black05 font-bold
+
+						// Highlight "Total" row
+						tr:last-child
+							th, td
+								@apply title-20 font-normal text-primary-black05 py-6
+							th
+								@apply font-normal title-20
+
+
+		
+.shop_table_responsive
+	.cart-item-summary
+		.item-name
+			.quantity
+				@apply ml-2

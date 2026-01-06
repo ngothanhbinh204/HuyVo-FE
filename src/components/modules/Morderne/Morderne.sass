@@ -18,6 +18,8 @@
 	// DESCRIPTION
 	.shop-description
 		@apply text-center max-w-5xl mx-auto mb-12 px-4
+		@apply body-14 leading-loose tracking-[0.1em] text-primary-black05 uppercase font-medium
+		@apply -md:hidden
 		
 		p
 			@apply body-14 leading-loose tracking-[0.1em] text-primary-black05 uppercase font-medium
@@ -129,3 +131,40 @@
 
 			.img-hover
 				@apply opacity-100 scale-100
+
+
+.section-related-products
+	.slider-wrapper
+		@apply relative
+
+		// Navigation Arrows (Reused from Home-3)
+		.nav-btn
+			@apply absolute z-10
+			@apply sq-10 flex items-center justify-center transition-all duration-300 cursor-pointer
+			@apply hidden lg:flex
+			top: 50%
+
+			i
+				@apply title-20 text-primary-black04
+
+			&:hover
+				i
+					@apply text-primary-black05
+
+			&.nav-prev
+				left: 0
+				transform: translate(-100%, -50%)
+
+			&.nav-next
+				right: 0
+				transform: translate(100%, -50%)
+
+			// Disabled state
+			&.swiper-button-disabled
+				@apply opacity-30 cursor-not-allowed
+				&:hover
+					i
+						@apply text-primary-black05
+
+		.category-product-slider
+			@apply w-full overflow-hidden

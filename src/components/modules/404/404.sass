@@ -1,0 +1,24 @@
+.page-404
+	@apply w-full min-h-[80vh] flex items-center justify-center py-20 bg-white
+	
+	.content-404
+		@apply text-center flex flex-col items-center max-w-3xl mx-auto px-4
+
+	.number-404
+		@apply text-[120px] lg:text-[180px] leading-none font-light text-primary-black05 opacity-10 font-sfu mb-[-30px] lg:mb-[-50px] select-none
+		// Optional: Mix-blend-mode if we want it to interact with background, but simplistic is better for now.
+
+	.title-404
+		@apply title-32 lg:title-42 uppercase tracking-[0.2em] text-primary-black05 mb-6 relative z-10 
+		@apply font-normal #{!important}
+
+	.desc-404
+		@apply body-16 text-primary-black04 mb-10 max-w-lg mx-auto leading-relaxed
+
+	.btn-home
+		@apply inline-flex items-center justify-center px-10 py-4
+		@apply bg-primary-black05 text-white body-14 font-medium uppercase tracking-[0.15em]
+		@apply transition-all duration-300 border border-primary-black05
+		
+		&:hover
+			@apply bg-transparent text-primary-black05

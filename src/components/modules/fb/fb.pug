@@ -1,0 +1,55 @@
+section.section-feedback
+	.container
+		.title_fb(data-aos="fade-up")
+			h2 CUSTOMER FEEDBACK
+		
+		.fb-grid
+			- 
+				const feedbacks = [
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+					{ name: 'Tăng Thanh Hà - Lập Xuân Lá Mạ', img: 'fb_1.png' },
+				]
+
+			each fb, index in feedbacks
+				//- delay tăng dần 50ms cho mỗi item để tạo hiệu ứng mượt mà
+				.fb-item(
+					data-aos="fade-up" 
+					data-aos-delay=(index % 4) * 100 
+					data-aos-duration="800"
+				)
+					.fb-image
+						+PugImg(`/img/${fb.img}`, `Feedback image ${index + 1}`)
+					
+					.fb-content
+						.fb-avt 
+							+PugImg(`/img/${fb.img}`, fb.name)
+						p.fb-name= fb.name
+		
+		.wrapper-pagination(data-aos="fade-up", data-aos-offset="0")
+			ul.paginations
+				li
+					a.prev.page-numbers(href="#")
+						i.fa.fa-angle-left
+				li
+					a.page-numbers(href="#") 1
+				li
+					span.page-numbers.current 2
+				li
+					a.page-numbers(href="#") 3
+				li
+					span.page-numbers.dots ...
+				li
+					a.page-numbers(href="#") 8
+				li
+					a.next.page-numbers(href="#")
+						i.fa.fa-angle-right

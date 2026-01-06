@@ -123,3 +123,44 @@
   padding: 0 10px !important;
   display: block;
 } */
+
+.woocommerce-order {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "notice notice"
+        "overview overview"
+        "bank details";
+    gap: 40px;
+}
+
+/* map từng block vào grid-area */
+.woocommerce-notice {
+    grid-area: notice;
+}
+
+.woocommerce-order-overview {
+    grid-area: overview;
+}
+
+.woocommerce-bacs-bank-details {
+    grid-area: bank;
+}
+
+.woocommerce-order-details {
+    grid-area: details;
+}
+
+@media screen and (max-width: 768px) {
+    .woocommerce-order {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "notice"
+            "overview"
+            "bank"
+            "details";
+        gap: 24px;
+    }
+
+}

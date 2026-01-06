@@ -43,61 +43,74 @@ do_action('woocommerce_before_mini_cart'); ?>
 				$product_price     = apply_filters('woocommerce_cart_item_price', WC()->cart->get_product_price($_product), $cart_item, $cart_item_key);
 				$product_permalink = apply_filters('woocommerce_cart_item_permalink', $_product->is_visible() ? $_product->get_permalink($cart_item) : '', $cart_item, $cart_item_key);
 		?>
-				<li class="woocommerce-mini-cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>" data-product-id="<?php echo $product_id; ?>">
-					<?php
-					echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-						'woocommerce_cart_item_remove_link',
-						sprintf(
-							'<a role="button" href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s">&times;</a>',
-							esc_url(wc_get_cart_remove_url($cart_item_key)),
-							/* translators: %s is the product name */
-							esc_attr(sprintf(__('Remove %s from cart', 'woocommerce'), wp_strip_all_tags($product_name))),
-							esc_attr($product_id),
-							esc_attr($cart_item_key),
-							esc_attr($_product->get_sku()),
-							/* translators: %s is the product name */
-							esc_attr(sprintf(__('&ldquo;%s&rdquo; has been removed from your cart', 'woocommerce'), wp_strip_all_tags($product_name)))
-						),
-						$cart_item_key
-					);
-					?>
-					<div class="product-thumbnail">
-						<?php echo $thumbnail; ?>
-					</div>
-					<div class="product-info">
-						<div class="product-name">
-							<?php echo $product_name; ?>
-						</div>
-						<div class="product-price">
-							<?php echo $product_price; ?>
-						</div>
-						<div class="product-meta">
-							<?php echo wc_get_formatted_cart_item_data($cart_item); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-							?>
-						</div>
-						<div class="product-quantity">
+				<li class="woocommerce-mini-cart-item woocommerce-cart-form__cart-item <?php echo esc_attr(apply_filters('woocommerce_mini_cart_item_class', 'mini_cart_item', $cart_item, $cart_item_key)); ?>" data-product-id="<?php echo $product_id; ?>">
+					<div class="cart-item-wrapper">
+						<div class="thumbnail">
 							<?php
-							if ($_product->is_sold_individually()) {
-								$min_quantity = 1;
-								$max_quantity = 1;
+							if (! $product_permalink) {
+								echo $thumbnail; // PHPCS: XSS ok.
 							} else {
-								$min_quantity = 0;
-								$max_quantity = $_product->get_max_purchase_quantity();
+								printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail); // PHPCS: XSS ok.
 							}
-
-							$product_quantity = woocommerce_quantity_input(
-								array(
-									'input_name'   => "cart[{$cart_item_key}][qty]",
-									'input_value'  => $cart_item['quantity'],
-									'max_value'    => $max_quantity,
-									'min_value'    => $min_quantity,
-									'product_name' => $product_name,
-								),
-								$_product,
-								false
-							);
-							echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
 							?>
+						</div>
+						<div class="product-info">
+							<div class="product-name-wrapper">
+								<div class="product-name">
+									<?php echo $product_name; ?>
+								</div>
+								<div class="product-price">
+									<?php echo $product_price; ?>
+								</div>
+								<div class="product-meta">
+									<?php echo wc_get_formatted_cart_item_data($cart_item); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+									?>
+								</div>
+							</div>
+							
+							<div class="product-quantity">
+								<?php
+								if ($_product->is_sold_individually()) {
+									$min_quantity = 1;
+									$max_quantity = 1;
+								} else {
+									$min_quantity = 0;
+									$max_quantity = $_product->get_max_purchase_quantity();
+								}
+
+								$product_quantity = woocommerce_quantity_input(
+									array(
+										'input_name'   => "cart[{$cart_item_key}][qty]",
+										'input_value'  => $cart_item['quantity'],
+										'max_value'    => $max_quantity,
+										'min_value'    => $min_quantity,
+										'product_name' => $product_name,
+									),
+									$_product,
+									false
+								);
+								echo apply_filters('woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item); // PHPCS: XSS ok.
+								?>
+								<div class="product-remove">
+									<?php
+									echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										'woocommerce_cart_item_remove_link',
+										sprintf(
+											'<a role="button" href="%s" class="remove remove_from_cart_button" aria-label="%s" data-product_id="%s" data-cart_item_key="%s" data-product_sku="%s" data-success_message="%s">&times;</a>',
+											esc_url(wc_get_cart_remove_url($cart_item_key)),
+											/* translators: %s is the product name */
+											esc_attr(sprintf(__('Remove %s from cart', 'woocommerce'), wp_strip_all_tags($product_name))),
+											esc_attr($product_id),
+											esc_attr($cart_item_key),
+											esc_attr($_product->get_sku()),
+											/* translators: %s is the product name */
+											esc_attr(sprintf(__('&ldquo;%s&rdquo; has been removed from your cart', 'woocommerce'), wp_strip_all_tags($product_name)))
+										),
+										$cart_item_key
+									);
+									?>
+								</div>
+							</div>
 						</div>
 					</div>
 				</li>

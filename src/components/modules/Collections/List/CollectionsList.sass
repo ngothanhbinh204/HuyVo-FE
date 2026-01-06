@@ -20,7 +20,7 @@
 	@apply relative w-full overflow-hidden
 
 	.banner-wrapper
-		@apply relative img-ratio ratio:pt-[900_1512]
+		@apply relative img-ratio -md:h-[80vh] ratio:pt-[100_100] lg:ratio:pt-[900_1512]
 
 	.banner-image
 		@apply absolute inset-0 w-full h-full
@@ -41,7 +41,9 @@
 			@apply  max-w-[500px]
 
 	.banner-heading
-		@apply title-42 font-medium uppercase tracking-wide text-white mb-3 leading-none
+		@apply text-[34px] font-light uppercase tracking-[0.5px] text-white mb-4 lg:mb-7
+		@apply font-normal #{!important}
+		@screen md
+			@apply title-42 mb-5
 
-		@screen lg
-			@apply mb-4.5
+			@apply mb-6

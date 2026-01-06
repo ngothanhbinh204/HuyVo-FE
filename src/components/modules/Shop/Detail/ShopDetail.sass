@@ -235,15 +235,19 @@
 	
 	.popup-header-center
 		@apply text-center mb-10
+		@apply hidden
+		
 
 	.popup-title
 		@apply body-16 text-primary-black05 mb-2.5 uppercase font-normal
 
 	.popup-desc
 		@apply body-14 text-primary-black05 leading-relaxed
+		@apply hidden
 
 	.popup-tabs-header
 		@apply flex items-center justify-center gap-8 border-b border-primary-black03/20 mb-10 w-full
+		@apply hidden
 		.tab-item
 			@apply pb-4 px-3 relative text-primary-black04 body-14 transition-colors
 			&:hover, &.active
@@ -263,7 +267,7 @@
 			@apply block
 
 	.measurement-unit
-		@apply body-14 font-extrabold text-black text-center mb-5
+		@apply body-14 font-extrabold text-black text-center my-5
 
 	.measurement-guide-image
 		@apply flex flex-col gap-5
@@ -282,12 +286,16 @@
 		.guide-image-col
 			@apply w-full md:w-1/2 flex justify-center
 			.guide-image
-				@apply w-full max-w-300 img-ratio ratio:pt-[450_300] bg-utility-gray03
+				@apply w-full img-ratio ratio:pt-[290_300] bg-utility-gray03
 				img
 					@apply w-full h-full object-cover
 
 		.guide-text-col
 			@apply w-full md:w-1/2
+			.desc
+				h3
+					@apply font-bold mb-2.5 body-16 font-sfu
+				@apply text-left leading-1.4 body-14
 
 		.guide-title
 			@apply body-18 font-bold mb-4

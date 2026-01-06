@@ -138,9 +138,9 @@ $single_product_size_guide = get_field('single_product_size_guide', 'option');
 				<h2 class="popup-title">
 					<?php echo !empty($single_product_size_guide['title']) ? $single_product_size_guide['title'] : ''; ?>
 				</h2>
-				<p class="popup-desc">
+				<div class="popup-desc">
 					<?php echo !empty($single_product_size_guide['description']) ? $single_product_size_guide['description'] : ''; ?>
-				</p>
+				</div>
 			</div>
 			<div class="popup-tabs-header">
 				<?php if (!empty($single_product_size_guide['tabs'])) : ?>
@@ -162,7 +162,23 @@ $single_product_size_guide = get_field('single_product_size_guide', 'option');
 				<h3 class="measurement-unit"><?php echo esc_html($row['title']); ?></h3>
 				<?php endif; ?>
 
-				<?php if ($layout === 'content_image') : ?>
+			
+
+				<?php if ($layout === 'image') : ?>
+				<div class="measurement-guide-image">
+					<div class="image-size">
+						<?php
+											$image = $row['image'];
+											if ($image && is_array($image)) :
+											?>
+						<img class="lozad" data-src="<?php echo esc_url($image['url']); ?>"
+							alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : $image['title']); ?>" />
+						<?php endif; ?>
+					</div>
+				</div>
+				<?php endif; ?>
+
+                	<?php if ($layout === 'content_image') : ?>
 				<div class="measurement-guide">
 					<!-- Cột ảnh bên trái -->
 					<div class="guide-image-col">
@@ -180,26 +196,13 @@ $single_product_size_guide = get_field('single_product_size_guide', 'option');
 					<!-- Cột text hướng dẫn bên phải -->
 					<div class="guide-text-col">
 						<?php if (! empty($row['content'])) : ?>
-						<?php echo apply_filters('the_content', $row['content']); ?>
+						<div class="desc">
+                            <?php echo apply_filters('the_content', $row['content']); ?>
+                        </div>
 						<?php endif; ?>
 					</div>
 				</div>
 				<?php endif; ?>
-
-				<?php if ($layout === 'image') : ?>
-				<div class="measurement-guide-image">
-					<div class="image-size">
-						<?php
-											$image = $row['image'];
-											if ($image && is_array($image)) :
-											?>
-						<img class="lozad" data-src="<?php echo esc_url($image['url']); ?>"
-							alt="<?php echo esc_attr($image['alt'] ? $image['alt'] : $image['title']); ?>" />
-						<?php endif; ?>
-					</div>
-				</div>
-				<?php endif; ?>
-
 				<?php endforeach; ?>
 				<?php endif; ?>
 			</div>

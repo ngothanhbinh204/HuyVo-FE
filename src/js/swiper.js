@@ -173,7 +173,7 @@ export function swiperInit() {
   if ($(".section-home-new-arrivals .swiper").length > 0) {
     new Swiper(".section-home-new-arrivals .swiper", {
       modules: [Navigation],
-      slidesPerView: 2,
+      slidesPerView: 1.5,
       spaceBetween: 12,
       speed: 600,
       loop: false,
@@ -183,11 +183,11 @@ export function swiperInit() {
       },
       breakpoints: {
         640: {
-          slidesPerView: 3,
+          slidesPerView: 1.5,
           spaceBetween: 12,
         },
         768: {
-          slidesPerView: 4,
+          slidesPerView: 2,
           spaceBetween: 16,
         },
         1024: {
@@ -206,18 +206,22 @@ export function swiperInit() {
     $this.addClass(`moderne-slider-${index}`);
 
     new Swiper(`.moderne-slider-${index} .swiper`, {
-      modules: [Navigation],
-      slidesPerView: 1,
+      modules: [Navigation, Autoplay],
+      slidesPerView: 1.5,
       spaceBetween: 12,
       speed: 600,
       loop: false,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
       navigation: {
         nextEl: `.moderne-slider-${index} .nav-next`,
         prevEl: `.moderne-slider-${index} .nav-prev`,
-      },
+      },    
       breakpoints: {
         640: {
-          slidesPerView: 2,
+          slidesPerView: 1.5,
           spaceBetween: 16,
         },
         1024: {

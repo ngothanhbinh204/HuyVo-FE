@@ -3,420 +3,438 @@
 // ================================================
 
 .header
-    @apply w-full fixed top-0 left-0 z-50 transition-all duration-300 p-4 pb-0
-    // border-bottom: 1px solid rgba(0, 0, 0, 0.05)
-    
-    // &.scrolled
-    //     @apply p-0
-    
-    &.menu-open
-        @apply bg-white
-    
-    .container
-        @apply max-w-full px-6 bg-white
-        @screen xl
-            @apply px-6
-    
-    .header-wrapper
-        @apply flex items-center justify-between py-2 lg:min-h-60 relative
-    
-    .header-left
-        @apply hidden
-        @screen lg
-            @apply block
-        
-        > .menu-list
-            @apply flex items-center gap-y-6 gap-x-2.5
-    
-    // Menu Items
-    .menu-item
-        > .header-link
-            @apply inline-flex items-center leading-5 body-14 px-2.5 py-3 font-normal uppercase cursor-pointer transition-all duration-300
-            letter-spacing: 0.15em
-            
-            .link-text
-                @apply relative
-                &::after
-                    content: ''
-                    @apply absolute left-0 bottom-0 w-0 h-1 bg-primary-black05 transition-all duration-300
-            
-            &:hover
-                .link-text::after
-                    @apply w-full
-        
-        // Active state for mega menu
-        &.has-dropdown
-            &.active
-                > .header-link
-                    .link-text::after
-                        @apply w-full
-                
-                .mega-menu
-                    @apply opacity-100 visible
-                    transform: translateY(0)
+	@apply w-full fixed top-0 left-0 z-50 transition-all duration-300 p-0 md:p-4 pb-0
+	
+	&.header-hidden
+		transform: translateY(-100%)
+	// border-bottom: 1px solid rgba(0, 0, 0, 0.05)
+	
+	// &.scrolled
+	//     @apply p-0
+	
+	&.menu-open
+		@apply bg-white
+	
+	.container
+		@apply max-w-full px-6 bg-white
+		@screen xl
+			@apply px-6
+	
+	.header-wrapper
+		@apply flex items-center justify-between py-2 lg:min-h-60 relative
+	
+	.header-left
+		@apply hidden
+		@screen lg
+			@apply block
+		
+		> .menu-list
+			@apply flex items-center gap-y-6 gap-x-2.5
+	
+	// Menu Items
+	.menu-item
+		> .header-link
+			@apply inline-flex items-center leading-5 body-14 px-2.5 py-3 font-normal uppercase cursor-pointer transition-all duration-300
+			letter-spacing: 0.15em
+			
+			.link-text
+				@apply relative
+				&::after
+					content: ''
+					@apply absolute left-0 bottom-0 w-0 h-1 bg-primary-black05 transition-all duration-300
+			
+			&:hover
+				.link-text::after
+					@apply w-full
+		
+		// Active state for mega menu
+		&.has-dropdown
+			&.active
+				> .header-link
+					.link-text::after
+						@apply w-full
+				
+				.mega-menu
+					@apply opacity-100 visible
+					transform: translateY(0)
 
-    .logo,
-    .custom-logo-link
-        @apply flex items-center transition-opacity
-        
-        @screen lg
-            @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
-        
-    
-    .header-right
-        @apply flex items-center gap-3
-        @screen lg
-            @apply gap-4.5
-    
-    .header-icon
-        @apply transition-all duration-300 cursor-pointer text-base flex items-center justify-center gap-2
-        @apply w-auto h-6
-        
-        &:hover
-            @apply opacity-60
-    
-    // Hamburger Button
-    .header-hamburger
-        @apply flex flex-col justify-center items-center cursor-pointer sq-10 relative
-        @screen lg
-            @apply hidden
-        
-        span
-            @apply block w-5 h-0.5 bg-primary-black05 transition-all duration-300
-            
-            &:nth-child(1)
-                transform: translateY(-4px)
-            
-            &:nth-child(2)
-                @apply opacity-100
-            
-            &:nth-child(3)
-                transform: translateY(4px)
-        
-        &.active
-            span
-                &:nth-child(1)
-                    transform: translateY(0) rotate(45deg)
-                
-                &:nth-child(2)
-                    @apply opacity-0
-                
-                &:nth-child(3)
-                    transform: translateY(0) rotate(-45deg)
+	.logo,
+	.custom-logo-link
+		@apply flex items-center transition-opacity
+		@apply -lg:order-2 -lg:flex-1 -lg:justify-center
+		
+		@screen lg
+			@apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+		
+	
+	.header-right
+		@apply flex items-center gap-3
+		@screen lg
+			@apply gap-4.5
+		@apply -lg:contents
+	
+	.cart-header
+		@apply -lg:order-3
+	
+	.header-icon
+		@apply transition-all duration-300 cursor-pointer text-base flex items-center justify-center gap-2
+		@apply w-auto h-6
+		
+		&:hover
+			@apply opacity-60
+
+		&.user-btn
+			@apply -lg:hidden
+
+		&.cart-btn
+			@apply -lg:order-4
+		
+		&.search-btn
+			@apply -lg:order-3 -lg:mr-5
+	
+	// Hamburger Button
+	.header-hamburger
+		@apply flex flex-col justify-center items-center cursor-pointer sq-10 relative
+		@apply -lg:order-1
+		@screen lg
+			@apply hidden
+		
+		span
+			@apply block w-5 h-0.5 bg-primary-black05 transition-all duration-300
+			
+			&:nth-child(1)
+				transform: translateY(-4px)
+			
+			&:nth-child(2)
+				@apply opacity-100
+			
+			&:nth-child(3)
+				transform: translateY(4px)
+		
+		&.active
+			span
+				&:nth-child(1)
+					transform: translateY(0) rotate(45deg)
+				
+				&:nth-child(2)
+					@apply opacity-0
+				
+				&:nth-child(3)
+					transform: translateY(0) rotate(-45deg)
 
 // ================================================
 // MEGA MENU
 // ================================================
 
 .mega-menu
-    @apply absolute left-0 w-full bg-white opacity-0 invisible transition-all duration-300
-    top: 100%
-    transform: translateY(-10px)
-    border-top: 1px solid rgba(0, 0, 0, 0.05)
-    
-    .container
-        @apply max-w-full px-8 py-5
+	@apply absolute left-0 w-full bg-white opacity-0 invisible transition-all duration-300
+	top: 100%
+	transform: translateY(-10px)
+	border-top: 1px solid rgba(0, 0, 0, 0.05)
+	
+	.container
+		@apply max-w-full px-8 py-5
 
-    
-    .mega-menu-wrapper
-        @apply grid gap-8
-        grid-template-columns: 1fr 1fr 1fr 1.5fr
-        grid-template-rows: auto auto
-        @screen xl
-            @apply gap-x-15 gap-y-0
-    
-    // Menu Columns
-    .mega-menu-column
-        @apply flex flex-col
-        > *
-            @apply text-primary-black05
-        .column-title
-            @apply body-16 font-extrabold uppercase tracking-widest py-2.5 text-primary-black05		
-        .menu-list
-            @apply flex flex-col
-            
-            > .menu-item
-                @apply body-14 py-4
-                
-                > a
-                    @apply flex items-center justify-between transition-all duration-300
-                    
-                    &:hover
-                        @apply text-primary-black05 pl-1
-                
-                // Items with submenu
-                &.has-submenu
-                    @apply flex flex-col
-                    
-                    > a
-                        @apply flex items-center justify-between cursor-pointer
-                        
-                        i
-                            @apply text-[10px] transition-transform duration-300 ml-2
-                    
-                    &.active
-                        > a i
-                            transform: rotate(180deg)
-                        
-                        .submenu-level2
-                            @apply max-h-[200px] opacity-100 mt-2
-                    
-                    .submenu-level2
-                        @apply flex flex-col pl-5 max-h-0 opacity-0 overflow-hidden transition-all duration-300
-                        
-                        .menu-item
-                            @apply body-14 py-2.5
-                            
-                            a
-                                @apply transition-all duration-300
-                                
-                                &:hover
-                                    @apply text-primary-black05 pl-1
-    
-    // Images Column
-    .mega-menu-images
-        @apply grid grid-cols-2 gap-5 row-span-2 items-center
-        
-        .image-wrapper
-            @apply overflow-hidden rounded-sm h-full
-            &:first-child
-                @apply img-ratio ratio:pt-[395_222]
-            &:last-child
-                @apply img-ratio ratio:pt-[277_222]
-            img
-                @apply w-full h-full object-cover transition-transform duration-300
-                
-                &:hover
-                    transform: scale(1.05)
-    
-    // Footer
-    .mega-menu-footer
-        @apply col-span-3 pt-8 mt-4 
-        
-        .shop-all-link
-            @apply inline-flex items-center gap-5 body-14 font-normal uppercase tracking-widest transition-all duration-300
-            letter-spacing: 0.15em
-            
-            i
-                @apply body-14 transition-transform duration-300
-            
-            &:hover
-                @apply gap-3
-                
-                i
-                    transform: translate(2px, -2px)
+	
+	.mega-menu-wrapper
+		@apply grid gap-8
+		grid-template-columns: 1fr 1fr 1fr 1.5fr
+		grid-template-rows: auto auto
+		@screen xl
+			@apply gap-x-15 gap-y-0
+	
+	// Menu Columns
+	.mega-menu-column
+		@apply flex flex-col
+		> *
+			@apply text-primary-black05
+		.column-title
+			@apply body-16 font-extrabold uppercase tracking-widest py-2.5 text-primary-black05		
+		.menu-list
+			@apply flex flex-col
+			
+			> .menu-item
+				@apply body-14 py-4
+				
+				> a
+					@apply flex items-center justify-between transition-all duration-300
+					
+					&:hover
+						@apply text-primary-black05 pl-1
+				
+				// Items with submenu
+				&.has-submenu
+					@apply flex flex-col
+					
+					> a
+						@apply flex items-center justify-between cursor-pointer
+						
+						i
+							@apply text-[10px] transition-transform duration-300 ml-2
+					
+					&.active
+						> a i
+							transform: rotate(180deg)
+						
+						.submenu-level2
+							@apply max-h-[200px] opacity-100 mt-2
+					
+					.submenu-level2
+						@apply flex flex-col pl-5 max-h-0 opacity-0 overflow-hidden transition-all duration-300
+						
+						.menu-item
+							@apply body-14 py-2.5
+							
+							a
+								@apply transition-all duration-300
+								
+								&:hover
+									@apply text-primary-black05 pl-1
+	
+	// Images Column
+	.mega-menu-images
+		@apply grid grid-cols-2 gap-5 row-span-2 items-center
+		
+		.image-wrapper
+			@apply overflow-hidden rounded-sm h-full
+			&:first-child
+				@apply img-ratio ratio:pt-[395_222]
+			&:last-child
+				@apply img-ratio ratio:pt-[277_222]
+			img
+				@apply w-full h-full object-cover transition-transform duration-300
+				
+				&:hover
+					transform: scale(1.05)
+	
+	// Footer
+	.mega-menu-footer
+		@apply col-span-3 pt-8 mt-4 
+		
+		.shop-all-link
+			@apply inline-flex items-center gap-5 body-14 font-normal uppercase tracking-widest transition-all duration-300
+			letter-spacing: 0.15em
+			
+			i
+				@apply body-14 transition-transform duration-300
+			
+			&:hover
+				@apply gap-3
+				
+				i
+					transform: translate(2px, -2px)
 
 // ================================================
 // MOBILE MENU - Figma Design Match
 // ================================================
 
 .mobile-menu
-    @apply fixed inset-0 z-[60] pointer-events-none
-    
-    &.active
-        @apply pointer-events-auto
-        
-        .mobile-menu-overlay
-            @apply opacity-100 visible
-        
-        .mobile-menu-inner
-            transform: translateX(0)
-    
-    // Background overlay with blur
-    .mobile-menu-overlay
-        @apply absolute inset-0 opacity-0 invisible transition-all duration-300
-        background: rgba(0, 0, 0, 0.4)
-        backdrop-filter: blur(8px)
-    
-    // Menu Panel
-    .mobile-menu-inner
-        @apply absolute top-0 right-0 h-full bg-white overflow-y-auto transition-transform duration-300 flex flex-col
-        transform: translateX(100%)
-        width: 100%
-        max-width: 400px
-        @screen sm
-            max-width: 420px
-    
-    // Close Button - Top Right
-    .mobile-menu-close
-        @apply absolute top-4 p-3 right-4 cursor-pointer transition-opacity flex items-center justify-center z-10
-        @apply sq-12 text-white bg-primary-black05 rounded-full
-        
-        i
-            @apply text-lg
-        
-        &:hover
-            @apply opacity-60
-    
-    // Menu Body
-    .mobile-menu-body
-        @apply flex-1 pt-16 px-8 pb-8 overflow-y-auto
-        @screen sm
-            @apply px-10
-    
-    // Mobile Navigation
-    .mobile-nav
-        .mobile-menu-list
-            @apply flex flex-col
-    
-    // Menu Item - Category Style
-    .menu-item
-        &.is-category
-            @apply mb-2
-            
-            .menu-item-header
-                @apply flex items-center justify-between gap-10 -md:w-[250px] 
-            
-            .category-title
-                @apply body-16 font-extrabold uppercase tracking-widest text-primary-black05 py-3 block flex-1
-                letter-spacing: 0.1em
-            
-            .submenu-toggle
-                @apply sq-5 flex items-center justify-center cursor-pointer text-primary-black05
-                
-                i
-                    @apply text-xs transition-transform duration-300
-            
-            // Active state - expanded
-            &.active
-                .submenu-toggle i
-                    transform: rotate(180deg)
-                
-                > .sub-menu
-                    @apply max-h-screen opacity-100
-            
-            // Submenu
-            > .sub-menu
-                @apply flex flex-col max-h-0 opacity-0 overflow-hidden transition-all duration-300
-                
-                > .menu-item
-                    max-width: r(215px)
-                    a
-                        @apply flex items-center justify-between body-14 text-primary-black05 py-3.5 transition-all duration-300
-                        
-                        i
-                            @apply text-xs text-primary-black03 transition-transform duration-300
-                        
-                        &:hover
-                            @apply pl-1
-                            
-                            i
-                                @apply text-primary-black05
-                    
-                    // Items with arrow
-                    &.has-arrow
-                        a
-                            @apply pr-0
-                    
-                    // Nested Submenu (Level 2)
-                    &.has-submenu
-                        &.active
-                            > a i
-                                transform: rotate(90deg)
-                            
-                            .submenu-level2
-                                @apply max-h-screen opacity-100 mb-2
-                        
-                        .submenu-level2
-                            @apply flex flex-col pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-300
-                            
-                            .menu-item
-                                a
-                                    @apply py-2 text-primary-black03 body-14
-                                    
-                                    &:hover
-                                        @apply text-primary-black05
-    
-    // Mobile Menu Footer
-    .mobile-menu-footer
-        @apply px-8 py-6 mt-auto
-        @screen sm
-            @apply px-10
-        
-        .shop-all-link
-            @apply inline-flex items-center gap-5 body-14 font-normal uppercase tracking-widest text-primary-black05 transition-all duration-300
-            letter-spacing: 0.1em
-            
-            i
-                @apply text-sm transition-transform duration-300
-            
-            &:hover
-                @apply gap-3
-                
-                i
-                    transform: translate(2px, -2px)
+	@apply fixed inset-0 z-[60] pointer-events-none
+	
+	&.active
+		@apply pointer-events-auto
+		
+		.mobile-menu-overlay
+			@apply opacity-100 visible
+		
+		.mobile-menu-inner
+			transform: translateX(0)
+	
+	// Background overlay with blur
+	.mobile-menu-overlay
+		@apply absolute inset-0 opacity-0 invisible transition-all duration-300
+		background: rgba(0, 0, 0, 0.4)
+		backdrop-filter: blur(8px)
+	
+	// Menu Panel
+	.mobile-menu-inner
+		@apply absolute top-0 right-0 h-full bg-white overflow-y-auto transition-transform duration-300 flex flex-col
+		transform: translateX(100%)
+		width: 100%
+		max-width: 400px
+		@screen sm
+			max-width: 420px
+	
+	// Close Button - Top Right
+	.mobile-menu-close
+		@apply absolute top-4 p-3 right-4 cursor-pointer transition-opacity flex items-center justify-center z-10
+		@apply sq-12 text-white bg-primary-black05 rounded-full
+		
+		i
+			@apply text-lg
+		
+		&:hover
+			@apply opacity-60
+	
+	// Menu Body
+	.mobile-menu-body
+		@apply flex-1 pt-16 px-8 pb-8 overflow-y-auto
+		@screen sm
+			@apply px-10
+	
+	// Mobile Navigation
+	.mobile-nav
+		.mobile-menu-list
+			@apply flex flex-col
+	
+	// Menu Item - Category Style
+	.menu-item
+		&.is-category
+			@apply mb-2
+			
+			.menu-item-header
+				@apply flex items-center justify-between gap-10 -md:w-[250px] 
+			
+			.category-title
+				@apply body-16 font-extrabold uppercase tracking-widest text-primary-black05 py-3 block flex-1
+				letter-spacing: 0.1em
+			
+			.submenu-toggle
+				@apply sq-5 flex items-center justify-center cursor-pointer text-primary-black05
+				
+				i
+					@apply text-xs transition-transform duration-300
+			
+			// Active state - expanded
+			&.active
+				.submenu-toggle i
+					transform: rotate(180deg)
+				
+				> .sub-menu
+					@apply max-h-screen opacity-100
+			
+			// Submenu
+			> .sub-menu
+				@apply flex flex-col max-h-0 opacity-0 overflow-hidden transition-all duration-300
+				
+				> .menu-item
+					max-width: r(215px)
+					a
+						@apply flex items-center justify-between body-14 text-primary-black05 py-3.5 transition-all duration-300
+						
+						i
+							@apply text-xs text-primary-black03 transition-transform duration-300
+						
+						&:hover
+							@apply pl-1
+							
+							i
+								@apply text-primary-black05
+					
+					// Items with arrow
+					&.has-arrow
+						a
+							@apply pr-0
+					
+					// Nested Submenu (Level 2)
+					&.has-submenu
+						&.active
+							> a i
+								transform: rotate(90deg)
+							
+							.submenu-level2
+								@apply max-h-screen opacity-100 mb-2
+						
+						.submenu-level2
+							@apply flex flex-col pl-4 max-h-0 opacity-0 overflow-hidden transition-all duration-300
+							
+							.menu-item
+								a
+									@apply py-2 text-primary-black03 body-14
+									
+									&:hover
+										@apply text-primary-black05
+	
+	// Mobile Menu Footer
+	.mobile-menu-footer
+		@apply px-8 py-6 mt-auto
+		@screen sm
+			@apply px-10
+		
+		.shop-all-link
+			@apply inline-flex items-center gap-5 body-14 font-normal uppercase tracking-widest text-primary-black05 transition-all duration-300
+			letter-spacing: 0.1em
+			
+			i
+				@apply text-sm transition-transform duration-300
+			
+			&:hover
+				@apply gap-3
+				
+				i
+					transform: translate(2px, -2px)
 
 // ================================================
 // SEARCH OVERLAY (Fullscreen)
 // ================================================
 
 .header-search-overlay
-    @apply fixed inset-0 z-[100] pointer-events-none flex items-start justify-center pt-20
-    @screen lg
-        @apply items-center pt-0
-    
-    &.active
-        @apply pointer-events-auto
-        
-        .search-overlay-backdrop
-            @apply opacity-100 visible
-        
-        .search-overlay-content
-            @apply opacity-100 visible
-            transform: translateY(0)
-    
-    .search-overlay-backdrop
-        @apply absolute inset-0 bg-black/90 opacity-0 invisible transition-all duration-300
-        backdrop-filter: blur(10px)
-    
-    .search-overlay-content
-        @apply relative z-10 w-full max-w-3xl px-6 opacity-0 invisible transition-all duration-300
-        transform: translateY(-20px)
-    
-    .search-close
-        @apply absolute -top-12 right-0 text-white text-2xl cursor-pointer transition-opacity sq-12 flex items-center justify-center
-        @screen lg
-            @apply -top-16 text-3xl
-        
-        &:hover
-            @apply opacity-60
-    
-    .search-form-wrapper
-        @apply w-full
-    
-    .search-form
-        @apply flex items-center bg-white rounded-full overflow-hidden
-        box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2)
-    
-    .search-input
-        @apply flex-1 h-14 px-6 text-base outline-none border-none bg-transparent
-        @screen lg
-            @apply h-16 px-8 text-lg
-    
-    .search-submit
-        @apply w-14 h-14 flex items-center justify-center text-lg cursor-pointer transition-all duration-300 bg-primary-black05 text-white
-        @screen lg
-            @apply w-16 h-16 text-xl
-        
-        &:hover
-            @apply bg-neutral-800
-    
-    // Search Suggestions
-    .search-suggestions
-        @apply mt-8 text-center
-        @screen lg
-            @apply mt-10
-    
-    .search-section-title
-        @apply body-14 font-medium uppercase tracking-widest text-white/60 mb-4
-        letter-spacing: 0.15em
-    
-    .search-tags
-        @apply flex flex-wrap items-center justify-center gap-2
-        
-        li
-            a
-                @apply inline-block px-4 py-2 text-sm text-white border border-white/30 rounded-full transition-all duration-300
-                
-                &:hover
-                    @apply bg-white text-primary-black05 border-white
+	@apply fixed inset-0 z-[100] pointer-events-none flex items-start justify-center pt-20
+	@screen lg
+		@apply items-center pt-0
+	
+	&.active
+		@apply pointer-events-auto
+		
+		.search-overlay-backdrop
+			@apply opacity-100 visible
+		
+		.search-overlay-content
+			@apply opacity-100 visible
+			transform: translateY(0)
+	
+	.search-overlay-backdrop
+		@apply absolute inset-0 bg-black/90 opacity-0 invisible transition-all duration-300
+		backdrop-filter: blur(10px)
+	
+	.search-overlay-content
+		@apply relative z-10 w-full max-w-3xl px-6 opacity-0 invisible transition-all duration-300
+		transform: translateY(-20px)
+	
+	.search-close
+		@apply absolute -top-12 right-0 text-white text-2xl cursor-pointer transition-opacity sq-12 flex items-center justify-center
+		@screen lg
+			@apply -top-16 text-3xl
+		
+		&:hover
+			@apply opacity-60
+	
+	.search-form-wrapper
+		@apply w-full
+	
+	.search-form
+		@apply flex items-center bg-white rounded-full overflow-hidden
+		box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2)
+	
+	.search-input
+		@apply flex-1 h-14 px-6 text-base outline-none border-none bg-transparent
+		@screen lg
+			@apply h-16 px-8 text-lg
+	
+	.search-submit
+		@apply w-14 h-14 flex items-center justify-center text-lg cursor-pointer transition-all duration-300 bg-primary-black05 text-white
+		@screen lg
+			@apply w-16 h-16 text-xl
+		
+		&:hover
+			@apply bg-neutral-800
+	
+	// Search Suggestions
+	.search-suggestions
+		@apply mt-8 text-center
+		@screen lg
+			@apply mt-10
+	
+	.search-section-title
+		@apply body-14 font-medium uppercase tracking-widest text-white/60 mb-4
+		letter-spacing: 0.15em
+	
+	.search-tags
+		@apply flex flex-wrap items-center justify-center gap-2
+		
+		li
+			a
+				@apply inline-block px-4 py-2 text-sm text-white border border-white/30 rounded-full transition-all duration-300
+				
+				&:hover
+					@apply bg-white text-primary-black05 border-white

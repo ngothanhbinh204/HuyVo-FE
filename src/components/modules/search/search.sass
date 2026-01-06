@@ -1,0 +1,38 @@
+// Search Page Styles
+.page-search-results
+	@apply py-10 lg:py-20 min-h-[60vh]
+
+	.search-header
+		@apply text-center mb-10 lg:mb-16
+		
+		.page-title
+			@apply title-32 lg:title-42 uppercase tracking-[0.15em] text-primary-black05 mb-4 
+			@apply font-normal #{!important}
+
+		.search-query-text
+			@apply body-16 text-primary-black04
+			span
+				@apply italic ml-2 relative
+				@apply font-normal #{!important} 
+				&::after
+					content: ''
+					@apply absolute left-0 bottom-0 w-full h-[1px] bg-primary-black05
+
+	.post-type-section
+		@apply mb-12 lg:mb-20 last:mb-0
+
+		.section-title
+			@apply title-24 lg:title-32 font-light uppercase tracking-[0.1em] text-primary-black05 mb-6 lg:mb-10
+			@apply font-normal #{!important} 
+			@apply border-b border-primary-black01 pb-4 flex items-center justify-between
+
+			.count
+				@apply text-base font-normal text-primary-black03 tracking-normal
+
+	.search-grid
+		@apply grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 lg:gap-x-5 lg:gap-y-10
+
+	.no-results
+		@apply text-center py-10 lg:py-20 bg-utility-gray03/20
+		p
+			@apply body-16 text-primary-black04

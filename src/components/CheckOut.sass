@@ -17,10 +17,12 @@
 		h3
 			@apply title-24 font-medium tracking-[0.15em] uppercase
 			@apply text-primary-black05 pt-5 pb-10
+		.section-wrap-box-white
+			@apply p-0 #{!important}
 		#billing_ward_field,
 		#billing_district_field,
 		#billing_state_field
-			@apply col-span-12 lg:col-span-4 #{!important}
+			@apply col-span-12 md:col-span-6 lg:col-span-6 xl:col-span-6 #{!important}
 		
 		#ship-to-different-address
 			label
@@ -31,6 +33,8 @@
 				input
 					&:checked
 						@apply bg-primary-black05 #{!important}
+		.form-row.place-order
+			@apply p-0 #{!important}
 
 	.checkout-woo-inner-form-right
 		@apply lg:col-span-6
@@ -38,28 +42,59 @@
 		.section-wrap-box-white
 			@apply sticky top-24 #{!important}
 			@apply p-0 #{!important}
+		.variation-item
+			dd
+				@apply text-primary-black05 #{!important}
 			
 
 	/* ================= TITLES ================= */
 	.title-line
 		@apply title-24 font-medium tracking-[0.15em] uppercase
-		@apply text-primary-black05 pt-5 pb-10
+		@apply text-primary-black05 pt-3 pb-6 lg:pt-5 lg:pb-10
 
 	/* ================= FORM ================= */
 	.woocommerce-billing-fields__field-wrapper
 		@apply grid grid-cols-1 md:grid-cols-12 gap-x-5
+		#billing_country_field
+			@apply order-4 col-span-12 md:col-span-6 #{!important}
+		#billing_state_field
+			@apply order-5 col-span-12 md:col-span-6 #{!important}
+		#billing_email_field,
+		#billing_phone_field
+			@apply col-span-12 md:col-span-6 #{!important}
+	.woocommerce-shipping-fields__field-wrapper
+		@apply grid grid-cols-1 md:grid-cols-12 gap-x-5
+		#shipping_last_name_field
+			@apply order-1 col-span-12 md:col-span-6 #{!important}
+		#shipping_first_name_field
+			@apply order-2 col-span-12 md:col-span-6 #{!important}
+		#shipping_country_field
+			@apply order-3 col-span-12 md:col-span-6 #{!important}
+		#shipping_state_field
+			@apply order-4 col-span-12 md:col-span-6 #{!important}
+		#shipping_city_field
+			@apply order-5 col-span-12 md:col-span-6 #{!important}
+		#shipping_postcode_field
+			@apply order-6 col-span-12 md:col-span-6 #{!important}
+		#shipping_address_1_field
+			@apply order-7 col-span-12 #{!important}
+		#shipping_address_2_field
+			@apply order-8 col-span-12 #{!important}
+		
 
 	.form-row
 		@apply flex flex-col gap-2
 		@apply p-0 #{!important}
 
 		&.form-row-wide
-			@apply md:col-span-6 lg:col-span-12
+			@apply col-span-12 md:col-span-6 lg:col-span-12
 
 		.woocommerce-billing-fields__field-wrapper
 			label
 				// @apply text-xs uppercase tracking-wide text-primary-black03
 				@apply hidden #{!important}
+			&.screen-reader-text
+				all: unset !important
 
 		.required
 			@apply text-red-500
@@ -91,12 +126,46 @@
 		background-position: right 16px center
 
 	/* ================= SHIPPING METHOD ================= */
-	.shipping_method,
+	#checkout-shipping-methods-wrapper	
+		table
+			@apply w-full
+	
+			tr.woocommerce-shipping-totals.shipping
+				@apply block w-full
+				
+				th
+					@apply hidden
+	
+				td
+					@apply block w-full
+	
+		ul#shipping_method
+			@apply space-y-4 list-none p-0 m-0
+	
+			li
+				@apply flex items-center justify-between
+				@apply border border-primary-black02 p-5 bg-white transition-all duration-300 cursor-pointer
+				
+				&:hover
+					@apply border-primary-black05 bg-utility-gray03/10
+				
+				&:has(input:checked)
+					@apply border-primary-black05 ring-1 ring-primary-black05
+	
+				input[type="radio"]
+					@apply w-5 h-5 accent-primary-black05 cursor-pointer m-0 border-primary-black05 #{!important}
+	
+				label
+					@apply flex-1 body-14 text-primary-black05 font-medium cursor-pointer m-0 flex justify-between items-center ml-4
+					
+					.woocommerce-Price-amount
+						@apply font-bold text-primary-black05
+
+	/* ================= PAYMENT METHODS (Global) ================= */
 	.wc_payment_methods
 		@apply space-y-4
 
-	.wc_payment_method,
-	.shipping_method li
+	.wc_payment_method
 		@apply flex items-center justify-between
 		@apply border border-primary-black02 px-5 py-4
 		@apply cursor-pointer transition-all
@@ -108,7 +177,7 @@
 			@apply flex items-center gap-3 text-sm text-primary-black05
 
 		input
-			@apply accent-primary-black05 w-6 h-6 #{!important}
+			@apply accent-primary-black05 w-4 h-4 lg:w-6 lg:h-6 #{!important}
 
 		.amount
 			@apply text-sm font-medium text-primary-black05
@@ -197,6 +266,15 @@
 			&:after
 				@apply hidden #{!important}
 				content: none #{!important}
+
+	@screen -md
+		.wc_payment_method
+			@apply flex flex-wrap justify-start items-center gap-x-5 gap-y-6 relative
+			label
+				@apply absolute top-2 right-2 w-[60%] h-auto
+				@apply flex items-center justify-center
+				img
+					@apply max-w-[60%]
 .section-checkout
 	.woocommerce-checkout
 		.woocommerce-checkout-payment
@@ -253,18 +331,96 @@
 .mini-cart-wrapper .woocommerce-mini-cart-item a.remove
 	@apply body-16 w-fit underline text-utility-gray03 ml-auto font-normal #{!important}
 
-.mini-cart-wrapper
-	@apply overflow-hidden px-10 py-2.5
-	@apply max-h-[60vh] overflow-y-scroll #{!important}
-	.mini-cart-header
-		@apply font-normal border-none
-		.mini-cart-title
-			@apply title-20 font-normal #{!important}
-	.widget_shopping_cart_content
-		@apply p-0 #{!important}
-	.product-info
-		@apply pl-5
-.woocommerce-mini-cart__buttons
-	.buttons
+.cart-header
+	.mini-cart-wrapper
+		@apply overflow-hidden px-5 lg:px-10 lg:py-2.5
+		@apply lg:w-[650px] 
+		@apply max-w-[650px] h-[44rem] #{!important}
+		.mini-cart-header
+			@apply font-normal border-none
+			.mini-cart-title
+				@apply title-20 font-normal #{!important}
+		.woocommerce-mini-cart__total.total
+			@apply hidden #{!important}
+		.woocommerce-mini-cart
+			@apply my-5
+		.widget_shopping_cart_content
+			@apply p-0 #{!important} 
+			@apply space-y-5
+			@apply flex flex-col h-[80%]
+			.cart_list.product_list_widget
+				@apply flex-1 overscroll-y-auto overflow-x-hidden overflow-y-scroll
+		.payment-support
+			@apply space-y-3 mt-5
+		.product-info
+			@apply pl-5
+		.quantity-input-wrapper
+			&input[type="number"] 
+				@apply text-primary-black02
+		.mini-cart-close
+			i
+				@apply title-24 text-primary-black03
+		.woocommerce-mini-cart-item
+			@apply p-0
+			.cart-item-wrapper
+				@apply w-full
+				.product-info
+					@apply p-0
+					@apply flex-auto
+			.product-meta
+				@apply space-y-6
+				a.remove
+					@apply body-16 w-fit underline text-primary-black02 ml-auto font-normal #{!important}
+	&:hover
+		@apply block
+.woocommerce-mini-cart__buttons 
+	@apply flex-shrink-0
+	&.buttons
 		a
-			@apply w-full flex-auto font-normal body-18 text-white p-5 #{!important}
+			@apply w-full max-w-full flex-auto gap-2 font-normal body-18 text-white p-5 #{!important}
+			@apply border-transparent
+			@apply flex flex-row justify-between
+			span
+				@apply font-normal -md:text-[14px] body-16 #{!important}
+			&.total-price
+				@apply font-normal -md:text-[14px] body-18 #{!important}
+
+.woocommerce-billing-fields__field-wrapper,
+.woocommerce-shipping-fields__field-wrapper
+	.woocommerce-input-wrapper
+		@apply flex flex-col gap-6
+	p
+		span,
+		span.woocommerce-input-wrapper > input,
+		.select2-container,
+		.select2-container > span.selection,
+		.select2-container > span.selection > .select2-selection,
+		.select2-container > span.selection > .select2-selection .select2-selection__rendered,
+		.select2-container > span.selection > .select2-selection .select2-selection__rendered .select2-selection__choice,
+		.select2-container > span.selection > .select2-selection .select2-selection__rendered .select2-selection__choice .select2-selection__choice__remove
+			@apply max-h-15 #{!important}
+		.select2-container > span.selection > .select2-selection > .select2-selection__rendered
+			@apply py-0 #{!important}
+		.select2-container > span.selection > .select2-selection > .select2-selection__rendered > .select2-selection__choice
+			@apply py-0 #{!important}
+
+	.form-row
+		label.screen-reader-text
+			all: unset !important
+			line-height: 2 #{!important}
+	.form-row
+		&::before,
+		&::after
+			@apply hidden #{!important}
+			content: none #{!important}
+
+			
+
+.mini-cart-wrapper
+	// @apply block #{!important}
+	.woocommerce-mini-cart 
+		@apply h-[65%] overflow-y-scroll 
+		scrollbar-width: thin
+		&::-webkit-scrollbar
+			@apply w-2
+

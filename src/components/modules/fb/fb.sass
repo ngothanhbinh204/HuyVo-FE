@@ -1,0 +1,51 @@
+.section-feedback
+	.title_fb
+		@apply flex flex-col justify-center items-center my-10 md:my-12 lg:my-20
+		h2
+			@apply text-[42px] font-normal uppercase tracking-[1.5px] text-primary-black05 text-center leading-none
+
+	.fb-grid
+		@apply grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-5
+
+	.fb-item
+		@apply flex flex-col justify-between 
+		
+		.fb-image
+			@apply img-ratio ratio:pt-[610_343] overflow-hidden
+			img
+				@apply w-full h-full object-cover
+
+		.fb-content
+			@apply flex-1 flex flex-row gap-4 justify-start items-center py-2.5 
+			
+			.fb-avt
+				@apply w-10 h-10 shrink-0 rounded-full overflow-hidden
+				img
+					@apply w-full h-full object-cover scale-105
+			
+			.fb-name
+				@apply body-14 font-normal text-primary-black05 leading-[20px] tracking-[0.5px] line-clamp-2
+.wrapper-pagination
+	@apply mt-4 mb-8 md:mt-5 md:mb-15 lg:mt-10 lg:mb-30
+	@apply py-5 md:py-7 lg:py-10
+	@apply bg-white
+
+	.paginations
+		@apply flex justify-center items-center gap-2.5 flex-wrap list-none p-0
+		
+		li
+			@apply inline-block
+		.page-numbers
+			@apply w-10 h-10 flex justify-center items-center bg-white border border-transparent 
+			@apply text-primary-black05 body-16 font-normal transition-all cursor-pointer
+			
+			i
+				@apply font-normal text-primary-black05 body-16
+			&:hover, &.current
+				@apply border-primary-black05 bg-primary-black05 text-white
+				i
+					@apply text-white
+			&.dots
+				@apply cursor-default border-transparent bg-transparent text-primary-black05
+				&:hover
+					@apply bg-transparent text-primary-black05

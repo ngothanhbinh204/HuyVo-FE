@@ -20,9 +20,9 @@
 // ==========================================================
 .contact-hero-banner
 	@apply w-full
-
+	@apply -md:hidden
 	.banner-wrapper
-		@apply img-ratio ratio:pt-[604_1432]
+		@apply img-ratio ratio:pt-[604_1432] 
 
 		img
 			@apply w-full h-full object-cover
@@ -52,7 +52,7 @@
 		@apply w-full max-w-[576px] flex flex-col gap-5
 
 	.showroom-title
-		@apply title-36 font-normal uppercase tracking-wider text-primary-black05 py-1 lg:py-5
+		@apply -md:text-center title-36 font-normal uppercase tracking-wider text-primary-black05 py-1 lg:py-5
 
 	// Reversed layout
 	&.reversed
@@ -69,7 +69,7 @@
 // CONTACT INFO ITEMS
 // ==========================================================
 .contact-info-list
-	@apply flex flex-col gap-5
+	@apply flex flex-col gap-2.5 md:gap-5
 
 .contact-info-item
 	@apply flex items-start gap-3
@@ -88,7 +88,7 @@
 		@apply body-18 text-primary-black05
 
 	.info-value
-		@apply body-18 text-primary-black05
+		@apply body-18 text-primary-black05 leading-1.5
 
 		&:hover
 			@apply text-primary-black04
@@ -116,10 +116,10 @@
 // CENTER INFO SECTION
 // ==========================================================
 .contact-center-info
-	@apply py-16 lg:py-24 bg-[#f5f5f5]
+	@apply py-10 md:py-16 lg:py-24 bg-[#f5f5f5]
 
 	.center-content
-		@apply flex flex-col items-center text-center gap-10
+		@apply flex flex-col items-center text-center gap-5 md:gap-10
 
 	.info-block
 		@apply space-y-5

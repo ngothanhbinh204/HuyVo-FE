@@ -71,7 +71,7 @@
 
 		.swiper-slide
 			.content-wrap
-				@apply opacity-0 translate-y-8 transition-all duration-700 ease-out
+				@apply flex flex-col justify-center opacity-0 translate-y-8 transition-all duration-700 ease-out
 			
 			.polaroid-group
 				@apply opacity-0 scale-95 transition-all duration-700 ease-out delay-200
@@ -91,10 +91,10 @@
 
 	// New Slide Grid Structure
 	.slide-grid
-		@apply flex flex-col lg:flex-row w-full h-full py-6 lg:py-10 xl:py-15 
+		@apply gap-6 flex flex-col lg:flex-row w-full h-full py-6 lg:py-10 xl:py-15 
 	
 	.grid-left
-		@apply w-full lg:w-[50%] gap-4 lg:gap-15 flex flex-row h-full relative z-10 px-4 lg:pl-10
+		@apply w-full gap-4 lg:gap-15 flex flex-row h-full relative z-10 px-4 lg:pl-10
 
 	.content-wrap
 		@apply relative mb-10
@@ -111,8 +111,9 @@
 			@apply text-white leading-relaxed body-16
 
 	.bg-year-watermark
-		@apply text-[3rem] lg:title-140 font-bold text-transparent select-none z-[-1] text-center leading-[0.5]
+		@apply text-[3rem] lg:text-[5rem] font-bold text-transparent select-none z-[-1] text-center leading-[0.5]
 		-webkit-text-stroke: 1px #504B4C
+		@apply whitespace-nowrap
 
 	// Grid Right: Main Image
 	.grid-right
@@ -128,7 +129,7 @@
 	.polaroid-group
 		@apply relative my-auto flex gap-6 lg:gap-12 w-full
 		.wrapper-ratio
-			@apply img-ratio ratio:pt-[430_360] overflow-hidden w-full
+			@apply w-full h-full lg:w-[360px] lg:h-[430px] overflow-hidden
 			img
 				@apply w-full h-full object-cover 
 		

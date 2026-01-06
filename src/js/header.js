@@ -15,10 +15,24 @@ export const header = {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
+      // Add background/style when scrolled a bit
       if (currentScrollY > 50) {
         headerEl.classList.add("scrolled");
       } else {
         headerEl.classList.remove("scrolled");
+      }
+
+      // Hide/Show logic based on scroll direction
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling DOWN
+        headerEl.classList.add("header-hidden");
+        
+        // Optional: Close any open mega menus for cleaner UX
+        headerEl.classList.remove("menu-open");
+        document.querySelectorAll(".header .menu-item.has-dropdown.active").forEach(item => item.classList.remove("active"));
+      } else {
+        // Scrolling UP
+        headerEl.classList.remove("header-hidden");
       }
 
       lastScrollY = currentScrollY;
@@ -98,11 +112,11 @@ export const header = {
       mobileMenu?.classList.add("active");
       document.body.classList.add("overflow-hidden");
 
-      // Open first category by default
-      const firstCategory = mobileMenu?.querySelector(".menu-item.is-category");
-      if (firstCategory && !firstCategory.classList.contains("active")) {
-        firstCategory.classList.add("active");
-      }
+      // Requirement: Open ALL submenus by default
+      const allSubmenus = mobileMenu?.querySelectorAll(".menu-item-has-children");
+      allSubmenus?.forEach((item) => {
+        item.classList.add("active");
+      });
     };
 
     const closeMobileMenu = () => {
@@ -123,54 +137,70 @@ export const header = {
     mobileMenuOverlay?.addEventListener("click", closeMobileMenu);
 
     // ----------------------------------------
-    // Mobile Menu - Category Toggle (submenu-toggle button)
+    // Mobile Menu - Accordion Logic
     // ----------------------------------------
+    const handleAccordionToggle = (e) => {
+      e.preventDefault();
+      const toggle = e.currentTarget;
+      // Determine the main menu item container
+      const menuItem = toggle.closest(".menu-item");
+      if (!menuItem) return;
+
+      const parentList = menuItem.closest("ul");
+      if (!parentList) return;
+
+      // Identify siblings that are also menu items (and likely have children/submenus)
+      const siblings = Array.from(parentList.children).filter(
+        (child) =>
+          child !== menuItem && child.classList.contains("menu-item")
+      );
+
+      // Check state
+      const isCurrentActive = menuItem.classList.contains("active");
+      // Are any other siblings currently open?
+      const hasOtherActive = siblings.some((sib) => sib.classList.contains("active"));
+
+      // Logic:
+      // 1. If currently transitioning from "All/Many Open" to "Focus One":
+      //    (Implied by having other siblings active, OR simply enforcing "Close Others" rule)
+      //    We close all siblings and Ensure current is Active.
+      // 2. If standard single-accordion state (others closed):
+      //    We just toggle current.
+      
+      if (hasOtherActive) {
+        // Close all siblings
+        siblings.forEach((sib) => sib.classList.remove("active"));
+        // Force open current (Focus intent)
+        menuItem.classList.add("active");
+      } else {
+        // Standard toggle (Open <-> Close)
+        menuItem.classList.toggle("active");
+      }
+    };
+
+    // Apply to Category Toggles (Buttons)
     const mobileSubmenuToggles = document.querySelectorAll(
       ".mobile-menu .submenu-toggle"
     );
-
     mobileSubmenuToggles.forEach((toggle) => {
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        const menuItem = toggle.closest(".menu-item");
-        const isActive = menuItem.classList.contains("active");
-
-        // Toggle current (không đóng siblings để cho phép mở nhiều cùng lúc như thiết kế)
-        menuItem.classList.toggle("active", !isActive);
-      });
+      toggle.addEventListener("click", handleAccordionToggle);
     });
 
-    // ----------------------------------------
-    // Mobile Menu - Category Title Click Toggle
-    // ----------------------------------------
+    // Apply to Category Titles (Links)
     const categoryTitles = document.querySelectorAll(
       ".mobile-menu .category-title"
     );
-
     categoryTitles.forEach((title) => {
-      title.addEventListener("click", (e) => {
-        e.preventDefault();
-        const menuItem = title.closest(".menu-item");
-        const isActive = menuItem.classList.contains("active");
-
-        // Toggle current
-        menuItem.classList.toggle("active", !isActive);
-      });
+      title.addEventListener("click", handleAccordionToggle);
     });
 
-    // ----------------------------------------
-    // Mobile Menu - Nested Submenu Toggle (Level 2)
-    // ----------------------------------------
+    // Apply to Nested Submenus (Level 2 Links)
+    // Select links inside .has-submenu that are direct children (or intended toggles)
     const mobileNestedToggles = document.querySelectorAll(
       ".mobile-menu .sub-menu .has-submenu > a"
     );
-
     mobileNestedToggles.forEach((toggle) => {
-      toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        const menuItem = toggle.closest(".menu-item");
-        menuItem.classList.toggle("active");
-      });
+      toggle.addEventListener("click", handleAccordionToggle);
     });
 
     // ----------------------------------------
